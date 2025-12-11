@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LATIHAN UAS JARINGAN KOMPUTER - UT</title>
+<style>
+  body {font-family: Arial, sans-serif; background: #f5f5f5; margin: 20px;}
+  h2 {text-align: center; color: #003366;}
+  h3 {color:#004080; margin-top:30px;}
+  .question {background: #fff; padding: 15px; margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+  .question p {font-weight: bold; margin-bottom: 10px;}
+  .answers label {display: block; padding: 5px; border-radius: 5px; cursor: pointer;}
+  .answers input[type="radio"] {margin-right: 10px;}
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+  }
+  button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #resetBtn {background-color: #6c757d;}
+  #submitBtn {background-color: #007bff;}
+  #resetBtn:hover {background-color: #5a6268;}
+  #submitBtn:hover {background-color: #0056b3;}
+  #result {text-align: center; font-size: 18px; font-weight: bold; margin-top: 20px;}
+  .correct {background-color: #d4edda;}
+  .wrong {background-color: #f8d7da;}
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+<h2>LATIHAN UAS JARINGAN KOMPUTER - UT</h2>
+<div class="question" id="q1">
+  <p>1. Fungsi utama lapisan Network adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q1" value="A"> A. Menyediakan antarmuka aplikasi</label>
+    <label><input type="radio" name="q1" value="B"> B. Mengatur pengalamatan logis dan routing</label>
+    <label><input type="radio" name="q1" value="C"> C. Mengubah data ke sinyal</label>
+    <label><input type="radio" name="q1" value="D"> D. Mengenkripsi data</label>
+  </div>
+</div>
+
+<div class="question" id="q2">
+  <p>2. Perintah CMD untuk menampilkan konfigurasi IP pada Windows adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q2" value="A"> A. ping</label>
+    <label><input type="radio" name="q2" value="B"> B. ipconfig</label>
+    <label><input type="radio" name="q2" value="C"> C. netstat</label>
+    <label><input type="radio" name="q2" value="D"> D. tracert</label>
+  </div>
+</div>
+
+<div class="question" id="q3">
+  <p>3. Fungsi utama DHCP adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q3" value="A"> A. Menerjemahkan nama domain ke IP</label>
+    <label><input type="radio" name="q3" value="B"> B. Mengirim data antar komputer</label>
+    <label><input type="radio" name="q3" value="C"> C. Mengamankan data jaringan</label>
+    <label><input type="radio" name="q3" value="D"> D. Memberikan alamat IP otomatis ke host</label>
+  </div>
+</div>
+
+<div class="question" id="q4">
+  <p>4. Lapisan OSI yang berfungsi menjamin pengiriman data adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q4" value="A"> A. Physical</label>
+    <label><input type="radio" name="q4" value="B"> B. Data Link</label>
+    <label><input type="radio" name="q4" value="C"> C. Transport</label>
+    <label><input type="radio" name="q4" value="D"> D. Network</label>
+  </div>
+</div>
+
+<div class="question" id="q5">
+  <p>5. Protokol yang digunakan untuk akses halaman web adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q5" value="A"> A. FTP</label>
+    <label><input type="radio" name="q5" value="B"> B. SMTP</label>
+    <label><input type="radio" name="q5" value="C"> C. HTTP</label>
+    <label><input type="radio" name="q5" value="D"> D. SNMP</label>
+  </div>
+</div>
+
+<div class="question" id="q6">
+  <p>6. Fungsi perintah ping adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q6" value="A"> A. Mengatur IP host</label>
+    <label><input type="radio" name="q6" value="B"> B. Menguji konektivitas antar host</label>
+    <label><input type="radio" name="q6" value="C"> C. Menampilkan konfigurasi jaringan</label>
+    <label><input type="radio" name="q6" value="D"> D. Menerjemahkan nama domain</label>
+  </div>
+</div>
+
+<div class="question" id="q7">
+  <p>7. Protokol UDP berbeda dengan TCP karena …</p>
+  <div class="answers">
+    <label><input type="radio" name="q7" value="A"> A. Lebih aman</label>
+    <label><input type="radio" name="q7" value="B"> B. Memerlukan koneksi handshaking</label>
+    <label><input type="radio" name="q7" value="C"> C. Tidak menjamin pengiriman data</label>
+    <label><input type="radio" name="q7" value="D"> D. Digunakan untuk web browsing</label>
+  </div>
+</div>
+
+<div class="question" id="q8">
+  <p>8. Perintah CMD untuk menampilkan semua opsi ipconfig adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q8" value="A"> A. ipconfig /release</label>
+    <label><input type="radio" name="q8" value="B"> B. ipconfig /?</label>
+    <label><input type="radio" name="q8" value="C"> C. ipconfig /renew</label>
+    <label><input type="radio" name="q8" value="D"> D. ipconfig /all</label>
+  </div>
+</div>
+
+<div class="question" id="q9">
+  <p>9. Fungsi DNS adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q9" value="A"> A. Memberikan alamat IP otomatis</label>
+    <label><input type="radio" name="q9" value="B"> B. Menerjemahkan nama domain ke alamat IP</label>
+    <label><input type="radio" name="q9" value="C"> C. Mengatur rute data</label>
+    <label><input type="radio" name="q9" value="D"> D. Mengamankan jaringan</label>
+  </div>
+</div>
+
+<div class="question" id="q10">
+  <p>10. Perintah CMD untuk membersihkan layar adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q10" value="A"> A. ipconfig</label>
+    <label><input type="radio" name="q10" value="B"> B. cls</label>
+    <label><input type="radio" name="q10" value="C"> C. dir</label>
+    <label><input type="radio" name="q10" value="D"> D. netstat</label>
+  </div>
+</div>
+
+<div class="question" id="q11">
+  <p>11. Fungsi perintah netstat adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q11" value="A"> A. Menampilkan koneksi jaringan aktif</label>
+    <label><input type="radio" name="q11" value="B"> B. Menghapus cache DNS</label>
+    <label><input type="radio" name="q11" value="C"> C. Menampilkan konfigurasi IP</label>
+    <label><input type="radio" name="q11" value="D"> D. Menguji konektivitas host</label>
+  </div>
+</div>
+
+<div class="question" id="q12">
+  <p>12. Perintah tracert digunakan untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q12" value="A"> A. Menampilkan jalur paket ke host tujuan</label>
+    <label><input type="radio" name="q12" value="B"> B. Menampilkan IP lokal</label>
+    <label><input type="radio" name="q12" value="C"> C. Menghapus tabel routing</label>
+    <label><input type="radio" name="q12" value="D"> D. Menguji koneksi DNS</label>
+  </div>
+</div>
+
+<div class="question" id="q13">
+  <p>13. Fungsi server HTTP adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q13" value="A"> A. Menyimpan alamat IP</label>
+    <label><input type="radio" name="q13" value="B"> B. Menyediakan layanan halaman web</label>
+    <label><input type="radio" name="q13" value="C"> C. Mengirim email</label>
+    <label><input type="radio" name="q13" value="D"> D. Mengatur subnet</label>
+  </div>
+</div>
+
+<div class="question" id="q14">
+  <p>14. Fungsi lapisan Data Link adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q14" value="A"> A. Mengatur alamat IP</label>
+    <label><input type="radio" name="q14" value="B"> B. Menyediakan deteksi error dan pengalamatan fisik</label>
+    <label><input type="radio" name="q14" value="C"> C. Mengirim email</label>
+    <label><input type="radio" name="q14" value="D"> D. Mengatur bandwidth</label>
+  </div>
+</div>
+
+<div class="question" id="q15">
+  <p>15. Perintah pathping digunakan untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q15" value="A"> A. Menampilkan konfigurasi IP</label>
+    <label><input type="radio" name="q15" value="B"> B. Mengetahui jalur paket dan statistik</label>
+    <label><input type="radio" name="q15" value="C"> C. Menghapus cache DNS</label>
+    <label><input type="radio" name="q15" value="D"> D. Mengatur routing</label>
+  </div>
+</div>
+
+<div class="question" id="q16">
+  <p>16. Protokol FTP bekerja pada port …</p>
+  <div class="answers">
+    <label><input type="radio" name="q16" value="A"> A. 80</label>
+    <label><input type="radio" name="q16" value="B"> B. 25</label>
+    <label><input type="radio" name="q16" value="C"> C. 21</label>
+    <label><input type="radio" name="q16" value="D"> D. 53</label>
+  </div>
+</div>
+
+<div class="question" id="q17">
+  <p>17. Lapisan OSI yang berfungsi untuk enkapsulasi data ke paket disebut …</p>
+  <div class="answers">
+    <label><input type="radio" name="q17" value="A"> A. Network</label>
+    <label><input type="radio" name="q17" value="B"> B. Transport</label>
+    <label><input type="radio" name="q17" value="C"> C. Session</label>
+    <label><input type="radio" name="q17" value="D"> D. Data Link</label>
+  </div>
+</div>
+
+<div class="question" id="q18">
+  <p>18. Fungsi router adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q18" value="A"> A. Menghubungkan dua jaringan berbeda</label>
+    <label><input type="radio" name="q18" value="B"> B. Menyimpan data sementara</label>
+    <label><input type="radio" name="q18" value="C"> C. Menguatkan sinyal</label>
+    <label><input type="radio" name="q18" value="D"> D. Mengatur IP host</label>
+  </div>
+</div>
+
+<div class="question" id="q19">
+  <p>19. IP 192.168.1.10 termasuk kelas …</p>
+  <div class="answers">
+    <label><input type="radio" name="q19" value="A"> A. A</label>
+    <label><input type="radio" name="q19" value="B"> B. C</label>
+    <label><input type="radio" name="q19" value="C"> C. B</label>
+    <label><input type="radio" name="q19" value="D"> D. D</label>
+  </div>
+</div>
+
+<div class="question" id="q20">
+  <p>20. Fungsi perintah nslookup adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q20" value="A"> A. Menampilkan alamat IP dan DNS</label>
+    <label><input type="radio" name="q20" value="B"> B. Menguji konektivitas host</label>
+    <label><input type="radio" name="q20" value="C"> C. Mengatur IP host</label>
+    <label><input type="radio" name="q20" value="D"> D. Menampilkan rute jaringan</label>
+  </div>
+</div>
+
+<div class="question" id="q21">
+  <p>21. Port standar SMTP adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q21" value="A"> A. 25</label>
+    <label><input type="radio" name="q21" value="B"> B. 80</label>
+    <label><input type="radio" name="q21" value="C"> C. 53</label>
+    <label><input type="radio" name="q21" value="D"> D. 21</label>
+  </div>
+</div>
+
+<div class="question" id="q22">
+  <p>22. Fungsi netsh adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q22" value="A"> A. Mengatur firewall</label>
+    <label><input type="radio" name="q22" value="B"> B. Konfigurasi jaringan Windows</label>
+    <label><input type="radio" name="q22" value="C"> C. Melakukan ping</label>
+    <label><input type="radio" name="q22" value="D"> D. Menampilkan rute</label>
+  </div>
+</div>
+
+<div class="question" id="q23">
+  <p>23. Fungsi utama server DNS adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q23" value="A"> A. Menerjemahkan nama domain ke IP</label>
+    <label><input type="radio" name="q23" value="B"> B. Menyediakan halaman web</label>
+    <label><input type="radio" name="q23" value="C"> C. Mengatur IP host</label>
+    <label><input type="radio" name="q23" value="D"> D. Menghubungkan jaringan</label>
+  </div>
+</div>
+
+<div class="question" id="q24">
+  <p>24. Fungsi hub adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q24" value="A"> A. Menyimpan data sementara</label>
+    <label><input type="radio" name="q24" value="B"> B. Menghubungkan jaringan berbeda</label>
+    <label><input type="radio" name="q24" value="C"> C. Menyebarkan data ke semua port</label>
+    <label><input type="radio" name="q24" value="D"> D. Mengatur IP host</label>
+  </div>
+</div>
+
+<div class="question" id="q25">
+  <p>25. Perintah ipconfig /flushdns berfungsi untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q25" value="A"> A. Menghapus cache DNS</label>
+    <label><input type="radio" name="q25" value="B"> B. Menampilkan DNS</label>
+    <label><input type="radio" name="q25" value="C"> C. Menerjemahkan nama domain</label>
+    <label><input type="radio" name="q25" value="D"> D. Memperbarui IP host</label>
+  </div>
+</div>
+
+<div class="question" id="q26">
+  <p>26. Lapisan OSI yang setara dengan TCP/IP Application Layer adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q26" value="A"> A. Application, Presentation, Session</label>
+    <label><input type="radio" name="q26" value="B"> B. Data Link</label>
+    <label><input type="radio" name="q26" value="C"> C. Network</label>
+    <label><input type="radio" name="q26" value="D"> D. Transport</label>
+  </div>
+</div>
+
+<div class="question" id="q27">
+  <p>27. Jumlah host maksimal di subnet 255.255.255.0 adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q27" value="A"> A. 128</label>
+    <label><input type="radio" name="q27" value="B"> B. 254</label>
+    <label><input type="radio" name="q27" value="C"> C. 256</label>
+    <label><input type="radio" name="q27" value="D"> D. 512</label>
+  </div>
+</div>
+
+<div class="question" id="q28">
+  <p>28. Perangkat yang memperkuat sinyal jaringan adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q28" value="A"> A. Repeater</label>
+    <label><input type="radio" name="q28" value="B"> B. Bridge</label>
+    <label><input type="radio" name="q28" value="C"> C. Router</label>
+    <label><input type="radio" name="q28" value="D"> D. Switch</label>
+  </div>
+</div>
+
+<div class="question" id="q29">
+  <p>29. Fungsi perintah ipconfig /renew adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q29" value="A"> A. Memperbarui alamat IP dari DHCP</label>
+    <label><input type="radio" name="q29" value="B"> B. Menghapus cache DNS</label>
+    <label><input type="radio" name="q29" value="C"> C. Menampilkan konfigurasi jaringan</label>
+    <label><input type="radio" name="q29" value="D"> D. Melepaskan alamat IP</label>
+  </div>
+</div>
+
+<div class="question" id="q30">
+  <p>30. Protokol yang digunakan untuk transfer file antar komputer adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q30" value="A"> A. FTP</label>
+    <label><input type="radio" name="q30" value="B"> B. HTTP</label>
+    <label><input type="radio" name="q30" value="C"> C. SMTP</label>
+    <label><input type="radio" name="q30" value="D"> D. SNMP</label>
+  </div>
+</div>
+<!-- ====== BAGIAN 2 : SOAL 31–60 ====== -->
+
+<div class="question" id="q31">
+  <p>31. Topologi jaringan yang menggunakan satu kabel utama sebagai jalur komunikasi adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q31" value="A"> A. Star</label>
+    <label><input type="radio" name="q31" value="B"> B. Ring</label>
+    <label><input type="radio" name="q31" value="C"> C. Bus</label>
+    <label><input type="radio" name="q31" value="D"> D. Mesh</label>
+  </div>
+</div>
+
+<div class="question" id="q32">
+  <p>32. Protokol yang berfungsi menerjemahkan alamat IP ke alamat fisik (MAC) adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q32" value="A"> A. DNS</label>
+    <label><input type="radio" name="q32" value="B"> B. ARP</label>
+    <label><input type="radio" name="q32" value="C"> C. ICMP</label>
+    <label><input type="radio" name="q32" value="D"> D. DHCP</label>
+  </div>
+</div>
+
+<div class="question" id="q33">
+  <p>33. Lapisan OSI yang berhubungan langsung dengan pengguna adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q33" value="A"> A. Application</label>
+    <label><input type="radio" name="q33" value="B"> B. Session</label>
+    <label><input type="radio" name="q33" value="C"> C. Presentation</label>
+    <label><input type="radio" name="q33" value="D"> D. Network</label>
+  </div>
+</div>
+
+<div class="question" id="q34">
+  <p>34. Lapisan OSI yang berfungsi membentuk, memelihara, dan menghentikan koneksi adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q34" value="A"> A. Presentation</label>
+    <label><input type="radio" name="q34" value="B"> B. Session</label>
+    <label><input type="radio" name="q34" value="C"> C. Network</label>
+    <label><input type="radio" name="q34" value="D"> D. Transport</label>
+  </div>
+</div>
+
+<div class="question" id="q35">
+  <p>35. Alamat broadcast dari jaringan 192.168.2.0/24 adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q35" value="A"> A. 192.168.2.0</label>
+    <label><input type="radio" name="q35" value="B"> B. 192.168.2.1</label>
+    <label><input type="radio" name="q35" value="C"> C. 192.168.2.255</label>
+    <label><input type="radio" name="q35" value="D"> D. 255.255.255.0</label>
+  </div>
+</div>
+
+<div class="question" id="q36">
+  <p>36. Protokol yang digunakan untuk mengirim email antar server adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q36" value="A"> A. POP3</label>
+    <label><input type="radio" name="q36" value="B"> B. SMTP</label>
+    <label><input type="radio" name="q36" value="C"> C. IMAP</label>
+    <label><input type="radio" name="q36" value="D"> D. HTTP</label>
+  </div>
+</div>
+
+<div class="question" id="q37">
+  <p>37. Port default dari layanan HTTPS adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q37" value="A"> A. 25</label>
+    <label><input type="radio" name="q37" value="B"> B. 80</label>
+    <label><input type="radio" name="q37" value="C"> C. 443</label>
+    <label><input type="radio" name="q37" value="D"> D. 110</label>
+  </div>
+</div>
+
+<div class="question" id="q38">
+  <p>38. Dalam subnet mask 255.255.255.128, jumlah host yang dapat digunakan adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q38" value="A"> A. 62</label>
+    <label><input type="radio" name="q38" value="B"> B. 126</label>
+    <label><input type="radio" name="q38" value="C"> C. 254</label>
+    <label><input type="radio" name="q38" value="D"> D. 512</label>
+  </div>
+</div>
+
+<div class="question" id="q39">
+  <p>39. Perintah yang digunakan untuk melihat tabel routing pada router Cisco adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q39" value="A"> A. show version</label>
+    <label><input type="radio" name="q39" value="B"> B. show ip route</label>
+    <label><input type="radio" name="q39" value="C"> C. show running-config</label>
+    <label><input type="radio" name="q39" value="D"> D. show interface</label>
+  </div>
+</div>
+
+<div class="question" id="q40">
+  <p>40. Protokol yang digunakan untuk keamanan komunikasi di web adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q40" value="A"> A. HTTPS</label>
+    <label><input type="radio" name="q40" value="B"> B. FTP</label>
+    <label><input type="radio" name="q40" value="C"> C. SMTP</label>
+    <label><input type="radio" name="q40" value="D"> D. SNMP</label>
+  </div>
+</div>
+
+<div class="question" id="q41">
+  <p>41. Fungsi gateway dalam jaringan komputer adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q41" value="A"> A. Menghubungkan jaringan dengan protokol berbeda</label>
+    <label><input type="radio" name="q41" value="B"> B. Menguatkan sinyal</label>
+    <label><input type="radio" name="q41" value="C"> C. Menyebarkan data ke seluruh jaringan</label>
+    <label><input type="radio" name="q41" value="D"> D. Mengatur kecepatan bandwidth</label>
+  </div>
+</div>
+
+<div class="question" id="q42">
+  <p>42. Perintah CMD “ipconfig /release” digunakan untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q42" value="A"> A. Memperbarui alamat IP</label>
+    <label><input type="radio" name="q42" value="B"> B. Menampilkan konfigurasi IP</label>
+    <label><input type="radio" name="q42" value="C"> C. Melepaskan alamat IP saat ini</label>
+    <label><input type="radio" name="q42" value="D"> D. Menghapus cache DNS</label>
+  </div>
+</div>
+
+<div class="question" id="q43">
+  <p>43. Perintah “ipconfig /registerdns” berfungsi untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q43" value="A"> A. Menampilkan DNS aktif</label>
+    <label><input type="radio" name="q43" value="B"> B. Memperbarui DNS di server</label>
+    <label><input type="radio" name="q43" value="C"> C. Menghapus cache DNS</label>
+    <label><input type="radio" name="q43" value="D"> D. Menyimpan DNS lokal</label>
+  </div>
+</div>
+
+<div class="question" id="q44">
+  <p>44. Perintah “net user” digunakan untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q44" value="A"> A. Melihat user account di komputer</label>
+    <label><input type="radio" name="q44" value="B"> B. Melihat tabel routing</label>
+    <label><input type="radio" name="q44" value="C"> C. Menampilkan IP address</label>
+    <label><input type="radio" name="q44" value="D"> D. Menampilkan DNS</label>
+  </div>
+</div>
+
+<div class="question" id="q45">
+  <p>45. Perintah “ipconfig /displaydns” digunakan untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q45" value="A"> A. Menampilkan cache DNS</label>
+    <label><input type="radio" name="q45" value="B"> B. Menghapus DNS</label>
+    <label><input type="radio" name="q45" value="C"> C. Menampilkan IP host</label>
+    <label><input type="radio" name="q45" value="D"> D. Menyetel IP otomatis</label>
+  </div>
+</div>
+
+<div class="question" id="q46">
+  <p>46. Perintah “netsh wlan show profile” berfungsi untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q46" value="A"> A. Menampilkan profil jaringan Wi-Fi</label>
+    <label><input type="radio" name="q46" value="B"> B. Menampilkan IP publik</label>
+    <label><input type="radio" name="q46" value="C"> C. Mengatur IP statis</label>
+    <label><input type="radio" name="q46" value="D"> D. Menghapus IP lokal</label>
+  </div>
+</div>
+
+<div class="question" id="q47">
+  <p>47. Protokol yang digunakan oleh perintah ping adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q47" value="A"> A. TCP</label>
+    <label><input type="radio" name="q47" value="B"> B. UDP</label>
+    <label><input type="radio" name="q47" value="C"> C. ICMP</label>
+    <label><input type="radio" name="q47" value="D"> D. ARP</label>
+  </div>
+</div>
+
+<div class="question" id="q48">
+  <p>48. Dalam OSI, lapisan yang bertanggung jawab terhadap pengalamatan fisik adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q48" value="A"> A. Physical</label>
+    <label><input type="radio" name="q48" value="B"> B. Data Link</label>
+    <label><input type="radio" name="q48" value="C"> C. Network</label>
+    <label><input type="radio" name="q48" value="D"> D. Transport</label>
+  </div>
+</div>
+
+<div class="question" id="q49">
+  <p>49. Protokol yang bertanggung jawab terhadap enkripsi pada HTTPS adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q49" value="A"> A. SSL/TLS</label>
+    <label><input type="radio" name="q49" value="B"> B. SSH</label>
+    <label><input type="radio" name="q49" value="C"> C. ICMP</label>
+    <label><input type="radio" name="q49" value="D"> D. ARP</label>
+  </div>
+</div>
+
+<div class="question" id="q50">
+  <p>50. Fungsi layer Presentation pada OSI adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q50" value="A"> A. Mengatur koneksi aplikasi</label>
+    <label><input type="radio" name="q50" value="B"> B. Enkripsi dan dekripsi data</label>
+    <label><input type="radio" name="q50" value="C"> C. Routing data</label>
+    <label><input type="radio" name="q50" value="D"> D. Menangani error</label>
+  </div>
+</div>
+
+<div class="question" id="q51">
+  <p>51. Protokol yang bekerja pada port 53 adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q51" value="A"> A. DNS</label>
+    <label><input type="radio" name="q51" value="B"> B. DHCP</label>
+    <label><input type="radio" name="q51" value="C"> C. SMTP</label>
+    <label><input type="radio" name="q51" value="D"> D. FTP</label>
+  </div>
+</div>
+
+<div class="question" id="q52">
+  <p>52. Layer OSI yang berhubungan langsung dengan media transmisi adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q52" value="A"> A. Transport</label>
+    <label><input type="radio" name="q52" value="B"> B. Network</label>
+    <label><input type="radio" name="q52" value="C"> C. Physical</label>
+    <label><input type="radio" name="q52" value="D"> D. Data Link</label>
+  </div>
+</div>
+
+<div class="question" id="q53">
+  <p>53. Protokol yang memberikan alamat IP otomatis adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q53" value="A"> A. DNS</label>
+    <label><input type="radio" name="q53" value="B"> B. DHCP</label>
+    <label><input type="radio" name="q53" value="C"> C. FTP</label>
+    <label><input type="radio" name="q53" value="D"> D. SMTP</label>
+  </div>
+</div>
+
+<div class="question" id="q54">
+  <p>54. Protokol yang bertanggung jawab terhadap transportasi data pada TCP/IP adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q54" value="A"> A. TCP dan UDP</label>
+    <label><input type="radio" name="q54" value="B"> B. HTTP dan FTP</label>
+    <label><input type="radio" name="q54" value="C"> C. IP dan ICMP</label>
+    <label><input type="radio" name="q54" value="D"> D. ARP dan DNS</label>
+  </div>
+</div>
+
+<div class="question" id="q55">
+  <p>55. Layer yang bertugas menentukan rute terbaik bagi paket adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q55" value="A"> A. Transport</label>
+    <label><input type="radio" name="q55" value="B"> B. Network</label>
+    <label><input type="radio" name="q55" value="C"> C. Data Link</label>
+    <label><input type="radio" name="q55" value="D"> D. Session</label>
+  </div>
+</div>
+
+<div class="question" id="q56">
+  <p>56. Lapisan OSI yang bertanggung jawab untuk pengendalian error adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q56" value="A"> A. Network</label>
+    <label><input type="radio" name="q56" value="B"> B. Data Link</label>
+    <label><input type="radio" name="q56" value="C"> C. Transport</label>
+    <label><input type="radio" name="q56" value="D"> D. Application</label>
+  </div>
+</div>
+
+<div class="question" id="q57">
+  <p>57. Protokol yang digunakan untuk remote login adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q57" value="A"> A. SSH</label>
+    <label><input type="radio" name="q57" value="B"> B. HTTPS</label>
+    <label><input type="radio" name="q57" value="C"> C. FTP</label>
+    <label><input type="radio" name="q57" value="D"> D. POP3</label>
+  </div>
+</div>
+
+<div class="question" id="q58">
+  <p>58. Alamat IP yang digunakan hanya dalam jaringan lokal disebut …</p>
+  <div class="answers">
+    <label><input type="radio" name="q58" value="A"> A. Public IP</label>
+    <label><input type="radio" name="q58" value="B"> B. Private IP</label>
+    <label><input type="radio" name="q58" value="C"> C. Static IP</label>
+    <label><input type="radio" name="q58" value="D"> D. Dynamic IP</label>
+  </div>
+</div>
+
+<div class="question" id="q59">
+  <p>59. Lapisan OSI yang bertanggung jawab terhadap koneksi ujung ke ujung adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q59" value="A"> A. Transport</label>
+    <label><input type="radio" name="q59" value="B"> B. Network</label>
+    <label><input type="radio" name="q59" value="C"> C. Session</label>
+    <label><input type="radio" name="q59" value="D"> D. Presentation</label>
+  </div>
+</div>
+
+<div class="question" id="q60">
+  <p>60. Protokol ICMP digunakan untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q60" value="A"> A. Diagnosa dan pengujian koneksi jaringan</label>
+    <label><input type="radio" name="q60" value="B"> B. Transfer file</label>
+    <label><input type="radio" name="q60" value="C"> C. Email</label>
+    <label><input type="radio" name="q60" value="D"> D. Manajemen jaringan</label>
+  </div>
+</div>
+
+<div class="btn-container">
+  <button type="button" id="resetBtn" onclick="resetQuiz()" style="display:none;">Ulangi Quiz</button>
+  <button type="button" id="submitBtn" onclick="checkAnswers()">Submit Jawaban</button>
+</div>
+
+<p id="result"></p>
+
+<footer>
+  <p>© 2025 Latihan UAS JARKOM UT | Created by <strong>Aditya Wildan</strong></p>
+</footer>
+
+<script>
+const answerKey = {
+  q1:"B", q2:"B", q3:"D", q4:"C", q5:"C", q6:"B", q7:"C", q8:"B", q9:"B", q10:"B",
+  q11:"A", q12:"A", q13:"B", q14:"B", q15:"B", q16:"C", q17:"A", q18:"A", q19:"B", q20:"A",
+  q21:"A", q22:"B", q23:"A", q24:"C", q25:"A", q26:"A", q27:"B", q28:"A", q29:"A", q30:"A",
+  q31:"C", q32:"B", q33:"A", q34:"B", q35:"C", q36:"B", q37:"C", q38:"A", q39:"B", q40:"A",
+  q41:"A", q42:"C", q43:"B", q44:"A", q45:"A", q46:"A", q47:"C", q48:"B", q49:"A", q50:"B",
+  q51:"A", q52:"C", q53:"B", q54:"A", q55:"B", q56:"B", q57:"A", q58:"B", q59:"A", q60:"A"
+};
+
+function checkAnswers() {
+  let total = 0;
+  for (let i = 1; i <= 60; i++) {
+    const q = "q" + i;
+    const qDiv = document.getElementById(q);
+    if (!qDiv) continue;
+    const options = document.getElementsByName(q);
+    qDiv.classList.remove("correct", "wrong");
+    let correct = false;
+    for (const opt of options) {
+      const label = opt.parentNode;
+      label.style.fontWeight = "normal";
+      label.style.color = "black";
+      if (opt.checked && opt.value === answerKey[q]) correct = true;
+    }
+    if (correct) {
+      qDiv.classList.add("correct");
+      total++;
+    } else {
+      qDiv.classList.add("wrong");
+      for (const opt of options) {
+        const label = opt.parentNode;
+        if (opt.value === answerKey[q]) {
+          label.style.fontWeight = "bold";
+          label.style.color = "green";
+        }
+      }
+    }
+  }
+  document.getElementById("result").innerHTML =
+    `Jumlah jawaban benar: <span style="color:green">${total}</span> dari 60 soal`;
+  document.getElementById("submitBtn").style.display = "none";
+  document.getElementById("resetBtn").style.display = "inline-block";
+}
+
+function resetQuiz() {
+  for (let i = 1; i <= 60; i++) {
+    const q = "q" + i;
+    const qDiv = document.getElementById(q);
+    if (!qDiv) continue;
+    const options = document.getElementsByName(q);
+    qDiv.classList.remove("correct", "wrong");
+    for (const opt of options) {
+      opt.checked = false;
+      const label = opt.parentNode;
+      label.style.fontWeight = "normal";
+      label.style.color = "black";
+    }
+  }
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("resetBtn").style.display = "none";
+  document.getElementById("submitBtn").style.display = "inline-block";
+}
+</script>
+</body>
+</html>

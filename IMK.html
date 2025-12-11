@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LATIHAN UAS IMK - UT</title>
+<style>
+  body {font-family: Arial, sans-serif; background: #f5f5f5; margin: 20px;}
+  h2 {text-align: center; color: #003366;}
+  h3 {color:#004080; margin-top:30px;}
+  .question {background: #fff; padding: 15px; margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+  .question p {font-weight: bold; margin-bottom: 10px;}
+  .answers label {display: block; padding: 5px; border-radius: 5px; cursor: pointer;}
+  .answers input[type="radio"] {margin-right: 10px;}
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+  }
+  button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #resetBtn {background-color: #6c757d;}
+  #submitBtn {background-color: #007bff;}
+  #resetBtn:hover {background-color: #5a6268;}
+  #submitBtn:hover {background-color: #0056b3;}
+  #result {text-align: center; font-size: 18px; font-weight: bold; margin-top: 20px;}
+  .correct {background-color: #d4edda;}
+  .wrong {background-color: #f8d7da;}
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+<h2>LATIHAN UAS INTERAKSI MANUSIA & KOMPUTER - UT</h2>
+<div class="question" id="q1">
+  <p>1. Ilmu yang mempelajari hubungan antara manusia dan komputer agar sistem lebih mudah digunakan disebut …</p>
+  <div class="answers">
+    <label><input type="radio" name="q1" value="A">A. Ergonomi</label>
+    <label><input type="radio" name="q1" value="B">B. Interaksi Manusia dan Komputer</label>
+    <label><input type="radio" name="q1" value="C">C. Rekayasa Perangkat Lunak</label>
+    <label><input type="radio" name="q1" value="D">D. Sistem Informasi</label>
+  </div>
+</div>
+
+<div class="question" id="q2">
+  <p>2. Tujuan utama dari Interaksi Manusia dan Komputer (IMK) adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q2" value="A">A. Meningkatkan performa hardware</label>
+    <label><input type="radio" name="q2" value="B">B. Meningkatkan kegunaan dan kenyamanan sistem</label>
+    <label><input type="radio" name="q2" value="C">C. Mempercepat proses komputasi</label>
+    <label><input type="radio" name="q2" value="D">D. Mengurangi biaya pengembangan</label>
+  </div>
+</div>
+
+<div class="question" id="q3">
+  <p>3. Komponen utama dalam sistem interaksi manusia dan komputer terdiri dari …</p>
+  <div class="answers">
+    <label><input type="radio" name="q3" value="A">A. Perangkat keras dan jaringan</label>
+    <label><input type="radio" name="q3" value="B">B. Pengguna, perangkat keras, dan perangkat lunak</label>
+    <label><input type="radio" name="q3" value="C">C. Sistem operasi dan database</label>
+    <label><input type="radio" name="q3" value="D">D. Komputer dan bahasa pemrograman</label>
+  </div>
+</div>
+
+<div class="question" id="q4">
+  <p>4. Faktor manusia dalam IMK mencakup aspek …</p>
+  <div class="answers">
+    <label><input type="radio" name="q4" value="A">A. Bahasa pemrograman</label>
+    <label><input type="radio" name="q4" value="B">B. Pengetahuan teknis komputer</label>
+    <label><input type="radio" name="q4" value="C">C. Persepsi, kognisi, dan kemampuan fisik pengguna</label>
+    <label><input type="radio" name="q4" value="D">D. Teknologi jaringan</label>
+  </div>
+</div>
+
+<div class="question" id="q5">
+  <p>5. Salah satu tujuan penting dalam IMK adalah terciptanya sistem yang …</p>
+  <div class="answers">
+    <label><input type="radio" name="q5" value="A">A. Kompleks dan canggih</label>
+    <label><input type="radio" name="q5" value="B">B. Mudah digunakan dan efisien</label>
+    <label><input type="radio" name="q5" value="C">C. Memiliki banyak fitur</label>
+    <label><input type="radio" name="q5" value="D">D. Butuh pelatihan pengguna</label>
+  </div>
+</div>
+
+<div class="question" id="q6">
+  <p>6. Paradigma interaksi yang menggambarkan pengguna berkomunikasi dengan sistem melalui perintah teks disebut …</p>
+  <div class="answers">
+    <label><input type="radio" name="q6" value="A">A. Direct Manipulation</label>
+    <label><input type="radio" name="q6" value="B">B. Command Line Interface</label>
+    <label><input type="radio" name="q6" value="C">C. Natural Language Interface</label>
+    <label><input type="radio" name="q6" value="D">D. Menu Based Interface</label>
+  </div>
+</div>
+
+<div class="question" id="q7">
+  <p>7. Model interaksi yang menekankan tindakan langsung terhadap objek pada layar disebut …</p>
+  <div class="answers">
+    <label><input type="radio" name="q7" value="A">A. Menu-based Interaction</label>
+    <label><input type="radio" name="q7" value="B">B. Command-based Interaction</label>
+    <label><input type="radio" name="q7" value="C">C. Direct Manipulation</label>
+    <label><input type="radio" name="q7" value="D">D. Conversational Interaction</label>
+  </div>
+</div>
+
+<div class="question" id="q8">
+  <p>8. Dalam IMK, istilah usability berarti …</p>
+  <div class="answers">
+    <label><input type="radio" name="q8" value="A">A. Kemampuan sistem untuk diinstal</label>
+    <label><input type="radio" name="q8" value="B">B. Tingkat kemudahan pengguna dalam menggunakan sistem</label>
+    <label><input type="radio" name="q8" value="C">C. Kecepatan perangkat keras</label>
+    <label><input type="radio" name="q8" value="D">D. Kestabilan jaringan komputer</label>
+  </div>
+</div>
+
+<div class="question" id="q9">
+  <p>9. Tujuan dari evaluasi kebergunaan (usability testing) adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q9" value="A">A. Menguji performa hardware</label>
+    <label><input type="radio" name="q9" value="B">B. Mengetahui seberapa efektif dan efisien sistem digunakan</label>
+    <label><input type="radio" name="q9" value="C">C. Menguji kapasitas memori komputer</label>
+    <label><input type="radio" name="q9" value="D">D. Meningkatkan kecepatan aplikasi</label>
+  </div>
+</div>
+
+<div class="question" id="q10">
+  <p>10. Kerangka kerja interaksi yang menjelaskan hubungan antara manusia, komputer, dan konteks pengguna disebut …</p>
+  <div class="answers">
+    <label><input type="radio" name="q10" value="A">A. Cognitive Model</label>
+    <label><input type="radio" name="q10" value="B">B. Interaction Framework</label>
+    <label><input type="radio" name="q10" value="C">C. Interface Design Model</label>
+    <label><input type="radio" name="q10" value="D">D. Usability Framework</label>
+  </div>
+</div>
+
+<!-- lanjut soal 11-20 (singkat agar pesan muat) -->
+<div class="question" id="q11">
+  <p>11. Dalam model interaksi, pengguna disebut juga sebagai …</p>
+  <div class="answers">
+    <label><input type="radio" name="q11" value="A">A. Executor</label>
+    <label><input type="radio" name="q11" value="B">B. Evaluator</label>
+    <label><input type="radio" name="q11" value="C">C. Controller</label>
+    <label><input type="radio" name="q11" value="D">D. Processor</label>
+  </div>
+</div>
+
+<div class="question" id="q12">
+  <p>12. Pengertian 'feedback' dalam IMK adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q12" value="A">A. Respon sistem terhadap tindakan pengguna</label>
+    <label><input type="radio" name="q12" value="B">B. Hasil input data</label>
+    <label><input type="radio" name="q12" value="C">C. Reaksi pengguna terhadap sistem</label>
+    <label><input type="radio" name="q12" value="D">D. Tampilan menu utama</label>
+  </div>
+</div>
+
+<div class="question" id="q13">
+  <p>13. Paradigma yang meniru komunikasi manusia dengan bahasa alami disebut …</p>
+  <div class="answers">
+    <label><input type="radio" name="q13" value="A">A. Command Line Interface</label>
+    <label><input type="radio" name="q13" value="B">B. Natural Language Interaction</label>
+    <label><input type="radio" name="q13" value="C">C. Menu-Based Interaction</label>
+    <label><input type="radio" name="q13" value="D">D. GUI Interaction</label>
+  </div>
+</div>
+
+<div class="question" id="q14">
+  <p>14. Keunggulan utama paradigma manipulasi langsung adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q14" value="A">A. Mengurangi beban memori sistem</label>
+    <label><input type="radio" name="q14" value="B">B. Meningkatkan kontrol langsung pengguna terhadap objek</label>
+    <label><input type="radio" name="q14" value="C">C. Menghilangkan kebutuhan interface grafis</label>
+    <label><input type="radio" name="q14" value="D">D. Menyederhanakan proses coding</label>
+  </div>
+</div>
+
+<div class="question" id="q15">
+  <p>15. Salah satu contoh aplikasi berbasis manipulasi langsung adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q15" value="A">A. Command Prompt</label>
+    <label><input type="radio" name="q15" value="B">B. Microsoft Word</label>
+    <label><input type="radio" name="q15" value="C">C. Terminal Linux</label>
+    <label><input type="radio" name="q15" value="D">D. BIOS Setup</label>
+  </div>
+</div>
+
+<div class="question" id="q16">
+  <p>16. Model mental pengguna membantu perancang sistem untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q16" value="A">A. Mengatur memori komputer</label>
+    <label><input type="radio" name="q16" value="B">B. Memahami cara berpikir pengguna dalam menggunakan sistem</label>
+    <label><input type="radio" name="q16" value="C">C. Mendesain perangkat keras baru</label>
+    <label><input type="radio" name="q16" value="D">D. Mengembangkan algoritma data</label>
+  </div>
+</div>
+
+<div class="question" id="q17">
+  <p>17. Kesalahan klasik dalam antarmuka biasanya disebabkan oleh …</p>
+  <div class="answers">
+    <label><input type="radio" name="q17" value="A">A. Kurangnya konsistensi dan umpan balik</label>
+    <label><input type="radio" name="q17" value="B">B. Hardware rusak</label>
+    <label><input type="radio" name="q17" value="C">C. Software tidak kompatibel</label>
+    <label><input type="radio" name="q17" value="D">D. Keterbatasan jaringan</label>
+  </div>
+</div>
+
+<div class="question" id="q18">
+  <p>18. Dalam konteks IMK, istilah “usability goals” mengacu pada …</p>
+  <div class="answers">
+    <label><input type="radio" name="q18" value="A">A. Tujuan kebergunaan seperti efektivitas dan efisiensi</label>
+    <label><input type="radio" name="q18" value="B">B. Tujuan bisnis organisasi</label>
+    <label><input type="radio" name="q18" value="C">C. Tujuan teknis sistem operasi</label>
+    <label><input type="radio" name="q18" value="D">D. Tujuan desain visual</label>
+  </div>
+</div>
+
+<div class="question" id="q19">
+  <p>19. Salah satu karakteristik sistem yang baik menurut IMK adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q19" value="A">A. Sulit dipelajari</label>
+    <label><input type="radio" name="q19" value="B">B. Mudah dipelajari dan digunakan</label>
+    <label><input type="radio" name="q19" value="C">C. Memiliki fitur tersembunyi</label>
+    <label><input type="radio" name="q19" value="D">D. Bergantung pada manual panjang</label>
+  </div>
+</div>
+
+<div class="question" id="q20">
+  <p>20. Aspek penting dalam desain antarmuka adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q20" value="A">A. Konsistensi, umpan balik, dan kontrol pengguna</label>
+    <label><input type="radio" name="q20" value="B">B. Warna mencolok dan animasi</label>
+    <label><input type="radio" name="q20" value="C">C. Banyak menu dan sub-menu</label>
+    <label><input type="radio" name="q20" value="D">D. Desain acak untuk kreativitas</label>
+  </div>
+</div>
+<div class="question" id="q21">
+  <p>21. Kebergunaan (usability) dalam konteks IMK mengacu pada …</p>
+  <div class="answers">
+    <label><input type="radio" name="q21" value="A">A. Kemampuan sistem untuk dipelajari dan digunakan secara efisien</label>
+    <label><input type="radio" name="q21" value="B">B. Kemampuan sistem menjalankan banyak proses</label>
+    <label><input type="radio" name="q21" value="C">C. Kecepatan sistem dalam memproses data</label>
+    <label><input type="radio" name="q21" value="D">D. Jumlah fitur dalam sistem</label>
+  </div>
+</div>
+
+<div class="question" id="q22">
+  <p>22. Salah satu prinsip utama dalam kebergunaan sistem adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q22" value="A">A. Kompleksitas tinggi</label>
+    <label><input type="radio" name="q22" value="B">B. Konsistensi dan umpan balik</label>
+    <label><input type="radio" name="q22" value="C">C. Tampilan warna mencolok</label>
+    <label><input type="radio" name="q22" value="D">D. Banyaknya menu pilihan</label>
+  </div>
+</div>
+
+<div class="question" id="q23">
+  <p>23. Contoh kesalahan klasik dalam antarmuka pengguna adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q23" value="A">A. Tombol navigasi tidak konsisten di setiap halaman</label>
+    <label><input type="radio" name="q23" value="B">B. Adanya panduan bantuan di setiap menu</label>
+    <label><input type="radio" name="q23" value="C">C. Penggunaan ikon yang sesuai fungsi</label>
+    <label><input type="radio" name="q23" value="D">D. Sistem memberikan umpan balik cepat</label>
+  </div>
+</div>
+
+<div class="question" id="q24">
+  <p>24. Tujuan utama pengujian kebergunaan adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q24" value="A">A. Mengukur kapasitas server</label>
+    <label><input type="radio" name="q24" value="B">B. Menilai efisiensi kode program</label>
+    <label><input type="radio" name="q24" value="C">C. Mengetahui efektivitas sistem dalam digunakan pengguna</label>
+    <label><input type="radio" name="q24" value="D">D. Menguji performa jaringan</label>
+  </div>
+</div>
+
+<div class="question" id="q25">
+  <p>25. Prinsip “visibility of system status” berarti …</p>
+  <div class="answers">
+    <label><input type="radio" name="q25" value="A">A. Sistem harus memberikan informasi jelas tentang apa yang sedang terjadi</label>
+    <label><input type="radio" name="q25" value="B">B. Sistem tidak perlu memberi umpan balik</label>
+    <label><input type="radio" name="q25" value="C">C. Pengguna tidak boleh tahu proses internal</label>
+    <label><input type="radio" name="q25" value="D">D. Semua aktivitas sistem disembunyikan</label>
+  </div>
+</div>
+
+<div class="question" id="q26">
+  <p>26. Dalam paradigma manipulasi langsung, pengguna berinteraksi dengan …</p>
+  <div class="answers">
+    <label><input type="radio" name="q26" value="A">A. Objek visual di layar</label>
+    <label><input type="radio" name="q26" value="B">B. Perintah berbasis teks</label>
+    <label><input type="radio" name="q26" value="C">C. Kode pemrograman</label>
+    <label><input type="radio" name="q26" value="D">D. Menu berbasis suara</label>
+  </div>
+</div>
+
+<div class="question" id="q27">
+  <p>27. Contoh interaksi manipulasi langsung adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q27" value="A">A. Mengetik perintah di terminal</label>
+    <label><input type="radio" name="q27" value="B">B. Menyeret ikon file ke Recycle Bin</label>
+    <label><input type="radio" name="q27" value="C">C. Menggunakan baris perintah DOS</label>
+    <label><input type="radio" name="q27" value="D">D. Memasukkan kode manual</label>
+  </div>
+</div>
+
+<div class="question" id="q28">
+  <p>28. Kelebihan manipulasi langsung adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q28" value="A">A. Meningkatkan rasa kontrol pengguna terhadap sistem</label>
+    <label><input type="radio" name="q28" value="B">B. Membutuhkan waktu belajar lebih lama</label>
+    <label><input type="radio" name="q28" value="C">C. Tidak membutuhkan umpan balik</label>
+    <label><input type="radio" name="q28" value="D">D. Hanya cocok untuk ahli komputer</label>
+  </div>
+</div>
+
+<div class="question" id="q29">
+  <p>29. Antarmuka berbasis menu mempermudah pengguna karena …</p>
+  <div class="answers">
+    <label><input type="radio" name="q29" value="A">A. Pengguna cukup memilih dari daftar opsi</label>
+    <label><input type="radio" name="q29" value="B">B. Pengguna harus mengetik kode</label>
+    <label><input type="radio" name="q29" value="C">C. Membutuhkan bahasa pemrograman</label>
+    <label><input type="radio" name="q29" value="D">D. Mengharuskan hafalan panjang</label>
+  </div>
+</div>
+
+<div class="question" id="q30">
+  <p>30. Contoh penggunaan menu berbasis hierarki terdapat pada …</p>
+  <div class="answers">
+    <label><input type="radio" name="q30" value="A">A. Menu “File → Save As” di Microsoft Word</label>
+    <label><input type="radio" name="q30" value="B">B. Command Prompt</label>
+    <label><input type="radio" name="q30" value="C">C. BIOS System</label>
+    <label><input type="radio" name="q30" value="D">D. Text Editor Terminal</label>
+  </div>
+</div>
+
+<div class="question" id="q31">
+  <p>31. Salah satu kelemahan antarmuka berbasis menu adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q31" value="A">A. Tidak ramah pengguna</label>
+    <label><input type="radio" name="q31" value="B">B. Sulit digunakan oleh pemula</label>
+    <label><input type="radio" name="q31" value="C">C. Membatasi pilihan jika menu terlalu panjang</label>
+    <label><input type="radio" name="q31" value="D">D. Tidak bisa menampilkan gambar</label>
+  </div>
+</div>
+
+<div class="question" id="q32">
+  <p>32. Menu yang menampilkan pilihan secara drop-down termasuk jenis …</p>
+  <div class="answers">
+    <label><input type="radio" name="q32" value="A">A. Flat menu</label>
+    <label><input type="radio" name="q32" value="B">B. Pull-down menu</label>
+    <label><input type="radio" name="q32" value="C">C. Pop-up menu</label>
+    <label><input type="radio" name="q32" value="D">D. Contextual menu</label>
+  </div>
+</div>
+
+<div class="question" id="q33">
+  <p>33. Prinsip penting dalam desain menu adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q33" value="A">A. Konsistensi, kelompok logis, dan urutan penting</label>
+    <label><input type="radio" name="q33" value="B">B. Warna mencolok dan animasi berlebih</label>
+    <label><input type="radio" name="q33" value="C">C. Banyak submenu tanpa hierarki</label>
+    <label><input type="radio" name="q33" value="D">D. Menyembunyikan fitur utama</label>
+  </div>
+</div>
+
+<div class="question" id="q34">
+  <p>34. Salah satu contoh kelemahan manipulasi langsung adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q34" value="A">A. Tidak intuitif</label>
+    <label><input type="radio" name="q34" value="B">B. Membutuhkan banyak sumber daya grafis</label>
+    <label><input type="radio" name="q34" value="C">C. Tidak interaktif</label>
+    <label><input type="radio" name="q34" value="D">D. Tidak bisa menggunakan ikon</label>
+  </div>
+</div>
+
+<div class="question" id="q35">
+  <p>35. Desain ikon yang baik harus …</p>
+  <div class="answers">
+    <label><input type="radio" name="q35" value="A">A. Kompleks dan penuh detail</label>
+    <label><input type="radio" name="q35" value="B">B. Berbeda bentuk dengan makna fungsi</label>
+    <label><input type="radio" name="q35" value="C">C. Representatif dan mudah dikenali</label>
+    <label><input type="radio" name="q35" value="D">D. Menggunakan banyak warna</label>
+  </div>
+</div>
+
+<div class="question" id="q36">
+  <p>36. Dalam menu berbasis teks, interaksi pengguna dilakukan dengan …</p>
+  <div class="answers">
+    <label><input type="radio" name="q36" value="A">A. Mengetik kode program</label>
+    <label><input type="radio" name="q36" value="B">B. Mengetik angka atau memilih nomor menu</label>
+    <label><input type="radio" name="q36" value="C">C. Menggunakan sensor suara</label>
+    <label><input type="radio" name="q36" value="D">D. Menyentuh layar</label>
+  </div>
+</div>
+
+<div class="question" id="q37">
+  <p>37. Komponen penting dalam menu hierarki adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q37" value="A">A. Warna latar belakang</label>
+    <label><input type="radio" name="q37" value="B">B. Ukuran font</label>
+    <label><input type="radio" name="q37" value="C">C. Struktur induk dan anak menu</label>
+    <label><input type="radio" name="q37" value="D">D. Gaya visual</label>
+  </div>
+</div>
+
+<div class="question" id="q38">
+  <p>38. Prinsip "user control and freedom" dalam kebergunaan berarti …</p>
+  <div class="answers">
+    <label><input type="radio" name="q38" value="A">A. Pengguna dapat membatalkan atau mengulang aksi dengan mudah</label>
+    <label><input type="radio" name="q38" value="B">B. Sistem menentukan seluruh keputusan</label>
+    <label><input type="radio" name="q38" value="C">C. Pengguna harus mengikuti urutan tertentu</label>
+    <label><input type="radio" name="q38" value="D">D. Semua opsi disembunyikan</label>
+  </div>
+</div>
+
+<div class="question" id="q39">
+  <p>39. Dalam antarmuka menu, istilah “default value” berarti …</p>
+  <div class="answers">
+    <label><input type="radio" name="q39" value="A">A. Nilai yang harus diisi manual</label>
+    <label><input type="radio" name="q39" value="B">B. Nilai yang sudah disiapkan oleh sistem</label>
+    <label><input type="radio" name="q39" value="C">C. Nilai acak yang berubah-ubah</label>
+    <label><input type="radio" name="q39" value="D">D. Pilihan yang tidak dapat diubah</label>
+  </div>
+</div>
+
+<div class="question" id="q40">
+  <p>40. Dalam menu desain antarmuka, urutan logis dan penggunaan istilah umum akan …</p>
+  <div class="answers">
+    <label><input type="radio" name="q40" value="A">A. Meningkatkan kemudahan navigasi pengguna</label>
+    <label><input type="radio" name="q40" value="B">B. Menurunkan efektivitas sistem</label>
+    <label><input type="radio" name="q40" value="C">C. Membingungkan pengguna baru</label>
+    <label><input type="radio" name="q40" value="D">D. Mengurangi kebergunaan</label>
+  </div>
+</div>
+<!-- Modul 7: Dialog berbasis teks dan borang -->
+<div class="question" id="q41">
+  <p>41. Dialog berbasis teks memungkinkan pengguna berinteraksi dengan sistem melalui …</p>
+  <div class="answers">
+    <label><input type="radio" name="q41" value="A">A. Pengetikan perintah atau pengisian borang teks</label>
+    <label><input type="radio" name="q41" value="B">B. Gerakan tubuh</label>
+    <label><input type="radio" name="q41" value="C">C. Sentuhan layar</label>
+    <label><input type="radio" name="q41" value="D">D. Klik ikon grafis</label>
+  </div>
+</div>
+
+<div class="question" id="q42">
+  <p>42. Tujuan utama dari dialog berbasis bahasa alami adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q42" value="A">A. Meniru komunikasi antar manusia</label>
+    <label><input type="radio" name="q42" value="B">B. Menggantikan sistem menu</label>
+    <label><input type="radio" name="q42" value="C">C. Mempercepat proses pemrograman</label>
+    <label><input type="radio" name="q42" value="D">D. Mengurangi kebutuhan database</label>
+  </div>
+</div>
+
+<div class="question" id="q43">
+  <p>43. Pengisian borang (form) yang baik harus memiliki …</p>
+  <div class="answers">
+    <label><input type="radio" name="q43" value="A">A. Desain sederhana, terstruktur, dan informatif</label>
+    <label><input type="radio" name="q43" value="B">B. Warna kontras tinggi</label>
+    <label><input type="radio" name="q43" value="C">C. Banyak kolom tanpa label</label>
+    <label><input type="radio" name="q43" value="D">D. Desain bebas</label>
+  </div>
+</div>
+
+<div class="question" id="q44">
+  <p>44. Contoh sistem dialog berbasis teks adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q44" value="A">A. Chatbot layanan pelanggan</label>
+    <label><input type="radio" name="q44" value="B">B. Menu dropdown</label>
+    <label><input type="radio" name="q44" value="C">C. Command Prompt</label>
+    <label><input type="radio" name="q44" value="D">D. A dan C benar</label>
+  </div>
+</div>
+
+<div class="question" id="q45">
+  <p>45. Prinsip utama dalam perancangan borang adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q45" value="A">A. Menyediakan panduan yang jelas untuk setiap kolom input</label>
+    <label><input type="radio" name="q45" value="B">B. Mengisi otomatis semua kolom</label>
+    <label><input type="radio" name="q45" value="C">C. Menghapus label kolom</label>
+    <label><input type="radio" name="q45" value="D">D. Menggabungkan semua data dalam satu baris</label>
+  </div>
+</div>
+
+<!-- Modul 8: Perancangan tampilan -->
+<div class="question" id="q46">
+  <p>46. Tujuan utama dari perancangan tampilan adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q46" value="A">A. Menyusun antarmuka agar mudah dipahami dan digunakan</label>
+    <label><input type="radio" name="q46" value="B">B. Memperindah sistem secara visual</label>
+    <label><input type="radio" name="q46" value="C">C. Menghemat memori komputer</label>
+    <label><input type="radio" name="q46" value="D">D. Membatasi interaksi pengguna</label>
+  </div>
+</div>
+
+<div class="question" id="q47">
+  <p>47. Langkah pertama dalam perancangan tampilan adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q47" value="A">A. Membuat mockup visual</label>
+    <label><input type="radio" name="q47" value="B">B. Analisis kebutuhan pengguna</label>
+    <label><input type="radio" name="q47" value="C">C. Menentukan warna tampilan</label>
+    <label><input type="radio" name="q47" value="D">D. Membuat kode program</label>
+  </div>
+</div>
+
+<div class="question" id="q48">
+  <p>48. Komponen utama dalam Lembar Kerja Tampilan (LKT) adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q48" value="A">A. Header, area isi, tombol aksi</label>
+    <label><input type="radio" name="q48" value="B">B. Background, teks, dan ikon</label>
+    <label><input type="radio" name="q48" value="C">C. Database dan server</label>
+    <label><input type="radio" name="q48" value="D">D. Browser dan plugin</label>
+  </div>
+</div>
+
+<div class="question" id="q49">
+  <p>49. Prinsip “Konsistensi” dalam desain tampilan berarti …</p>
+  <div class="answers">
+    <label><input type="radio" name="q49" value="A">A. Elemen desain memiliki pola dan tata letak serupa di seluruh halaman</label>
+    <label><input type="radio" name="q49" value="B">B. Desain selalu berubah agar dinamis</label>
+    <label><input type="radio" name="q49" value="C">C. Warna dan posisi diacak</label>
+    <label><input type="radio" name="q49" value="D">D. Font berbeda di setiap halaman</label>
+  </div>
+</div>
+
+<div class="question" id="q50">
+  <p>50. Salah satu manfaat LKT adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q50" value="A">A. Mempermudah perancang dalam menguji tampilan sebelum dikembangkan</label>
+    <label><input type="radio" name="q50" value="B">B. Menggantikan database</label>
+    <label><input type="radio" name="q50" value="C">C. Mengurangi kapasitas penyimpanan</label>
+    <label><input type="radio" name="q50" value="D">D. Menghapus komponen interaktif</label>
+  </div>
+</div>
+
+<!-- Modul 9: Peranti interaksi dan lingkungan fisik -->
+<div class="question" id="q51">
+  <p>51. Contoh peranti interaksi input adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q51" value="A">A. Keyboard dan mouse</label>
+    <label><input type="radio" name="q51" value="B">B. Printer dan monitor</label>
+    <label><input type="radio" name="q51" value="C">C. Speaker dan proyektor</label>
+    <label><input type="radio" name="q51" value="D">D. Modem dan router</label>
+  </div>
+</div>
+
+<div class="question" id="q52">
+  <p>52. Faktor ergonomi dalam perancangan tempat kerja berkaitan dengan …</p>
+  <div class="answers">
+    <label><input type="radio" name="q52" value="A">A. Kenyamanan fisik pengguna</label>
+    <label><input type="radio" name="q52" value="B">B. Kecepatan sistem komputer</label>
+    <label><input type="radio" name="q52" value="C">C. Kapasitas penyimpanan</label>
+    <label><input type="radio" name="q52" value="D">D. Biaya pengembangan</label>
+  </div>
+</div>
+
+<div class="question" id="q53">
+  <p>53. Salah satu aspek penting dalam lingkungan kerja yang sehat adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q53" value="A">A. Pencahayaan yang cukup</label>
+    <label><input type="radio" name="q53" value="B">B. Warna mencolok dan bising</label>
+    <label><input type="radio" name="q53" value="C">C. Ruang kerja sempit</label>
+    <label><input type="radio" name="q53" value="D">D. Kursi tanpa sandaran</label>
+  </div>
+</div>
+
+<div class="question" id="q54">
+  <p>54. Postur tubuh yang salah saat bekerja dapat menyebabkan …</p>
+  <div class="answers">
+    <label><input type="radio" name="q54" value="A">A. Nyeri otot dan kelelahan</label>
+    <label><input type="radio" name="q54" value="B">B. Peningkatan fokus</label>
+    <label><input type="radio" name="q54" value="C">C. Kinerja lebih efisien</label>
+    <label><input type="radio" name="q54" value="D">D. Peningkatan daya ingat</label>
+  </div>
+</div>
+
+<div class="question" id="q55">
+  <p>55. Sirkulasi udara yang baik dalam ruang kerja bertujuan untuk …</p>
+  <div class="answers">
+    <label><input type="radio" name="q55" value="A">A. Mengurangi kebisingan</label>
+    <label><input type="radio" name="q55" value="B">B. Menjaga suhu dan kenyamanan kerja</label>
+    <label><input type="radio" name="q55" value="C">C. Mempercepat jaringan</label>
+    <label><input type="radio" name="q55" value="D">D. Menghemat energi</label>
+  </div>
+</div>
+
+<div class="question" id="q56">
+  <p>56. Warna ruangan kerja berpengaruh terhadap …</p>
+  <div class="answers">
+    <label><input type="radio" name="q56" value="A">A. Psikologis dan produktivitas pekerja</label>
+    <label><input type="radio" name="q56" value="B">B. Kecepatan komputer</label>
+    <label><input type="radio" name="q56" value="C">C. Ukuran layar monitor</label>
+    <label><input type="radio" name="q56" value="D">D. Jumlah pengguna</label>
+  </div>
+</div>
+
+<div class="question" id="q57">
+  <p>57. Tujuan utama penerapan ergonomi di tempat kerja adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q57" value="A">A. Meningkatkan efisiensi dan kenyamanan pengguna</label>
+    <label><input type="radio" name="q57" value="B">B. Mempercepat proses komputerisasi</label>
+    <label><input type="radio" name="q57" value="C">C. Menambah biaya produksi</label>
+    <label><input type="radio" name="q57" value="D">D. Membatasi aktivitas pengguna</label>
+  </div>
+</div>
+
+<div class="question" id="q58">
+  <p>58. Salah satu gangguan kesehatan akibat penggunaan komputer terlalu lama adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q58" value="A">A. Peningkatan daya tahan tubuh</label>
+    <label><input type="radio" name="q58" value="B">B. Ketegangan mata (eye strain)</label>
+    <label><input type="radio" name="q58" value="C">C. Kekuatan otot meningkat</label>
+    <label><input type="radio" name="q58" value="D">D. Fokus meningkat</label>
+  </div>
+</div>
+
+<div class="question" id="q59">
+  <p>59. Suhu ruangan kerja ideal untuk kenyamanan kerja komputer adalah sekitar …</p>
+  <div class="answers">
+    <label><input type="radio" name="q59" value="A">A. 20–25°C</label>
+    <label><input type="radio" name="q59" value="B">B. 10–15°C</label>
+    <label><input type="radio" name="q59" value="C">C. 30–35°C</label>
+    <label><input type="radio" name="q59" value="D">D. 5–10°C</label>
+  </div>
+</div>
+
+<div class="question" id="q60">
+  <p>60. Prinsip utama lingkungan kerja yang baik menurut IMK adalah …</p>
+  <div class="answers">
+    <label><input type="radio" name="q60" value="A">A. Nyaman, aman, dan mendukung produktivitas</label>
+    <label><input type="radio" name="q60" value="B">B. Warna mencolok dan ruang sempit</label>
+    <label><input type="radio" name="q60" value="C">C. Sunyi total tanpa ventilasi</label>
+    <label><input type="radio" name="q60" value="D">D. Minimal pencahayaan</label>
+  </div>
+</div>
+
+<div class="btn-container">
+  <button type="button" id="resetBtn" onclick="resetQuiz()" style="display:none;">Ulangi Quiz</button>
+  <button type="button" id="submitBtn" onclick="checkAnswers()">Submit Jawaban</button>
+</div>
+
+<p id="result"></p>
+
+<footer>
+  <p>© 2025 Latihan UAS IMK UT | Created by <strong>Aditya Wildan</strong></p>
+</footer>
+<script>
+const answerKey = {
+  q1:"B", q2:"B", q3:"B", q4:"C", q5:"B",
+  q6:"B", q7:"C", q8:"B", q9:"B", q10:"B",
+  q11:"A", q12:"A", q13:"B", q14:"B", q15:"B",
+  q16:"B", q17:"A", q18:"A", q19:"B", q20:"A",
+  q21:"A", q22:"B", q23:"A", q24:"C", q25:"A",
+  q26:"A", q27:"B", q28:"A", q29:"A", q30:"A",
+  q31:"C", q32:"B", q33:"A", q34:"B", q35:"C",
+  q36:"B", q37:"C", q38:"A", q39:"B", q40:"A",
+  q41:"A", q42:"A", q43:"A", q44:"D", q45:"A",
+  q46:"A", q47:"B", q48:"A", q49:"A", q50:"A",
+  q51:"A", q52:"A", q53:"A", q54:"A", q55:"B",
+  q56:"A", q57:"A", q58:"B", q59:"A", q60:"A"
+};
+
+function checkAnswers() {
+  let total = 0;
+  for (let i = 1; i <= 60; i++) {
+    const q = "q" + i;
+    const qDiv = document.getElementById(q);
+    if (!qDiv) continue;
+    const options = document.getElementsByName(q);
+    qDiv.classList.remove("correct", "wrong");
+    let correct = false;
+    for (const opt of options) {
+      const label = opt.parentNode;
+      label.style.fontWeight = "normal";
+      label.style.color = "black";
+      if (opt.checked && opt.value === answerKey[q]) correct = true;
+    }
+    if (correct) {
+      qDiv.classList.add("correct");
+      total++;
+    } else {
+      qDiv.classList.add("wrong");
+      for (const opt of options) {
+        const label = opt.parentNode;
+        if (opt.value === answerKey[q]) {
+          label.style.fontWeight = "bold";
+          label.style.color = "green";
+        }
+      }
+    }
+  }
+  document.getElementById("result").innerHTML =
+    `Jumlah jawaban benar: <span style="color:green">${total}</span> dari 60 soal`;
+  document.getElementById("submitBtn").style.display = "none";
+  document.getElementById("resetBtn").style.display = "inline-block";
+}
+
+function resetQuiz() {
+  for (let i = 1; i <= 60; i++) {
+    const q = "q" + i;
+    const qDiv = document.getElementById(q);
+    if (!qDiv) continue;
+    const options = document.getElementsByName(q);
+    qDiv.classList.remove("correct", "wrong");
+    for (const opt of options) {
+      opt.checked = false;
+      const label = opt.parentNode;
+      label.style.fontWeight = "normal";
+      label.style.color = "black";
+    }
+  }
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("resetBtn").style.display = "none";
+  document.getElementById("submitBtn").style.display = "inline-block";
+}
+</script>
+</body>
+</html>
