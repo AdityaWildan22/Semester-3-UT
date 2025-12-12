@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Struktur Data - 50 Soal</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e9ecef; /* Warna latar belakang lebih modern */
+            margin: 20px;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #495057;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .question {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .question p {
+            font-weight: 600; /* Lebih tebal */
+            margin-bottom: 15px;
+            color: #212529;
+            line-height: 1.6;
+        }
+
+        .answers label {
+            display: block;
+            padding: 10px 15px;
+            margin-top: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid #dee2e6;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .answers label:hover {
+            background-color: #f8f9fa;
+            border-color: #007bff;
+        }
+
+        .answers input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.1);
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 17px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        #result {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f1f1f1;
+        }
+
+        .correct {
+            background-color: #d4edda; /* Hijau lembut untuk soal yang benar */
+            border: 1px solid #c3e6cb;
+        }
+
+        .wrong {
+            background-color: #f8d7da; /* Merah lembut untuk soal yang salah/tidak dijawab */
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* Highlight Jawaban Benar (diaktifkan setelah submit) */
+        .answers .highlight-correct {
+            background-color: #a3e7b2 !important; /* Hijau lebih cerah */
+            font-weight: bold;
+            color: #0056b3;
+            border: 2px solid #28a745;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Kuis Pilihan Ganda: Konsep Dasar Struktur Data</h2>
+    <div id="quiz-container">
+        <!-- Soal 1 -->
+        <div class="question" id="q1">
+            <p>1. Apa yang paling tepat mendefinisikan Struktur Data?</p>
+            <div class="answers">
+                <label><input type="radio" name="q1" value="A"> A. Organisasi, manajemen, dan penyimpanan data yang efisien.</label>
+                <label><input type="radio" name="q1" value="B"> B. Kumpulan sintaks dan aturan bahasa pemrograman Java.</label>
+                <label><input type="radio" name="q1" value="C"> C. Proses mengubah data menjadi informasi yang berguna.</label>
+                <label><input type="radio" name="q1" value="D"> D. Teknik pengkodean untuk mengurangi kompleksitas program.</label>
+            </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="question" id="q2">
+            <p>2. Notasi yang digunakan untuk menggambarkan batas atas waktu eksekusi suatu algoritma (kasus terburuk) adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q2" value="A"> A. Notasi Omega ($\Omega$)</label>
+                <label><input type="radio" name="q2" value="B"> B. Notasi Theta ($\Theta$)</label>
+                <label><input type="radio" name="q2" value="C"> C. Notasi Kecil-o ($o$)</label>
+                <label><input type="radio" name="q2" value="D"> D. Notasi Big-O ($O$)</label>
+            </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="question" id="q3">
+            <p>3. Dalam Java, keyword yang wajib ada untuk mendefinisikan sebuah kelas adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q3" value="A"> A. <code>class</code></label>
+                <label><input type="radio" name="q3" value="B"> B. <code>struct</code></label>
+                <label><input type="radio" name="q3" value="C"> C. <code>new</code></label>
+                <label><input type="radio" name="q3" value="D"> D. <code>object</code></label>
+            </div>
+        </div>
+
+        <!-- Soal 4 -->
+        <div class="question" id="q4">
+            <p>4. Tipe data primitif di Java yang memiliki ukuran memori 1 byte (8 bit) adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q4" value="A"> A. <code>int</code></label>
+                <label><input type="radio" name="q4" value="B"> B. <code>byte</code></label>
+                <label><input type="radio" name="q4" value="C"> C. <code>char</code></label>
+                <label><input type="radio" name="q4" value="D"> D. <code>long</code></label>
+            </div>
+        </div>
+
+        <!-- Soal 5 -->
+        <div class="question" id="q5">
+            <p>5. Berapakah hasil dari operasi modular $17 \pmod 5$?</p>
+            <div class="answers">
+                <label><input type="radio" name="q5" value="A"> A. 1</label>
+                <label><input type="radio" name="q5" value="B"> B. 3</label>
+                <label><input type="radio" name="q5" value="C"> C. 2</label>
+                <label><input type="radio" name="q5" value="D"> D. 0</label>
+            </div>
+        </div>
+
+        <!-- Soal 6 -->
+        <div class="question" id="q6">
+            <p>6. Konsep yang mendefinisikan tipe data hanya berdasarkan operasi yang dapat dilakukan, tanpa mempedulikan implementasi internalnya, disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q6" value="A"> A. Tipe Data Abstrak (ADT)</label>
+                <label><input type="radio" name="q6" value="B"> B. Tipe Data Primitif</label>
+                <label><input type="radio" name="q6" value="C"> C. Struktur Data Linear</label>
+                <label><input type="radio" name="q6" value="D"> D. Notasi Algoritma</label>
+            </div>
+        </div>
+
+        <!-- Soal 7 -->
+        <div class="question" id="q7">
+            <p>7. Dalam Java, tipe data primitif untuk menyimpan nilai logika (Benar atau Salah) adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q7" value="A"> A. <code>int</code></label>
+                <label><input type="radio" name="q7" value="B"> B. <code>char</code></label>
+                <label><input type="radio" name="q7" value="C"> C. <code>string</code></label>
+                <label><input type="radio" name="q7" value="D"> D. <code>boolean</code></label>
+            </div>
+        </div>
+
+        <!-- Soal 8 -->
+        <div class="question" id="q8">
+            <p>8. Struktur data yang menyimpan elemen-elemennya dalam urutan berdekatan di memori dan diakses melalui indeks adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q8" value="A"> A. Linked List</label>
+                <label><input type="radio" name="q8" value="B"> B. Array</label>
+                <label><input type="radio" name="q8" value="C"> C. Queue</label>
+                <label><input type="radio" name="q8" value="D"> D. Tree</label>
+            </div>
+        </div>
+
+        <!-- Soal 9 -->
+        <div class="question" id="q9">
+            <p>9. Kelemahan utama Array (statis) adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q9" value="A"> A. Membutuhkan waktu $O(n)$ untuk akses elemen.</label>
+                <label><input type="radio" name="q9" value="B"> B. Ukuran memori sudah ditetapkan di awal dan sulit diubah.</label>
+                <label><input type="radio" name="q9" value="C"> C. Hanya dapat menyimpan tipe data primitif.</label>
+                <label><input type="radio" name="q9" value="D"> D. Operasi penyisipan selalu $O(1)$.</label>
+            </div>
+        </div>
+
+        <!-- Soal 10 -->
+        <div class="question" id="q10">
+            <p>10. Jika sebuah array dideklarasikan dengan `String[] nama = new String[5];`, berapakah indeks terakhir yang valid untuk array tersebut?</p>
+            <div class="answers">
+                <label><input type="radio" name="q10" value="A"> A. 5</label>
+                <label><input type="radio" name="q10" value="B"> B. 4</label>
+                <label><input type="radio" name="q10" value="C"> C. 1</label>
+                <label><input type="radio" name="q10" value="D"> D. 6</label>
+            </div>
+        </div>
+
+        <!-- Soal 11 -->
+        <div class="question" id="q11">
+            <p>11. Linked List menyimpan data dalam unit diskrit yang disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q11" value="A"> A. Node</label>
+                <label><input type="radio" name="q11" value="B"> B. Index</label>
+                <label><input type="radio" name="q11" value="C"> C. Block</label>
+                <label><input type="radio" name="q11" value="D"> D. Element</label>
+            </div>
+        </div>
+
+        <!-- Soal 12 -->
+        <div class="question" id="q12">
+            <p>12. Keunggulan utama Linked List dibandingkan Array adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q12" value="A"> A. Kemampuan untuk tumbuh dan menyusut secara dinamis.</label>
+                <label><input type="radio" name="q12" value="B"> B. Akses acak elemen data lebih cepat.</label>
+                <label><input type="radio" name="q12" value="C"> C. Tidak membutuhkan memori tambahan untuk pointer.</label>
+                <label><input type="radio" name="q12" value="D"> D. Implementasi lebih sederhana dan mudah.</label>
+            </div>
+        </div>
+
+        <!-- Soal 13 -->
+        <div class="question" id="q13">
+            <p>13. Dalam Singly Linked List (SLL), node terakhir harus memiliki pointer yang menunjuk ke:</p>
+            <div class="answers">
+                <label><input type="radio" name="q13" value="A"> A. Node pertama (head)</label>
+                <label><input type="radio" name="q13" value="B"> B. <code>null</code></label>
+                <label><input type="radio" name="q13" value="C"> C. Node sebelumnya</label>
+                <label><input type="radio" name="q13" value="D"> D. Node acak dalam list</label>
+            </div>
+        </div>
+
+        <!-- Soal 14 -->
+        <div class="question" id="q14">
+            <p>14. Doubly Linked List (DLL) memiliki keuntungan dalam hal:</p>
+            <div class="answers">
+                <label><input type="radio" name="q14" value="A"> A. Menghemat ruang memori.</label>
+                <label><input type="radio" name="q14" value="B"> B. Memungkinkan traversal (penelusuran) maju dan mundur.</label>
+                <label><input type="radio" name="q14" value="C"> C. Akses elemen $O(1)$.</label>
+                <label><input type="radio" name="q14" value="D"> D. Penghapusan node selalu $O(1)$.</label>
+            </div>
+        </div>
+
+        <!-- Soal 15 -->
+        <div class="question" id="q15">
+            <p>15. Berapakah kompleksitas waktu (Big-O) untuk operasi penyisipan node di awal Singly Linked List?</p>
+            <div class="answers">
+                <label><input type="radio" name="q15" value="A"> A. $O(n)$</label>
+                <label><input type="radio" name="q15" value="B"> B. $O(1)$</label>
+                <label><input type="radio" name="q15" value="C"> C. $O(\log n)$</label>
+                <label><input type="radio" name="q15" value="D"> D. $O(n^2)$</label>
+            </div>
+        </div>
+
+        <!-- Soal 16 -->
+        <div class="question" id="q16">
+            <p>16. Stack (Tumpukan) adalah Struktur Data Linear yang beroperasi berdasarkan prinsip:</p>
+            <div class="answers">
+                <label><input type="radio" name="q16" value="A"> A. FIFO (First-In, First-Out)</label>
+                <label><input type="radio" name="q16" value="B"> B. FILO (First-In, Last-Out)</label>
+                <label><input type="radio" name="q16" value="C"> C. LIFO (Last-In, First-Out)</label>
+                <label><input type="radio" name="q16" value="D"> D. LILO (Last-In, Last-Out)</label>
+            </div>
+        </div>
+
+        <!-- Soal 17 -->
+        <div class="question" id="q17">
+            <p>17. Operasi untuk menambahkan elemen baru ke bagian atas (top) Stack disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q17" value="A"> A. PUSH</label>
+                <label><input type="radio" name="q17" value="B"> B. POP</label>
+                <label><input type="radio" name="q17" value="C"> C. ENQUEUE</label>
+                <label><input type="radio" name="q17" value="D"> D. DEQUEUE</label>
+            </div>
+        </div>
+
+        <!-- Soal 18 -->
+        <div class="question" id="q18">
+            <p>18. Setelah urutan operasi Stack berikut: PUSH(10), PUSH(20), POP(), PUSH(30), elemen teratas (top) Stack adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q18" value="A"> A. 30</label>
+                <label><input type="radio" name="q18" value="B"> B. 20</label>
+                <label><input type="radio" name="q18" value="C"> C. 10</label>
+                <label><input type="radio" name="q18" value="D"> D. Stack Kosong</label>
+            </div>
+        </div>
+
+        <!-- Soal 19 -->
+        <div class="question" id="q19">
+            <p>19. Kondisi di mana Stack tidak dapat menerima elemen baru karena sudah penuh (saat diimplementasikan dengan Array) disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q19" value="A"> A. Underflow</label>
+                <label><input type="radio" name="q19" value="B"> B. Overflow</label>
+                <label><input type="radio" name="q19" value="C"> C. Null Pointer</label>
+                <label><input type="radio" name="q19" value="D"> D. Segmentation Fault</label>
+            </div>
+        </div>
+
+        <!-- Soal 20 -->
+        <div class="question" id="q20">
+            <p>20. Operasi `PEEK` pada Stack berfungsi untuk:</p>
+            <div class="answers">
+                <label><input type="radio" name="q20" value="A"> A. Mengembalikan nilai elemen teratas tanpa menghapusnya.</label>
+                <label><input type="radio" name="q20" value="B"> B. Mengembalikan dan menghapus elemen teratas.</label>
+                <label><input type="radio" name="q20" value="C"> C. Menambahkan elemen ke bagian bawah Stack.</label>
+                <label><input type="radio" name="q20" value="D"> D. Mencari elemen tertentu dalam Stack.</label>
+            </div>
+        </div>
+
+        <!-- Soal 21 -->
+        <div class="question" id="q21">
+            <p>21. Queue (Antrean) adalah Struktur Data Linear yang beroperasi berdasarkan prinsip:</p>
+            <div class="answers">
+                <label><input type="radio" name="q21" value="A"> A. FIFO (First-In, First-Out)</label>
+                <label><input type="radio" name="q21" value="B"> B. LIFO (Last-In, First-Out)</label>
+                <label><input type="radio" name="q21" value="C"> C. Priority-Based</label>
+                <label><input type="radio" name="q21" value="D"> D. Random Access</label>
+            </div>
+        </div>
+
+        <!-- Soal 22 -->
+        <div class="question" id="q22">
+            <p>22. Operasi untuk menambahkan elemen ke Queue (di bagian belakang/rear) disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q22" value="A"> A. PUSH</label>
+                <label><input type="radio" name="q22" value="B"> B. DEQUEUE</label>
+                <label><input type="radio" name="q22" value="C"> C. ENQUEUE</label>
+                <label><input type="radio" name="q22" value="D"> D. POP</label>
+            </div>
+        </div>
+
+        <!-- Soal 23 -->
+        <div class="question" id="q23">
+            <p>23. Penghapusan elemen dari Queue selalu dilakukan pada ujung yang disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q23" value="A"> A. Front (Depan)</label>
+                <label><input type="radio" name="q23" value="B"> B. Rear (Belakang)</label>
+                <label><input type="radio" name="q23" value="C"> C. Top (Atas)</label>
+                <label><input type="radio" name="q23" value="D"> D. Middle (Tengah)</label>
+            </div>
+        </div>
+
+        <!-- Soal 24 -->
+        <div class="question" id="q24">
+            <p>24. Masalah utama yang muncul pada implementasi Queue menggunakan array linear adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q24" value="A"> A. Overflow saat Front = Rear.</label>
+                <label><input type="radio" name="q24" value="B"> B. Akses elemen $O(n)$.</label>
+                <label><input type="radio" name="q24" value="C"> C. Terjadi "Fragmentasi Ruang" (ruang kosong di depan yang tidak dapat digunakan).</label>
+                <label><input type="radio" name="q24" value="D"> D. Operasi DEQUEUE membutuhkan $O(n)$.</label>
+            </div>
+        </div>
+
+        <!-- Soal 25 -->
+        <div class="question" id="q25">
+            <p>25. Solusi untuk mengatasi masalah fragmentasi ruang pada Queue berbasis array linear adalah menggunakan:</p>
+            <div class="answers">
+                <label><input type="radio" name="q25" value="A"> A. Circular Queue</label>
+                <label><input type="radio" name="q25" value="B"> B. Priority Queue</label>
+                <label><input type="radio" name="q25" value="C"> C. Deque</label>
+                <label><input type="radio" name="q25" value="D"> D. Double Array</label>
+            </div>
+        </div>
+
+        <!-- Soal 26 -->
+        <div class="question" id="q26">
+            <p>26. Struktur data yang paling cocok untuk memodelkan sistem antrean pelanggan di loket adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q26" value="A"> A. Stack</label>
+                <label><input type="radio" name="q26" value="B"> B. Queue</label>
+                <label><input type="radio" name="q26" value="C"> C. Linked List</label>
+                <label><input type="radio" name="q26" value="D"> D. Array Statis</label>
+            </div>
+        </div>
+
+        <!-- Soal 27 -->
+        <div class="question" id="q27">
+            <p>27. Pada implementasi Stack menggunakan Array, variabel yang biasanya digunakan untuk melacak elemen teratas adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q27" value="A"> A. <code>base</code></label>
+                <label><input type="radio" name="q27" value="B"> B. <code>top</code></label>
+                <label><input type="radio" name="q27" value="C"> C. <code>rear</code></label>
+                <label><input type="radio" name="q27" value="D"> D. <code>front</code></label>
+            </div>
+        </div>
+
+        <!-- Soal 28 -->
+        <div class="question" id="q28">
+            <p>28. Jika Anda perlu mengakses elemen data secara acak (misalnya, elemen ke-50) secepat mungkin, struktur data mana yang paling efisien (O(1))?</p>
+            <div class="answers">
+                <label><input type="radio" name="q28" value="A"> A. Array</label>
+                <label><input type="radio" name="q28" value="B"> B. Singly Linked List</label>
+                <label><input type="radio" name="q28" value="C"> C. Stack</label>
+                <label><input type="radio" name="q28" value="D"> D. Queue</label>
+            </div>
+        </div>
+
+        <!-- Soal 29 -->
+        <div class="question" id="q29">
+            <p>29. Bagian dari Node dalam Linked List yang menyimpan data itu sendiri disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q29" value="A"> A. Field Data</label>
+                <label><input type="radio" name="q29" value="B"> B. Field Index</label>
+                <label><input type="radio" name="q29" value="C"> C. Field Head</label>
+                <label><input type="radio" name="q29" value="D"> D. Field Pointer (Next/Prev)</label>
+            </div>
+        </div>
+
+        <!-- Soal 30 -->
+        <div class="question" id="q30">
+            <p>30. Dalam konteks Tipe Data Abstrak (ADT), Stack dan Queue adalah contoh dari ADT jenis:</p>
+            <div class="answers">
+                <label><input type="radio" name="q30" value="A"> A. Struktur Data Linear</label>
+                <label><input type="radio" name="q30" value="B"> B. Struktur Data Non-Linear</label>
+                <label><input type="radio" name="q30" value="C"> C. Struktur Data Hirarkis</label>
+                <label><input type="radio" name="q30" value="D"> D. Struktur Data Terurut</label>
+            </div>
+        </div>
+
+        <!-- Soal 31 -->
+        <div class="question" id="q31">
+            <p>31. Bahasa pemrograman Java dikembangkan oleh:</p>
+            <div class="answers">
+                <label><input type="radio" name="q31" value="A"> A. Microsoft</label>
+                <label><input type="radio" name="q31" value="B"> B. IBM</label>
+                <label><input type="radio" name="q31" value="C"> C. Sun Microsystems (sekarang Oracle)</label>
+                <label><input type="radio" name="q31" value="D"> D. Google</label>
+            </div>
+        </div>
+
+        <!-- Soal 32 -->
+        <div class="question" id="q32">
+            <p>32. Dalam Singly Linked List, berapakah kompleksitas waktu (Big-O) untuk penyisipan node di tengah list?</p>
+            <div class="answers">
+                <label><input type="radio" name="q32" value="A"> A. $O(1)$</label>
+                <label><input type="radio" name="q32" value="B"> B. $O(n)$</label>
+                <label><input type="radio" name="q32" value="C"> C. $O(\log n)$</label>
+                <label><input type="radio" name="q32" value="D"> D. $O(n!)$</label>
+            </div>
+        </div>
+
+        <!-- Soal 33 -->
+        <div class="question" id="q33">
+            <p>33. Stack paling sering digunakan untuk:</p>
+            <div class="answers">
+                <label><input type="radio" name="q33" value="A"> A. Pemanggilan fungsi rekursif (Call Stack)</label>
+                <label><input type="radio" name="q33" value="B"> B. Mengelola task printer</label>
+                <label><input type="radio" name="q33" value="C"> C. Sistem antrean bank</label>
+                <label><input type="radio" name="q33" value="D"> D. Menyimpan data yang diakses secara acak</label>
+            </div>
+        </div>
+
+        <!-- Soal 34 -->
+        <div class="question" id="q34">
+            <p>34. Jika array `A` memiliki dimensi $3 \times 4$ (3 baris, 4 kolom), berapa total elemen yang dimilikinya?</p>
+            <div class="answers">
+                <label><input type="radio" name="q34" value="A"> A. 7</label>
+                <label><input type="radio" name="q34" value="B"> B. 12</label>
+                <label><input type="radio" name="q34" value="C"> C. 4</label>
+                <label><input type="radio" name="q34" value="D"> D. 3</label>
+            </div>
+        </div>
+
+        <!-- Soal 35 -->
+        <div class="question" id="q35">
+            <p>35. Apa ciri khas dari Circular Linked List (CLL)?</p>
+            <div class="answers">
+                <label><input type="radio" name="q35" value="A"> A. Setiap node memiliki dua pointer.</label>
+                <label><input type="radio" name="q35" value="B"> B. Node pertama menunjuk ke <code>null</code>.</label>
+                <label><input type="radio" name="q35" value="C"> C. Node terakhir menunjuk kembali ke node pertama.</label>
+                <label><input type="radio" name="q35" value="D"> D. Setiap node memiliki index.</label>
+            </div>
+        </div>
+
+        <!-- Soal 36 -->
+        <div class="question" id="q36">
+            <p>36. Tipe data primitif di Java yang berukuran 64-bit dan digunakan untuk bilangan bulat besar adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q36" value="A"> A. <code>int</code></label>
+                <label><input type="radio" name="q36" value="B"> B. <code>long</code></label>
+                <label><input type="radio" name="q36" value="C"> C. <code>double</code></label>
+                <label><input type="radio" name="q36" value="D"> D. <code>float</code></label>
+            </div>
+        </div>
+
+        <!-- Soal 37 -->
+        <div class="question" id="q37">
+            <p>37. Urutan operasi Stack: PUSH(X), PUSH(Y), POP(), PUSH(Z). Elemen yang akan di-POP selanjutnya adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q37" value="A"> A. X</label>
+                <label><input type="radio" name="q37" value="B"> B. Y</label>
+                <label><input type="radio" name="q37" value="C"> C. Z</label>
+                <label><input type="radio" name="q37" value="D"> D. Stack kosong</label>
+            </div>
+        </div>
+
+        <!-- Soal 38 -->
+        <div class="question" id="q38">
+            <p>38. Operasi yang digunakan untuk menghapus elemen dari Stack adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q38" value="A"> A. POP</label>
+                <label><input type="radio" name="q38" value="B"> B. DEQUEUE</label>
+                <label><input type="radio" name="q38" value="C"> C. REMOVE</label>
+                <label><input type="radio" name="q38" value="D"> D. DELETE</label>
+            </div>
+        </div>
+
+        <!-- Soal 39 -->
+        <div class="question" id="q39">
+            <p>39. Operasi DEQUEUE pada Queue (Antrean) berfungsi untuk:</p>
+            <div class="answers">
+                <label><input type="radio" name="q39" value="A"> A. Menambahkan elemen ke belakang.</label>
+                <label><input type="radio" name="q39" value="B"> B. Menghapus elemen dari depan.</label>
+                <label><input type="radio" name="q39" value="C"> C. Melihat elemen paling depan.</label>
+                <label><input type="radio" name="q39" value="D"> D. Mengubah urutan antrean.</label>
+            </div>
+        </div>
+
+        <!-- Soal 40 -->
+        <div class="question" id="q40">
+            <p>40. Dalam implementasi Queue berbasis Array, jika `front` adalah $0$ dan `rear` adalah $N-1$ (di mana $N$ adalah ukuran array), kondisi ini disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q40" value="A"> A. Overflow</label>
+                <label><input type="radio" name="q40" value="B"> B. Underflow</label>
+                <label><input type="radio" name="q40" value="C"> C. Empty</label>
+                <label><input type="radio" name="q40" value="D"> D. Normal State</label>
+            </div>
+        </div>
+
+        <!-- Soal 41 -->
+        <div class="question" id="q41">
+            <p>41. Pernyataan yang benar mengenai Linked List adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q41" value="A"> A. Linked List membutuhkan ruang memori ekstra untuk pointer.</label>
+                <label><input type="radio" name="q41" value="B"> B. Linked List lebih cepat daripada Array untuk akses acak.</label>
+                <label><input type="radio" name="q41" value="C"> C. Linked List hanya dapat diimplementasikan menggunakan Doubly Linked List.</label>
+                <label><input type="radio" name="q41" value="D"> D. Linked List menyimpan elemen secara berdekatan di memori.</label>
+            </div>
+        </div>
+
+        <!-- Soal 42 -->
+        <div class="question" id="q42">
+            <p>42. Tipe data <code>char</code> di Java digunakan untuk menyimpan:</p>
+            <div class="answers">
+                <label><input type="radio" name="q42" value="A"> A. String teks panjang</label>
+                <label><input type="radio" name="q42" value="B"> B. Bilangan bulat kecil</label>
+                <label><input type="radio" name="q42" value="C"> C. Karakter tunggal (menggunakan Unicode)</label>
+                <label><input type="radio" name="q42" value="D"> D. Nilai desimal</label>
+            </div>
+        </div>
+
+        <!-- Soal 43 -->
+        <div class="question" id="q43">
+            <p>43. Apa yang dimaksud dengan array multidimensi?</p>
+            <div class="answers">
+                <label><input type="radio" name="q43" value="A"> A. Array yang dapat menampung tipe data yang berbeda.</label>
+                <label><input type="radio" name="q43" value="B"> B. Array dari array, seperti matriks.</label>
+                <label><input type="radio" name="q43" value="C"> C. Array yang dapat diubah ukurannya setelah deklarasi.</label>
+                <label><input type="radio" name="q43" value="D"> D. Array yang diakses hanya menggunakan satu indeks.</label>
+            </div>
+        </div>
+
+        <!-- Soal 44 -->
+        <div class="question" id="q44">
+            <p>44. Jika Stack kosong, dan Anda mencoba melakukan operasi POP(), kondisi yang terjadi disebut:</p>
+            <div class="answers">
+                <label><input type="radio" name="q44" value="A"> A. Underflow</label>
+                <label><input type="radio" name="q44" value="B"> B. Overflow</label>
+                <label><input type="radio" name="q44" value="C"> C. Segmentation</label>
+                <label><input type="radio" name="q44" value="D"> D. Fragmentation</label>
+            </div>
+        </div>
+
+        <!-- Soal 45 -->
+        <div class="question" id="q45">
+            <p>45. Fungsi atau metode yang tidak didefinisikan secara eksplisit dalam ADT tetapi melekat pada operasi-operasi yang didefinisikan adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q45" value="A"> A. Implementasi</label>
+                <label><input type="radio" name="q45" value="B"> B. Deklarasi</label>
+                <label><input type="radio" name="q45" value="C"> C. Sintaks</label>
+                <label><input type="radio" name="q45" value="D"> D. Algoritma</label>
+            </div>
+        </div>
+
+        <!-- Soal 46 -->
+        <div class="question" id="q46">
+            <p>46. Dalam Queue Circular Array, bagaimana cara menentukan kondisi Queue penuh?</p>
+            <div class="answers">
+                <label><input type="radio" name="q46" value="A"> A. <code>(rear + 1) % size == front</code></label>
+                <label><input type="radio" name="q46" value="B"> B. <code>rear == size - 1</code></label>
+                <label><input type="radio" name="q46" value="C"> C. <code>front == rear</code></label>
+                <label><input type="radio" name="q46" value="D"> D. <code>rear > size</code></label>
+            </div>
+        </div>
+
+        <!-- Soal 47 -->
+        <div class="question" id="q47">
+            <p>47. Struktur data yang menyediakan dua ujung untuk penyisipan dan penghapusan (baik depan maupun belakang) adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q47" value="A"> A. Stack</label>
+                <label><input type="radio" name="q47" value="B"> B. Queue</label>
+                <label><input type="radio" name="q47" value="C"> C. Deque (Double Ended Queue)</label>
+                <label><input type="radio" name="q47" value="D"> D. Linked List</label>
+            </div>
+        </div>
+
+        <!-- Soal 48 -->
+        <div class="question" id="q48">
+            <p>48. Kompleksitas waktu untuk mencari elemen tertentu di Singly Linked List (kasus terburuk) adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q48" value="A"> A. $O(1)$</label>
+                <label><input type="radio" name="q48" value="B"> B. $O(n)$</label>
+                <label><input type="radio" name="q48" value="C"> C. $O(\log n)$</label>
+                <label><input type="radio" name="q48" value="D"> D. $O(n^2)$</label>
+            </div>
+        </div>
+
+        <!-- Soal 49 -->
+        <div class="question" id="q49">
+            <p>49. Dalam Doubly Linked List, setiap node memiliki pointer ke:</p>
+            <div class="answers">
+                <label><input type="radio" name="q49" value="A"> A. Node sebelumnya dan node berikutnya.</label>
+                <label><input type="radio" name="q49" value="B"> B. Node berikutnya saja.</label>
+                <label><input type="radio" name="q49" value="C"> C. Node kepala (head) dan node ekor (tail).</label>
+                <label><input type="radio" name="q49" value="D"> D. Node sebelumnya dan node kepala.</label>
+            </div>
+        </div>
+
+        <!-- Soal 50 -->
+        <div class="question" id="q50">
+            <p>50. Apa hasil dari urutan operasi Queue: ENQUEUE(A), ENQUEUE(B), DEQUEUE(), ENQUEUE(C)? Elemen yang di-DEQUEUE selanjutnya adalah:</p>
+            <div class="answers">
+                <label><input type="radio" name="q50" value="A"> A. A</label>
+                <label><input type="radio" name="q50" value="B"> B. B</label>
+                <label><input type="radio" name="q50" value="C"> C. C</label>
+                <label><input type="radio" name="q50" value="D"> D. Queue kosong</label>
+            </div>
+        </div>
+
+        <!-- Tambahkan lebih banyak soal di sini (q51 sampai q60 jika diperlukan) -->
+
+    </div>
+
+    <div class="btn-container">
+        <button type="button" id="submitBtn" onclick="checkAnswers()">Kirim Jawaban dan Cek Nilai</button>
+        <button type="button" id="resetBtn" onclick="resetQuiz()" style="display:none;">Ulangi Kuis</button>
+    </div>
+
+    <p id="result"></p>
+
+    <script>
+        // Kunci Jawaban untuk 50 Soal
+        const answerKey = {
+            q1: "A", q2: "D", q3: "A", q4: "B", q5: "C", q6: "A", q7: "D", q8: "B", q9: "B", q10: "B",
+            q11: "A", q12: "A", q13: "B", q14: "B", q15: "B", q16: "C", q17: "A", q18: "A", q19: "B", q20: "A",
+            q21: "A", q22: "C", q23: "A", q24: "C", q25: "A", q26: "B", q27: "B", q28: "A", q29: "A", q30: "A",
+            q31: "C", q32: "B", q33: "A", q34: "B", q35: "C", q36: "B", q37: "C", q38: "A", q39: "B", q40: "A",
+            q41: "A", q42: "C", q43: "B", q44: "A", q45: "A", q46: "A", q47: "C", q48: "B", q49: "A", q50: "B"
+        };
+        
+        const NUM_QUESTIONS = 50; // Jumlah soal yang diperiksa
+
+        function checkAnswers() {
+            let totalCorrect = 0;
+            const submitBtn = document.getElementById("submitBtn");
+            const resetBtn = document.getElementById("resetBtn");
+            const resultElement = document.getElementById("result");
+
+            for (let i = 1; i <= NUM_QUESTIONS; i++) {
+                const q = "q" + i;
+                const qDiv = document.getElementById(q);
+                const options = document.getElementsByName(q);
+                const correctAnswer = answerKey[q];
+                
+                // Hapus highlight sebelumnya
+                qDiv.classList.remove("correct", "wrong");
+
+                let isCorrect = false;
+                let answered = false;
+                
+                // Proses setiap opsi jawaban
+                for (const opt of options) {
+                    const label = opt.parentNode;
+                    label.classList.remove("highlight-correct"); // Hapus highlight lama
+                    
+                    // Highlight jawaban yang benar
+                    if (opt.value === correctAnswer) {
+                        label.classList.add("highlight-correct");
+                    }
+                    
+                    if (opt.checked) {
+                        answered = true;
+                        if (opt.value === correctAnswer) {
+                            isCorrect = true;
+                        }
+                    }
+                }
+
+                // Beri warna latar belakang pada soal
+                if (isCorrect) {
+                    qDiv.classList.add("correct");
+                    totalCorrect++;
+                } else {
+                    qDiv.classList.add("wrong");
+                }
+                
+                // Nonaktifkan semua opsi setelah submit
+                options.forEach(opt => opt.disabled = true);
+            }
+
+            // Tampilkan hasil
+            resultElement.innerHTML =
+                `Hasil Anda: Jawaban benar: <span style="color:#28a745;">${totalCorrect}</span> dari ${NUM_QUESTIONS} soal.`;
+
+            // Atur tampilan tombol
+            submitBtn.style.display = "none";
+            resetBtn.style.display = "inline-block";
+        }
+
+        function resetQuiz() {
+            const submitBtn = document.getElementById("submitBtn");
+            const resetBtn = document.getElementById("resetBtn");
+            const resultElement = document.getElementById("result");
+
+            for (let i = 1; i <= NUM_QUESTIONS; i++) {
+                const q = "q" + i;
+                const qDiv = document.getElementById(q);
+                const options = document.getElementsByName(q);
+
+                qDiv.classList.remove("correct", "wrong");
+                
+                // Reset setiap opsi
+                for (const opt of options) {
+                    opt.checked = false;
+                    opt.disabled = false; // Aktifkan kembali opsi
+                    opt.parentNode.classList.remove("highlight-correct");
+                }
+            }
+
+            // Reset tampilan
+            resultElement.innerHTML = "";
+            resetBtn.style.display = "none";
+            submitBtn.style.display = "inline-block";
+        }
+    </script>
+</body>
+</html>
