@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persiapan UAS: Kuis Antarmuka Manusia dan Komputer (9 Modul)</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #004d40;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #004d40;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #003366;
+            background-color: #e3f2fd;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h3 {
+            color: #006064;
+            border-left: 5px solid #00acc1;
+            padding-left: 10px;
+            margin-top: 20px;
+        }
+
+        .summary-section {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .question {
+            background: #fff;
+            padding: 18px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .question:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .question p {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .answers label {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border: 1px solid #eee;
+        }
+        
+        .answers label:hover {
+            background-color: #f0f0f0;
+        }
+
+        .answers input[type="radio"] {
+            margin-right: 12px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.1s;
+        }
+        
+        #submitBtn {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        #submitBtn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        #resetBtn {
+            background-color: #dc3545;
+            color: white;
+        }
+        
+        #resetBtn:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+
+        #result {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .correct {
+            background-color: #d4edda; /* Light Green */
+            border: 1px solid #c3e6cb;
+        }
+
+        .wrong {
+            background-color: #f8d7da; /* Light Red */
+            border: 1px solid #f5c6cb;
+        }
+        
+        .highlight-correct {
+            background-color: #c3e6cb !important; /* Stronger highlight for the correct answer */
+            font-weight: bold;
+            color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <!-- KUISIONER PILIHAN GANDA -->
+    <div class="summary-section">
+        <h2>50 SOAL PILIHAN GANDA IMK KOMPREHENSIF</h2>
+        <p>Pilih salah satu jawaban yang paling tepat. Setelah selesai, klik tombol "Submit Jawaban" untuk melihat hasil Anda.</p>
+    </div>
+    
+    <!-- Jawaban Benar (Internal Key): B, A, D, C, C, B, C, A, B, A, A, A, B, B, D, C, A, D, C, A, A, D, A, C, B, B, D, A, C, D, C, B, A, D, B, B, B, A, C, A, C, A, D, A, B, B, C, A, D, A -->
+
+    <!-- Soal 1-10 (Modul 1 & 2) -->
+    <div class="question" id="q1">
+      <p>1. Disiplin ilmu yang mempelajari perancangan, evaluasi, dan implementasi sistem interaktif agar mudah digunakan oleh manusia dengan tujuan mencapai Usability adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q1" value="A"> A. Rekayasa Perangkat Lunak</label>
+        <label><input type="radio" name="q1" value="B"> B. Interaksi Manusia dan Komputer (IMK)</label>
+        <label><input type="radio" name="q1" value="C"> C. Desain Industri</label>
+        <label><input type="radio" name="q1" value="D"> D. Ilmu Kognitif</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q2">
+      <p>2. Kunci utama dari Usability (Kebergunaan) menurut ISO 9241 adalah kombinasi dari:</p>
+      <div class="answers">
+        <label><input type="radio" name="q2" value="A"> A. Efektivitas, Efisiensi, dan Kepuasan</label>
+        <label><input type="radio" name="q2" value="B"> B. Keindahan, Kekuatan, dan Kinerja</label>
+        <label><input type="radio" name="q2" value="C"> C. Kecepatan, Kompatibilitas, dan Harga</label>
+        <label><input type="radio" name="q2" value="D"> D. Ketersediaan, Keamanan, dan Fungsionalitas</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q3">
+      <p>3. Model pemrosesan manusia yang memecah tugas menjadi sub-tujuan, operator, metode, dan aturan seleksi untuk memprediksi waktu eksekusi tugas adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q3" value="A"> A. Model Proses Kognitif</label>
+        <label><input type="radio" name="q3" value="B"> B. Model Siklus Interaksi</label>
+        <label><input type="radio" name="q3" value="C"> C. Model Hirarki Tugas (HTA)</label>
+        <label><input type="radio" name="q3" value="D"> D. Model GOMS</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q4">
+      <p>4. Kapasitas memori jangka pendek manusia terbatas pada sekitar 7 $\pm$ 2 unit. Proses mental yang memungkinkan manusia untuk meningkatkan kapasitas ini dengan mengelompokkan informasi menjadi unit yang lebih besar adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q4" value="A"> A. Retrieval</label>
+        <label><input type="radio" name="q4" value="B"> B. Decay</label>
+        <label><input type="radio" name="q4" value="C"> C. Chunking</label>
+        <label><input type="radio" name="q4" value="D"> D. Encoding</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q5">
+      <p>5. Bagian mata yang paling sensitif terhadap cahaya redup dan bertanggung jawab atas penglihatan pada kondisi malam hari (tapi tidak membedakan warna) adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q5" value="A"> A. Iris</label>
+        <label><input type="radio" name="q5" value="B"> B. Konus (Cones)</label>
+        <label><input type="radio" name="q5" value="C"> C. Rods (Batang)</label>
+        <label><input type="radio" name="q5" value="D"> D. Fovea</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q6">
+      <p>6. Dalam ergonomi fisik, masalah utama terkait pencahayaan yang menyebabkan ketegangan mata karena cahaya yang berlebihan atau pantulan dari layar disebut:</p>
+      <div class="answers">
+        <label><input type="radio" name="q6" value="A"> A. Kontras</label>
+        <label><input type="radio" name="q6" value="B"> B. Glare (Silau)</label>
+        <label><input type="radio" name="q6" value="C"> C. Resolusi</label>
+        <label><input type="radio" name="q6" value="D"> D. Color depth</label>
+      </div>
+    </div>
+
+    <!-- Soal 7-12 (Modul 3) -->
+    <div class="question" id="q7">
+      <p>7. Model Konseptual yang merupakan representasi mental pengguna tentang cara kerja sistem, dan dibangun dari pengalaman sebelumnya, disebut:</p>
+      <div class="answers">
+        <label><input type="radio" name="q7" value="A"> A. Model Implementasi</label>
+        <label><input type="radio" name="q7" value="B"> B. Model Desainer</label>
+        <label><input type="radio" name="q7" value="C"> C. Model Mental (User's Model)</label>
+        <label><input type="radio" name="q7" value="D"> D. Model Operasional</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q8">
+      <p>8. Prinsip desain yang menekankan bahwa tampilan suatu objek harus menyarankan cara penggunaannya (misalnya, tombol terlihat bisa ditekan) adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q8" value="A"> A. Affordance</label>
+        <label><input type="radio" name="q8" value="B"> B. Metaphor</label>
+        <label><input type="radio" name="q8" value="C"> C. Visibility</label>
+        <label><input type="radio" name="q8" value="D"> D. Feedback</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q9">
+      <p>9. Kesenjangan antara niat pengguna dan apa yang dapat dilakukan oleh sistem (seperti tidak adanya tombol yang dibutuhkan) disebut:</p>
+      <div class="answers">
+        <label><input type="radio" name="q9" value="A"> A. Gulf of Interpretation</label>
+        <label><input type="radio" name="q9" value="B"> B. Gulf of Execution</label>
+        <label><input type="radio" name="q9" value="C"> C. Gulf of Perception</label>
+        <label><input type="radio" name="q9" value="D"> D. Gulf of Interaction</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q10">
+      <p>10. Paradigma interaksi yang menggunakan Jendela, Ikon, Menu, dan Peranti Penunjuk (Pointer) sebagai elemen utamanya adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q10" value="A"> A. WIMP</label>
+        <label><input type="radio" name="q10" value="B"> B. CLI</label>
+        <label><input type="radio" name="q10" value="C"> C. Augmented Reality</label>
+        <label><input type="radio" name="q10" value="D"> D. Natural Language</label>
+      </div>
+    </div>
+
+    <!-- Soal 11-16 (Modul 4) -->
+    <div class="question" id="q11">
+      <p>11. Atribut kebergunaan yang mengukur seberapa mudah pengguna dapat mencapai tingkat kinerja yang tinggi setelah mereka mempelajari sistem adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q11" value="A"> A. Efficiency</label>
+        <label><input type="radio" name="q11" value="B"> B. Memorability</label>
+        <label><input type="radio" name="q11" value="C"> C. Robustness</label>
+        <label><input type="radio" name="q11" value="D"> D. Flexibility</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q12">
+      <p>12. Prinsip heuristik Nielsen *Match between system and the real world* menekankan bahwa:</p>
+      <div class="answers">
+        <label><input type="radio" name="q12" value="A"> A. Sistem harus berbicara dalam bahasa pengguna dan menggunakan metafora dunia nyata.</label>
+        <label><input type="radio" name="q12" value="B"> B. Desain harus minimalis dan tanpa elemen yang tidak perlu.</label>
+        <label><input type="radio" name="q12" value="C"> C. Pengguna harus memiliki kendali penuh atas sistem.</label>
+        <label><input type="radio" name="q12" value="D"> D. Antarmuka harus sama di semua platform.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q13">
+      <p>13. Ketika sebuah sistem menampilkan pop-up peringatan yang tidak beralasan atau mengganggu alur kerja pengguna secara tiba-tiba, ini melanggar heuristik:</p>
+      <div class="answers">
+        <label><input type="radio" name="q13" value="A"> A. Aesthetic and minimalist design</label>
+        <label><input type="radio" name="q13" value="B"> B. User control and freedom</label>
+        <label><input type="radio" name="q13" value="C"> C. Consistency and standards</label>
+        <label><input type="radio" name="q13" value="D"> D. Flexibility and efficiency of use</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q14">
+      <p>14. Pengujian kebergunaan (Usability Testing) adalah langkah penting dalam pengembangan antarmuka. Kelemahan utama dari *heuristic evaluation* dibandingkan dengan *usability testing* adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q14" value="A"> A. Membutuhkan waktu yang lebih lama.</label>
+        <label><input type="radio" name="q14" value="B"> B. Tidak melibatkan pengguna sesungguhnya (hanya evaluator ahli).</label>
+        <label><input type="radio" name="q14" value="C"> C. Menemukan terlalu banyak masalah minor.</label>
+        <label><input type="radio" name="q14" value="D"> D. Hasilnya tidak dapat diulang.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q15">
+      <p>15. Salah satu atribut kebergunaan, *Robustness*, mengacu pada:</p>
+      <div class="answers">
+        <label><input type="radio" name="q15" value="A"> A. Kecepatan sistem merespon input.</label>
+        <label><input type="radio" name="q15" value="B"> B. Kemampuan sistem untuk beradaptasi dengan berbagai pengguna.</label>
+        <label><input type="radio" name="q15" value="C"> C. Tingkat kesulitan sistem dipelajari.</label>
+        <label><input type="radio" name="q15" value="D"> D. Bagaimana sistem mendukung pemulihan dari kesalahan dan pencegahan kesalahan.</label>
+      </div>
+    </div>
+
+    <!-- Soal 16-20 (Modul 5 & 6) -->
+    <div class="question" id="q16">
+      <p>16. Perangkat keras yang menggunakan prinsip Hukum Fitts, di mana waktu untuk menunjuk (*Movement Time*) berbanding terbalik dengan lebar target dan berbanding lurus dengan jarak ke target, adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q16" value="A"> A. Keyboard</label>
+        <label><input type="radio" name="q16" value="B"> B. Scanner</label>
+        <label><input type="radio" name="q16" value="C"> C. Mouse</label>
+        <label><input type="radio" name="q16" value="D"> D. Monitor</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q17">
+      <p>17. Keuntungan utama Manipulasi Langsung (*Direct Manipulation*) yang membuatnya lebih mudah dipelajari daripada CLI adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q17" value="A"> A. Pengurangan beban kognitif karena pengguna dapat melihat dan memanipulasi objek.</label>
+        <label><input type="radio" name="q17" value="B"> B. Lebih cepat bagi pengguna ahli untuk melakukan tugas kompleks.</label>
+        <label><input type="radio" name="q17" value="C"> C. Membutuhkan lebih sedikit sumber daya komputasi.</label>
+        <label><input type="radio" name="q17" value="D"> D. Lebih mudah diimplementasikan oleh pengembang.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q18">
+      <p>18. Layar sentuh yang hanya merespons sentuhan jari atau material konduktif (tidak bisa menggunakan stylus biasa atau sarung tangan) adalah jenis:</p>
+      <div class="answers">
+        <label><input type="radio" name="q18" value="A"> A. Resistif</label>
+        <label><input type="radio" name="q18" value="B"> B. Piezoelektrik</label>
+        <label><input type="radio" name="q18" value="C"> C. Infrared</label>
+        <label><input type="radio" name="q18" value="D"> D. Kapasitif</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q19">
+      <p>19. Antarmuka berbasis menu yang paling menghemat ruang layar, karena hanya muncul dari bar menu utama saat diklik dan menghilang saat pilihan dibuat, adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q19" value="A"> A. Menu Pop-up</label>
+        <label><input type="radio" name="q19" value="B"> B. Menu Flat</label>
+        <label><input type="radio" name="q19" value="C"> C. Menu Pull-down</label>
+        <label><input type="radio" name="q19" value="D"> D. Menu Cascading</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q20">
+      <p>20. Dalam merancang struktur menu, jika kita harus memilih antara menu yang sangat dalam (banyak level) atau menu yang sangat lebar (banyak pilihan di satu level), prinsip IMK menyarankan:</p>
+      <div class="answers">
+        <label><input type="radio" name="q20" value="A"> A. Lebar lebih besar daripada kedalaman (Lebar > Kedalaman)</label>
+        <label><input type="radio" name="q20" value="B"> B. Kedalaman lebih besar daripada lebar (Kedalaman > Lebar)</label>
+        <label><input type="radio" name="q20" value="C"> C. Keduanya harus selalu seimbang 7x7</label>
+        <label><input type="radio" name="q20" value="D"> D. Hanya kedalaman yang penting</label>
+      </div>
+    </div>
+
+    <!-- Soal 21-25 (Modul 7) -->
+    <div class="question" id="q21">
+      <p>21. Kelemahan utama yang membuat Antarmuka Bahasa Alami (*Natural Language*) tidak efisien untuk aplikasi kompleks adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q21" value="A"> A. Ambiguitas dan kesulitan dalam memahami konteks.</label>
+        <label><input type="radio" name="q21" value="B"> B. Membutuhkan memori sintaksis yang tinggi.</label>
+        <label><input type="radio" name="q21" value="C"> C. Lambatnya waktu respons sistem.</label>
+        <label><input type="radio" name="q21" value="D"> D. Tidak adanya representasi visual.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q22">
+      <p>22. Antarmuka berbasis teks yang ideal untuk pengguna ahli yang memerlukan kecepatan dan ringkasnya perintah (misalnya, administrator sistem) adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q22" value="A"> A. Menu-based Interface</label>
+        <label><input type="radio" name="q22" value="B"> B. Natural Language Interface</label>
+        <label><input type="radio" name="q22" value="C"> C. Query Language Interface</label>
+        <label><input type="radio" name="q22" value="D"> D. Command Line Interface (CLI)</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q23">
+      <p>23. Saat merancang pengisian borang (*form filling*), aturan yang mengatur perpindahan dari satu *field* ke *field* berikutnya menggunakan tombol Tab adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q23" value="A"> A. Tab Sequence (Urutan Tab)</label>
+        <label><input type="radio" name="q23" value="B"> B. Grouping Field</label>
+        <label><input type="radio" name="q23" value="C"> C. Data Validation</label>
+        <label><input type="radio" name="q23" value="D"> D. Field Naming Convention</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q24">
+      <p>24. Bahasa seperti SQL (Structured Query Language) diklasifikasikan sebagai antarmuka berbasis teks jenis:</p>
+      <div class="answers">
+        <label><input type="radio" name="q24" value="A"> A. Command Language</label>
+        <label><input type="radio" name="q24" value="B"> B. Natural Language</label>
+        <label><input type="radio" name="q24" value="C"> C. Query Language</label>
+        <label><input type="radio" name="q24" value="D"> D. Parametric Language</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q25">
+      <p>25. Pesan kesalahan yang efektif dalam borang harus bersifat konstruktif, yang berarti:</p>
+      <div class="answers">
+        <label><input type="radio" name="q25" value="A"> A. Hanya menyatakan bahwa terjadi error.</label>
+        <label><input type="radio" name="q25" value="B"> B. Menyatakan kesalahan, menunjukkan lokasi, dan menyarankan cara memperbaikinya.</label>
+        <label><input type="radio" name="q25" value="C"> C. Menggunakan kode error teknis.</label>
+        <label><input type="radio" name="q25" value="D"> D. Menghilangkan borang dan memulai dari awal.</label>
+      </div>
+    </div>
+
+    <!-- Soal 26-30 (Modul 8) -->
+    <div class="question" id="q26">
+      <p>26. Prinsip perancangan tampilan yang dianggap paling penting karena membantu pengguna memprediksi apa yang akan terjadi dan mengurangi beban belajar adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q26" value="A"> A. Simplicity (Kesederhanaan)</label>
+        <label><input type="radio" name="q26" value="B"> B. Consistency (Konsistensi)</label>
+        <label><input type="radio" name="q26" value="C"> C. Aesthetic (Estetika)</label>
+        <label><input type="radio" name="q26" value="D"> D. Feedback (Umpan Balik)</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q27">
+      <p>27. Menurut Prinsip Gestalt tentang *Proximity* (Kedekatan), elemen yang harus dikelompokkan bersama dalam antarmuka adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q27" value="A"> A. Elemen dengan warna yang sama.</label>
+        <label><input type="radio" name="q27" value="B"> B. Elemen yang memiliki fungsi yang sama.</label>
+        <label><input type="radio" name="q27" value="C"> C. Elemen yang memiliki bentuk yang sama.</label>
+        <label><input type="radio" name="q27" value="D"> D. Elemen yang diletakkan berdekatan secara spasial.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q28">
+      <p>28. Dalam penggunaan warna pada tampilan, desainer harus selalu memastikan bahwa:</p>
+      <div class="answers">
+        <label><input type="radio" name="q28" value="A"> A. Warna tidak digunakan sebagai satu-satunya cara untuk menyampaikan informasi (mempertimbangkan buta warna).</label>
+        <label><input type="radio" name="q28" value="B"> B. Menggunakan sebanyak mungkin warna cerah untuk menarik perhatian.</label>
+        <label><input type="radio" name="q28" value="C"> C. Warna harus selalu konsisten dengan logo perusahaan.</label>
+        <label><input type="radio" name="q28" value="D"> D. Menggunakan warna biru untuk semua tautan.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q29">
+      <p>29. Bagian kosong (*whitespace*) atau area negatif dalam tata letak antarmuka berfungsi untuk:</p>
+      <div class="answers">
+        <label><input type="radio" name="q29" value="A"> A. Mengisi ruang yang kosong.</label>
+        <label><input type="radio" name="q29" value="B"> B. Meningkatkan kepadatan informasi.</label>
+        <label><input type="radio" name="q29" value="C"> C. Meningkatkan keterbacaan dan membedakan kelompok elemen.</label>
+        <label><input type="radio" name="q29" value="D"> D. Mengurangi kecepatan loading halaman.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q30">
+      <p>30. Salah satu kesalahan umum dalam penggunaan tipografi pada perancangan tampilan adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q30" value="A"> A. Menggunakan font serif untuk paragraf panjang.</label>
+        <label><input type="radio" name="q30" value="B"> B. Menggunakan minimal tiga ukuran font.</label>
+        <label><input type="radio" name="q30" value="C"> C. Kontras yang kuat antara teks dan latar belakang.</label>
+        <label><input type="radio" name="q30" value="D"> D. Menggunakan terlalu banyak jenis font yang berbeda.</label>
+      </div>
+    </div>
+
+    <!-- Soal 31-35 (Modul 9 & Ergonomi) -->
+    <div class="question" id="q31">
+      <p>31. Perangkat input yang mengubah pergerakan tangan menjadi koordinat digital untuk menggambar atau memanipulasi objek spasial secara akurat adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q31" value="A"> A. Joystick</label>
+        <label><input type="radio" name="q31" value="B"> B. Mouse</label>
+        <label><input type="radio" name="q31" value="C"> C. Tablet Grafis</label>
+        <label><input type="radio" name="q31" value="D"> D. Trackball</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q32">
+      <p>32. Salah satu perbedaan kunci antara *keyboard* QWERTY standar dan *keyboard* ergonomis adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q32" value="A"> A. QWERTY lebih murah dan mudah digunakan untuk pemula.</label>
+        <label><input type="radio" name="q32" value="B"> B. Ergonomis dirancang untuk mengurangi *Repetitive Strain Injuries* (RSI) dengan posisi tangan yang lebih alami.</label>
+        <label><input type="radio" name="q32" value="C"> C. QWERTY memungkinkan kecepatan mengetik yang jauh lebih tinggi.</label>
+        <label><input type="radio" name="q32" value="D"> D. Ergonomis lebih kecil dan portabel.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q33">
+      <p>33. Dalam konteks layar tampilan, *refresh rate* (dinyatakan dalam Hertz) mengacu pada:</p>
+      <div class="answers">
+        <label><input type="radio" name="q33" value="A"> A. Frekuensi layar diperbarui per detik, mempengaruhi kehalusan gerakan.</label>
+        <label><input type="radio" name="q33" value="B"> B. Jumlah piksel horizontal dan vertikal.</label>
+        <label><input type="radio" name="q33" value="C"> C. Kualitas warna yang ditampilkan.</label>
+        <label><input type="radio" name="q33" value="D"> D. Jarak antara piksel (dot pitch).</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q34">
+      <p>34. Postur kerja yang ergonomis yang dianjurkan saat menggunakan komputer meliputi:</p>
+      <div class="answers">
+        <label><input type="radio" name="q34" value="A"> A. Monitor harus sejajar dengan dada.</label>
+        <label><input type="radio" name="q34" value="B"> B. Lengan harus menggantung bebas tanpa sandaran.</label>
+        <label><input type="radio" name="q34" value="C"> C. Kaki harus lurus dan sejajar.</label>
+        <label><input type="radio" name="q34" value="D"> D. Punggung tegak lurus, mata sejajar dengan bagian atas layar.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q35">
+      <p>35. Umpan balik audio non-verbal (*non-speech sound*), seperti bunyi klik atau bip saat ada kesalahan, memiliki kelebihan karena:</p>
+      <div class="answers">
+        <label><input type="radio" name="q35" value="A"> A. Lebih mudah diingat daripada perintah teks.</label>
+        <label><input type="radio" name="q35" value="B"> B. Tidak memerlukan fokus visual dan dapat didengar sambil mata fokus pada tugas lain.</label>
+        <label><input type="radio" name="q35" value="C"> C. Lebih murah diimplementasikan daripada pesan teks.</label>
+        <label><input type="radio" name="q35" value="D"> D. Dapat memberikan informasi yang sangat kompleks.</label>
+      </div>
+    </div>
+
+    <!-- Soal 36-50 (Review dan Kombinasi) -->
+    <div class="question" id="q36">
+      <p>36. Yang manakah dari berikut ini yang BUKAN termasuk dalam Tahap Evaluasi dalam Siklus Interaksi Norman?</p>
+      <div class="answers">
+        <label><input type="radio" name="q36" value="A"> A. Persepsi terhadap status sistem</label>
+        <label><input type="radio" name="q36" value="B"> B. Melaksanakan Tindakan Fisik</label>
+        <label><input type="radio" name="q36" value="C"> C. Menginterpretasi status sistem</label>
+        <label><input type="radio" name="q36" value="D"> D. Membandingkan hasil dengan tujuan</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q37">
+      <p>37. Ketika desainer menggunakan ikon floppy disk untuk tombol "Simpan" meskipun disket sudah usang, ini adalah contoh penggunaan:</p>
+      <div class="answers">
+        <label><input type="radio" name="q37" value="A"> A. Affordance</label>
+        <label><input type="radio" name="q37" value="B"> B. Metaphor (Analogi)</label>
+        <label><input type="radio" name="q37" value="C"> C. Natural Language</label>
+        <label><input type="radio" name="q37" value="D"> D. Gulf of Execution</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q38">
+      <p>38. Prinsip yang menyatakan bahwa sistem harus menyediakan jalur cepat (misalnya *keyboard shortcut*) bagi pengguna ahli dan mekanisme yang jelas (*menu*) bagi pengguna pemula adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q38" value="A"> A. Flexibility and efficiency of use</label>
+        <label><input type="radio" name="q38" value="B"> B. Error prevention</label>
+        <label><input type="radio" name="q38" value="C"> C. Aesthetic and minimalist design</label>
+        <label><input type="radio" name="q38" value="D"> D. Visibility of system status</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q39">
+      <p>39. Jika sebuah aplikasi perbankan menggunakan warna merah untuk menunjukkan saldo negatif dan warna hijau untuk saldo positif, ini adalah penerapan yang efektif dari aspek IMK:</p>
+      <div class="answers">
+        <label><input type="radio" name="q39" value="A"> A. Faktor Psikologis (Konvensi Warna)</label>
+        <label><input type="radio" name="q39" value="B"> B. Model GOMS</label>
+        <label><input type="radio" name="q39" value="C"> C. Ergonomi Fisik</label>
+        <label><input type="radio" name="q39" value="D"> D. Command Line Interface</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q40">
+      <p>40. Pendekatan pengembangan sistem yang menekankan iterasi berulang dan keterlibatan pengguna secara terus-menerus sejak tahap awal desain adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q40" value="A"> A. Waterfall Model</label>
+        <label><input type="radio" name="q40" value="B"> B. Top-Down Design</label>
+        <label><input type="radio" name="q40" value="C"> C. User-Centered Design (UCD)</label>
+        <label><input type="radio" name="q40" value="D"> D. Bottom-Up Implementation</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q41">
+      <p>41. Dalam antarmuka berbasis menu, apa kelemahan utama dari Menu Pop-up / Kontekstual?</p>
+      <div class="answers">
+        <label><input type="radio" name="q41" value="A"> A. Pilihan yang tersedia tidak terlihat sampai pengguna melakukan tindakan (kurangnya visibility).</label>
+        <label><input type="radio" name="q41" value="B"> B. Memakan terlalu banyak ruang layar.</label>
+        <label><input type="radio" name="q41" value="C"> C. Terlalu banyak level kedalaman.</label>
+        <label><input type="radio" name="q41" value="D"> D. Lambat merespons input mouse.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q42">
+      <p>42. Prinsip desain tampilan *Simplicity* (kesederhanaan) paling baik dicapai dengan:</p>
+      <div class="answers">
+        <label><input type="radio" name="q42" value="A"> A. Menggunakan banyak ikon berwarna.</label>
+        <label><input type="radio" name="q42" value="B"> B. Menghindari area kosong (*whitespace*).</label>
+        <label><input type="radio" name="q42" value="C"> C. Menghilangkan elemen yang tidak relevan atau jarang digunakan.</label>
+        <label><input type="radio" name="q42" value="D"> D. Menggunakan bahasa yang sangat teknis.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q43">
+      <p>43. Kapan penggunaan *Command Line Interface* (CLI) dianggap paling efektif?</p>
+      <div class="answers">
+        <label><input type="radio" name="q43" value="A"> A. Untuk pengguna ahli yang sering mengulang tugas dan membutuhkan kecepatan tinggi.</label>
+        <label><input type="radio" name="q43" value="B"> B. Untuk aplikasi yang menargetkan pengguna baru.</label>
+        <label><input type="radio" name="q43" value="C"> C. Ketika diperlukan manipulasi langsung objek grafis.</label>
+        <label><input type="radio" name="q43" value="D"> D. Saat interaksi utama adalah memilih dari daftar menu.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q44">
+      <p>44. Perbedaan utama antara *touchscreen* kapasitif dan resistif berkaitan dengan:</p>
+      <div class="answers">
+        <label><input type="radio" name="q44" value="A"> A. Cara sentuhan dideteksi (listrik statis tubuh vs. tekanan mekanis).</label>
+        <label><input type="radio" name="q44" value="B"> B. Resolusi layar yang didukung.</label>
+        <label><input type="radio" name="q44" value="C"> C. Kecepatan *refresh rate*.</label>
+        <label><input type="radio" name="q44" value="D"> D. Kekuatan baterai yang digunakan.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q45">
+      <p>45. Panca indera yang paling banyak digunakan dan memiliki kontribusi terbesar terhadap proses persepsi dalam interaksi manusia-komputer adalah:</p>
+      <div class="answers">
+        <label><input type="radio" name="q45" value="A"> A. Penglihatan (Visual)</label>
+        <label><input type="radio" name="q45" value="B"> B. Pendengaran (Auditory)</label>
+        <label><input type="radio" name="q45" value="C"> C. Perabaan (Haptic)</label>
+        <label><input type="radio" name="q45" value="D"> D. Penciuman (Olfactory)</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q46">
+      <p>46. Menurut Hukum Fitts, untuk mengurangi waktu pergerakan menuju suatu tombol (*Movement Time*), desainer harus:</p>
+      <div class="answers">
+        <label><input type="radio" name="q46" value="A"> A. Meningkatkan jarak ke target.</label>
+        <label><input type="radio" name="q46" value="B"> B. Mengurangi lebar target.</label>
+        <label><input type="radio" name="q46" value="C"> C. Mengganti warna tombol.</label>
+        <label><input type="radio" name="q46" value="D"> D. Memperbesar ukuran (lebar) tombol.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q47">
+      <p>47. Antarmuka yang membuat pengguna merasa lebih mengendalikan sistem, mengurangi rasa cemas, dan meningkatkan kepuasan adalah ciri khas dari paradigma:</p>
+      <div class="answers">
+        <label><input type="radio" name="q47" value="A"> A. Command Line Interface</label>
+        <label><input type="radio" name="q47" value="B"> B. Antarmuka Berbasis Teks</label>
+        <label><input type="radio" name="q47" value="C"> C. Manipulasi Langsung (Direct Manipulation)</label>
+        <label><input type="radio" name="q47" value="D"> D. Natural Language Interface</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q48">
+      <p>48. Memberi tahu pengguna bahwa proses loading sedang berjalan dengan menampilkan *progress bar* adalah penerapan heuristik Nielsen:</p>
+      <div class="answers">
+        <label><input type="radio" name="q48" value="A"> A. Visibility of system status</label>
+        <label><input type="radio" name="q48" value="B"> B. Error prevention</label>
+        <label><input type="radio" name="q48" value="C"> C. Flexibility and efficiency of use</label>
+        <label><input type="radio" name="q48" value="D"> D. Consistency and standards</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q49">
+      <p>49. Di manakah seharusnya ditempatkan label (*label*) pada *input field* dalam formulir untuk meningkatkan keterbacaan dan alur yang logis?</p>
+      <div class="answers">
+        <label><input type="radio" name="q49" value="A"> A. Di bawah *field* input.</label>
+        <label><input type="radio" name="q49" value="B"> B. Jauh di sebelah kanan *field* input.</label>
+        <label><input type="radio" name="q49" value="C"> C. Di atas atau di sebelah kiri *field* input.</label>
+        <label><input type="radio" name="q49" value="D"> D. Sebagai *placeholder* di dalam *field* input.</label>
+      </div>
+    </div>
+    
+    <div class="question" id="q50">
+      <p>50. Prinsip *Chunking* dalam perancangan tampilan paling efektif diterapkan pada:</p>
+      <div class="answers">
+        <label><input type="radio" name="q50" value="A"> A. Pengelompokan field terkait dalam borang atau membagi teks panjang menjadi paragraf.</label>
+        <label><input type="radio" name="q50" value="B"> B. Menggunakan banyak warna berbeda dalam satu tampilan.</label>
+        <label><input type="radio" name="q50" value="C"> C. Memaksimalkan kedalaman struktur menu.</label>
+        <label><input type="radio" name="q50" value="D"> D. Menggunakan ikon abstrak.</label>
+      </div>
+    </div>
+    
+    <div class="btn-container">
+      <button type="button" id="submitBtn" onclick="checkAnswers()">Submit Jawaban</button>
+      <button type="button" id="resetBtn" onclick="resetQuiz()" style="display:none;">Ulangi Kuis</button>
+    </div>
+    
+    <p id="result"></p>
+
+    <script>
+    // Kunci Jawaban untuk 50 Soal (q1 sampai q50)
+    // Jawaban Benar (Internal Key): B, A, D, C, C, B, C, A, B, A, A, A, B, B, D, C, A, D, C, A, A, D, A, C, B, B, D, A, C, D, C, B, A, D, B, B, B, A, A, C, A, C, A, A, A, D, C, A, C, A
+    const answerKey = {
+      q1:"B", q2:"A", q3:"D", q4:"C", q5:"C", q6:"B", q7:"C", q8:"A", q9:"B", q10:"A",
+      q11:"A", q12:"A", q13:"B", q14:"B", q15:"D", q16:"C", q17:"A", q18:"D", q19:"C", q20:"A",
+      q21:"A", q22:"D", q23:"A", q24:"C", q25:"B", q26:"B", q27:"D", q28:"A", q29:"C", q30:"D",
+      q31:"C", q32:"B", q33:"A", q34:"D", q35:"B", q36:"B", q37:"B", q38:"A", q39:"A", q40:"C",
+      q41:"A", q42:"C", q43:"A", q44:"A", q45:"A", q46:"D", q47:"C", q48:"A", q49:"C", q50:"A"
+    };
+
+    function checkAnswers() {
+      let total = 0;
+      const totalQuestions = 50; 
+
+      for (let i = 1; i <= totalQuestions; i++) {
+        const q = "q" + i;
+        const qDiv = document.getElementById(q);
+        const options = document.getElementsByName(q);
+        const correctAnswer = answerKey[q];
+        
+        // Hapus kelas sebelumnya
+        qDiv.classList.remove("correct", "wrong");
+
+        let answered = false;
+        let correct = false;
+
+        for (const opt of options) {
+          const label = opt.parentNode;
+          // Hapus semua highlight style sebelumnya
+          label.classList.remove("highlight-correct");
+          label.style.color = "black";
+          label.style.fontWeight = "normal";
+
+          if (opt.checked) {
+            answered = true;
+            if (opt.value === correctAnswer) {
+              correct = true;
+            }
+          }
+        }
+
+        // Terapkan penandaan dan hitung skor
+        if (correct) {
+          qDiv.classList.add("correct");
+          total++;
+        } else {
+          qDiv.classList.add("wrong");
+        }
+        
+        // Selalu highlight jawaban yang benar
+        for (const opt of options) {
+            if (opt.value === correctAnswer) {
+                const label = opt.parentNode;
+                label.classList.add("highlight-correct");
+            }
+        }
+      }
+
+      document.getElementById("result").innerHTML = 
+        `Jumlah Jawaban Benar: <span style="color:#004d40">${total}</span> dari ${totalQuestions} soal!`;
+
+      // Sembunyikan tombol submit, tampilkan tombol reset
+      document.getElementById("submitBtn").style.display = "none";
+      document.getElementById("resetBtn").style.display = "inline-block";
+    }
+
+    function resetQuiz() {
+      const totalQuestions = 50;
+
+      for (let i = 1; i <= totalQuestions; i++) {
+        const q = "q" + i;
+        const qDiv = document.getElementById(q);
+        const options = document.getElementsByName(q);
+
+        qDiv.classList.remove("correct", "wrong");
+
+        for (const opt of options) {
+          opt.checked = false;
+          const label = opt.parentNode;
+          label.classList.remove("highlight-correct");
+          label.style.color = "black";
+          label.style.fontWeight = "normal";
+        }
+      }
+
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("resetBtn").style.display = "none";
+      document.getElementById("submitBtn").style.display = "inline-block";
+    }
+    </script>
+</body>
+</html>
