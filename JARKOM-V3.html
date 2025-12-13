@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Modul Jaringan Komputer (105 Soal)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .question {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #e1e4e8;
+            transition: transform 0.2s;
+        }
+
+        .question:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .question p {
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .answers label {
+            display: block;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: background 0.2s;
+        }
+
+        .answers label:hover {
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+        }
+
+        .answers input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.1);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #submitBtn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        #submitBtn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        #resetBtn {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        #resetBtn:hover {
+            background-color: #545b62;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Styling Hasil */
+        .correct {
+            border: 2px solid #28a745;
+            background-color: #d4edda;
+        }
+        
+        .wrong {
+            border: 2px solid #dc3545;
+            background-color: #f8d7da;
+        }
+
+        .highlight-correct {
+            color: #155724;
+            background-color: #c3e6cb !important;
+            font-weight: bold;
+            border: 1px solid #155724;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Ujian Kompetensi Jaringan Komputer (105 Soal)</h2>
+
+    <!-- Start of Questions -->
+    
+    <!-- Soal 1 -->
+    <div class="question" id="q1">
+        <p>1. Plain Old Telephone Service (POTS) merupakan koneksi WAN yang termasuk pada jenis layanan...</p>
+        <div class="answers">
+            <label><input type="radio" name="q1" value="A"> A. Circuit Switching</label>
+            <label><input type="radio" name="q1" value="B"> B. Packet Switching</label>
+            <label><input type="radio" name="q1" value="C"> C. Cell-Switching</label>
+            <label><input type="radio" name="q1" value="D"> D. Dedicated Digital</label>
+        </div>
+    </div>
+
+    <!-- Soal 2 -->
+    <div class="question" id="q2">
+        <p>2. Menggunakan single data frame merupakan karakteristik pada koneksi WAN...</p>
+        <div class="answers">
+            <label><input type="radio" name="q2" value="A"> A. ISDN</label>
+            <label><input type="radio" name="q2" value="B"> B. POTS</label>
+            <label><input type="radio" name="q2" value="C"> C. Frame relay</label>
+            <label><input type="radio" name="q2" value="D"> D. Dial up modem</label>
+        </div>
+    </div>
+
+    <!-- Soal 3 -->
+    <div class="question" id="q3">
+        <p>3. Tentukan bilangan biner dari alamat IP 202.103.251.90</p>
+        <div class="answers">
+            <label><input type="radio" name="q3" value="A"> A. 11011010 01100111 11110011 01011010</label>
+            <label><input type="radio" name="q3" value="B"> B. 11011010 01101111 11110011 01011010</label>
+            <label><input type="radio" name="q3" value="C"> C. 11001010 01100111 11110011 01011010</label>
+            <label><input type="radio" name="q3" value="D"> D. 11001110 01100111 11100011 01011010</label>
+        </div>
+    </div>
+
+    <!-- Soal 4 -->
+    <div class="question" id="q4">
+        <p>4. Berapa jumlah host yang terbentuk dalam suatu subnet bila subnet mask-nya bernilai 255.255.254.0?</p>
+        <div class="answers">
+            <label><input type="radio" name="q4" value="A"> A. 254 host</label>
+            <label><input type="radio" name="q4" value="B"> B. 256 host</label>
+            <label><input type="radio" name="q4" value="C"> C. 510 host</label>
+            <label><input type="radio" name="q4" value="D"> D. 512 host</label>
+        </div>
+    </div>
+
+    <!-- Soal 5 -->
+    <div class="question" id="q5">
+        <p>5. Perhatikan proses FTP berikut! (i) CD, PW (ii) SENDSITE, SITE (iii) QUIT (iv) FTP, LOGIN, Password (v) PUT. Susun tahapan penggunaan FTP yang benar!</p>
+        <div class="answers">
+            <label><input type="radio" name="q5" value="A"> A. i - ii - iii - iv - v</label>
+            <label><input type="radio" name="q5" value="B"> B. iv - i - ii - v - iii</label>
+            <label><input type="radio" name="q5" value="C"> C. v - iv - iii - ii - i</label>
+            <label><input type="radio" name="q5" value="D"> D. iv - ii - v - i - iii</label>
+        </div>
+    </div>
+
+    <!-- Soal 6 -->
+    <div class="question" id="q6">
+        <p>6. Suatu PC terpasang alamat IP 172.16.45.67 dengan subnet mask 255.255.0.0. Network ID dan Host ID dari PC tersebut adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q6" value="A"> A. Network ID: 172.16.45.0, Host ID: 0.0.0.67</label>
+            <label><input type="radio" name="q6" value="B"> B. Network ID: 172.16.0.0, Host ID: 0.0.45.67</label>
+            <label><input type="radio" name="q6" value="C"> C. Network ID: 172.16.45.0, Host ID: 0.0.45.67</label>
+            <label><input type="radio" name="q6" value="D"> D. Network ID: 172.16.0.0, Host ID: 0.0.0.67</label>
+        </div>
+    </div>
+
+    <!-- Soal 7 -->
+    <div class="question" id="q7">
+        <p>7. IP address 172.31.255.200 termasuk ke dalam kelas...</p>
+        <div class="answers">
+            <label><input type="radio" name="q7" value="A"> A. Kelas A</label>
+            <label><input type="radio" name="q7" value="B"> B. Kelas B</label>
+            <label><input type="radio" name="q7" value="C"> C. Kelas C</label>
+            <label><input type="radio" name="q7" value="D"> D. Kelas D</label>
+        </div>
+    </div>
+
+    <!-- Soal 8 -->
+    <div class="question" id="q8">
+        <p>8. SSH merupakan protokol untuk perintah jarak jauh yang aman. Protokol ini memanfaatkan port...</p>
+        <div class="answers">
+            <label><input type="radio" name="q8" value="A"> A. 20</label>
+            <label><input type="radio" name="q8" value="B"> B. 21</label>
+            <label><input type="radio" name="q8" value="C"> C. 22</label>
+            <label><input type="radio" name="q8" value="D"> D. 23</label>
+        </div>
+    </div>
+
+    <!-- Soal 9 -->
+    <div class="question" id="q9">
+        <p>9. Konektor fiber optik yang berbentuk persegi (seperti pada gambar kisi-kisi) biasanya adalah tipe...</p>
+        <div class="answers">
+            <label><input type="radio" name="q9" value="A"> A. SC Duplex</label>
+            <label><input type="radio" name="q9" value="B"> B. ST</label>
+            <label><input type="radio" name="q9" value="C"> C. FC</label>
+            <label><input type="radio" name="q9" value="D"> D. LC Duplex</label>
+        </div>
+    </div>
+
+    <!-- Soal 10 -->
+    <div class="question" id="q10">
+        <p>10. Media transmisi yang arah ujung satu dengan lainnya sudah jelas (terpandu) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q10" value="A"> A. Transmisi radio</label>
+            <label><input type="radio" name="q10" value="B"> B. Komunikasi satelit</label>
+            <label><input type="radio" name="q10" value="C"> C. Fiber optic</label>
+            <label><input type="radio" name="q10" value="D"> D. Wifi</label>
+        </div>
+    </div>
+
+    <!-- Soal 11 -->
+    <div class="question" id="q11">
+        <p>11. Untuk menghubungkan dua perangkat jaringan sejenis (misal: PC ke PC atau Switch ke Switch) digunakan kabel UTP jenis...</p>
+        <div class="answers">
+            <label><input type="radio" name="q11" value="A"> A. Straight through</label>
+            <label><input type="radio" name="q11" value="B"> B. Cross over</label>
+            <label><input type="radio" name="q11" value="C"> C. Roll over</label>
+            <label><input type="radio" name="q11" value="D"> D. Straight over</label>
+        </div>
+    </div>
+
+    <!-- Soal 12 -->
+    <div class="question" id="q12">
+        <p>12. Kabel UTP Cat 6 memiliki kemampuan data rate maksimal sebesar...</p>
+        <div class="answers">
+            <label><input type="radio" name="q12" value="A"> A. 400 MHz</label>
+            <label><input type="radio" name="q12" value="B"> B. 500 MHz</label>
+            <label><input type="radio" name="q12" value="C"> C. 1000 Mbps (1 Gbps)</label>
+            <label><input type="radio" name="q12" value="D"> D. 10000 Mbps (10 Gbps)</label>
+        </div>
+    </div>
+
+    <!-- Soal 13 -->
+    <div class="question" id="q13">
+        <p>13. Berikut ini merupakan karakteristik Transmission Control Protocol (TCP), KECUALI...</p>
+        <div class="answers">
+            <label><input type="radio" name="q13" value="A"> A. Connection oriented</label>
+            <label><input type="radio" name="q13" value="B"> B. Memiliki fungsi reliabilitas</label>
+            <label><input type="radio" name="q13" value="C"> C. Two way handshake</label>
+            <label><input type="radio" name="q13" value="D"> D. Digunakan oleh protokol FTP</label>
+        </div>
+    </div>
+
+    <!-- Soal 14 -->
+    <div class="question" id="q14">
+        <p>14. Network Layer Reachability Information (NLRI) digunakan untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q14" value="A"> A. Entry table routing</label>
+            <label><input type="radio" name="q14" value="B"> B. Jalur yang dilalui oleh routing (BGP)</label>
+            <label><input type="radio" name="q14" value="C"> C. Advertise router</label>
+            <label><input type="radio" name="q14" value="D"> D. Meneruskan paket</label>
+        </div>
+    </div>
+
+    <!-- Soal 15 -->
+    <div class="question" id="q15">
+        <p>15. Protokol wireless LAN 802.11g memiliki kemampuan...</p>
+        <div class="answers">
+            <label><input type="radio" name="q15" value="A"> A. 54 Mbps, 5 GHz</label>
+            <label><input type="radio" name="q15" value="B"> B. 64 Mbps, 2.4 GHz</label>
+            <label><input type="radio" name="q15" value="C"> C. 54 Mbps, 2.4 GHz, Modulasi OFDM</label>
+            <label><input type="radio" name="q15" value="D"> D. 11 Mbps, 2.4 GHz</label>
+        </div>
+    </div>
+
+    <!-- Soal 16 -->
+    <div class="question" id="q16">
+        <p>16. Urutan proses alokasi alamat IP dengan menggunakan DHCP yang benar adalah (i.Request, ii.Ack, iii.Discover, iv.Offer)...</p>
+        <div class="answers">
+            <label><input type="radio" name="q16" value="A"> A. iii -> iv -> i -> ii</label>
+            <label><input type="radio" name="q16" value="B"> B. iii -> i -> iv -> ii</label>
+            <label><input type="radio" name="q16" value="C"> C. i -> iii -> iv -> ii</label>
+            <label><input type="radio" name="q16" value="D"> D. iv -> iii -> i -> ii</label>
+        </div>
+    </div>
+
+    <!-- Soal 17 -->
+    <div class="question" id="q17">
+        <p>17. Protokol routing yang menggunakan algoritma Shortest Path First (SPF) menggunakan konsep...</p>
+        <div class="answers">
+            <label><input type="radio" name="q17" value="A"> A. Link State</label>
+            <label><input type="radio" name="q17" value="B"> B. Distance vector</label>
+            <label><input type="radio" name="q17" value="C"> C. Hybrid</label>
+            <label><input type="radio" name="q17" value="D"> D. Link Distance</label>
+        </div>
+    </div>
+
+    <!-- Soal 18 -->
+    <div class="question" id="q18">
+        <p>18. Perangkat WLAN yang digunakan untuk mengarahkan sinyal frekuensi adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q18" value="A"> A. Power over ethernet</label>
+            <label><input type="radio" name="q18" value="B"> B. Amplifier</label>
+            <label><input type="radio" name="q18" value="C"> C. Antena</label>
+            <label><input type="radio" name="q18" value="D"> D. Signal splitter</label>
+        </div>
+    </div>
+
+    <!-- Soal 19 -->
+    <div class="question" id="q19">
+        <p>19. Metode request HTTP yang digunakan untuk meminta respon mirip GET tetapi tanpa badan pesan adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q19" value="A"> A. HEAD</label>
+            <label><input type="radio" name="q19" value="B"> B. PUT</label>
+            <label><input type="radio" name="q19" value="C"> C. POST</label>
+            <label><input type="radio" name="q19" value="D"> D. GET</label>
+        </div>
+    </div>
+
+    <!-- Soal 20 -->
+    <div class="question" id="q20">
+        <p>20. Parameter TCP untuk proses handshake pembentukan koneksi adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q20" value="A"> A. SYN dan ACK</label>
+            <label><input type="radio" name="q20" value="B"> B. SYN dan Checksum</label>
+            <label><input type="radio" name="q20" value="C"> C. Window dan ACK</label>
+            <label><input type="radio" name="q20" value="D"> D. URG dan Window</label>
+        </div>
+    </div>
+
+    <!-- Soal 21 -->
+    <div class="question" id="q21">
+        <p>21. Pesan DHCP dari Client untuk menyatakan sedang menggunakan informasi dari server adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q21" value="A"> A. DHCPREQUEST</label>
+            <label><input type="radio" name="q21" value="B"> B. DHCPDECLINE</label>
+            <label><input type="radio" name="q21" value="C"> C. DHCPDISCOVER</label>
+            <label><input type="radio" name="q21" value="D"> D. DHCPOFFER</label>
+        </div>
+    </div>
+
+    <!-- Soal 22 -->
+    <div class="question" id="q22">
+        <p>22. Pesan ICMP untuk memperoleh subnet mask jaringan adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q22" value="A"> A. Timestamp request</label>
+            <label><input type="radio" name="q22" value="B"> B. Address mask request dan reply</label>
+            <label><input type="radio" name="q22" value="C"> C. Echo request</label>
+            <label><input type="radio" name="q22" value="D"> D. Router advertisement</label>
+        </div>
+    </div>
+
+    <!-- Soal 23 -->
+    <div class="question" id="q23">
+        <p>23. Aplikasi yang menggunakan UDP adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q23" value="A"> A. Telnet, SMTP</label>
+            <label><input type="radio" name="q23" value="B"> B. DNS, RPC, SNMP</label>
+            <label><input type="radio" name="q23" value="C"> C. FTP, HTTP</label>
+            <label><input type="radio" name="q23" value="D"> D. LDAP, HTTP</label>
+        </div>
+    </div>
+
+    <!-- Soal 24 -->
+    <div class="question" id="q24">
+        <p>24. Standar internet yang mendukung format email selain ASCII (non-text attachment, multi-part) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q24" value="A"> A. SMTP</label>
+            <label><input type="radio" name="q24" value="B"> B. IMAP</label>
+            <label><input type="radio" name="q24" value="C"> C. POP3</label>
+            <label><input type="radio" name="q24" value="D"> D. MIME</label>
+        </div>
+    </div>
+
+    <!-- Soal 25 -->
+    <div class="question" id="q25">
+        <p>25. Urutan proses pembentukan koneksi TCP Server socket API (socket, bind, listen, accept) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q25" value="A"> A. socket -> bind -> listen -> accept</label>
+            <label><input type="radio" name="q25" value="B"> B. socket -> listen -> bind -> accept</label>
+            <label><input type="radio" name="q25" value="C"> C. bind -> socket -> listen -> accept</label>
+            <label><input type="radio" name="q25" value="D"> D. listen -> socket -> bind -> accept</label>
+        </div>
+    </div>
+
+    <!-- Soal 26 -->
+    <div class="question" id="q26">
+        <p>26. Kode status HTTP yang menandakan permintaan berhasil diproses adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q26" value="A"> A. 200</label>
+            <label><input type="radio" name="q26" value="B"> B. 404</label>
+            <label><input type="radio" name="q26" value="C"> C. 500</label>
+            <label><input type="radio" name="q26" value="D"> D. 403</label>
+        </div>
+    </div>
+
+    <!-- Soal 27 -->
+    <div class="question" id="q27">
+        <p>27. Perangkat lunak yang berjalan pada perangkat untuk merespon permintaan SNMP dari management station adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q27" value="A"> A. Sub agent</label>
+            <label><input type="radio" name="q27" value="B"> B. Agent / Master agent</label>
+            <label><input type="radio" name="q27" value="C"> C. Management station</label>
+            <label><input type="radio" name="q27" value="D"> D. MIB</label>
+        </div>
+    </div>
+
+    <!-- Soal 28 -->
+    <div class="question" id="q28">
+        <p>28. Jenis DNS Resource Record untuk mengetahui nama domain dari alamat IP (Reverse DNS) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q28" value="A"> A. SOA</label>
+            <label><input type="radio" name="q28" value="B"> B. NS</label>
+            <label><input type="radio" name="q28" value="C"> C. PTR</label>
+            <label><input type="radio" name="q28" value="D"> D. MX</label>
+        </div>
+    </div>
+
+    <!-- Soal 29 -->
+    <div class="question" id="q29">
+        <p>29. Teknologi Gigabit Ethernet 1000Base-LX menggunakan media...</p>
+        <div class="answers">
+            <label><input type="radio" name="q29" value="A"> A. Kabel UTP (pendek)</label>
+            <label><input type="radio" name="q29" value="B"> B. Kabel Fiber Optic (Long wavelength)</label>
+            <label><input type="radio" name="q29" value="C"> C. Kabel Coaxial</label>
+            <label><input type="radio" name="q29" value="D"> D. Wireless</label>
+        </div>
+    </div>
+
+    <!-- Soal 30 -->
+    <div class="question" id="q30">
+        <p>30. Cara kerja jaringan Token Ring adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q30" value="A"> A. Kirim data kapan saja</label>
+            <label><input type="radio" name="q30" value="B"> B. Broadcast ke seluruh jaringan</label>
+            <label><input type="radio" name="q30" value="C"> C. Token mengelilingi jaringan, hanya pemegang token yang boleh kirim</label>
+            <label><input type="radio" name="q30" value="D"> D. Menggunakan gelombang radio</label>
+        </div>
+    </div>
+
+    <!-- Soal 31 -->
+    <div class="question" id="q31">
+        <p>31. PDU (Protocol Data Unit) pada layer Physical adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q31" value="A"> A. Frame</label>
+            <label><input type="radio" name="q31" value="B"> B. Packet</label>
+            <label><input type="radio" name="q31" value="C"> C. Segment</label>
+            <label><input type="radio" name="q31" value="D"> D. Bit</label>
+        </div>
+    </div>
+
+    <!-- Soal 32 -->
+    <div class="question" id="q32">
+        <p>32. Pada model OSI, Ethernet beroperasi utamanya pada layer...</p>
+        <div class="answers">
+            <label><input type="radio" name="q32" value="A"> A. Application</label>
+            <label><input type="radio" name="q32" value="B"> B. Network</label>
+            <label><input type="radio" name="q32" value="C"> C. Session</label>
+            <label><input type="radio" name="q32" value="D"> D. Data Link (dan Physical)</label>
+        </div>
+    </div>
+
+    <!-- Soal 33 -->
+    <div class="question" id="q33">
+        <p>33. Lapisan TCP/IP yang menyediakan pengalamatan logik (IP Address) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q33" value="A"> A. Internetwork / Internet</label>
+            <label><input type="radio" name="q33" value="B"> B. Application</label>
+            <label><input type="radio" name="q33" value="C"> C. Transport</label>
+            <label><input type="radio" name="q33" value="D"> D. Network Interface</label>
+        </div>
+    </div>
+
+    <!-- Soal 34 -->
+    <div class="question" id="q34">
+        <p>34. Lapisan OSI yang bertugas memastikan reliabilitas data (error recovery, flow control end-to-end) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q34" value="A"> A. Session</label>
+            <label><input type="radio" name="q34" value="B"> B. Data Link</label>
+            <label><input type="radio" name="q34" value="C"> C. Transport</label>
+            <label><input type="radio" name="q34" value="D"> D. Presentation</label>
+        </div>
+    </div>
+
+    <!-- Soal 35 -->
+    <div class="question" id="q35">
+        <p>35. Protokol UDP bekerja pada layer...</p>
+        <div class="answers">
+            <label><input type="radio" name="q35" value="A"> A. Transport</label>
+            <label><input type="radio" name="q35" value="B"> B. Application</label>
+            <label><input type="radio" name="q35" value="C"> C. Internet</label>
+            <label><input type="radio" name="q35" value="D"> D. Network Interface</label>
+        </div>
+    </div>
+
+    <!-- Soal 36 -->
+    <div class="question" id="q36">
+        <p>36. Switched Multimegabit Data Service (SMDS) merupakan layanan WAN jenis...</p>
+        <div class="answers">
+            <label><input type="radio" name="q36" value="A"> A. Circuit switching</label>
+            <label><input type="radio" name="q36" value="B"> B. Packet switching</label>
+            <label><input type="radio" name="q36" value="C"> C. Cell-switching (Connectionless)</label>
+            <label><input type="radio" name="q36" value="D"> D. Dedicated digital</label>
+        </div>
+    </div>
+
+    <!-- Soal 37 -->
+    <div class="question" id="q37">
+        <p>37. Karakteristik Point to Point Protocol (PPP) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q37" value="A"> A. Menggunakan ISDN</label>
+            <label><input type="radio" name="q37" value="B"> B. Single data frame</label>
+            <label><input type="radio" name="q37" value="C"> C. Potongan diskrit</label>
+            <label><input type="radio" name="q37" value="D"> D. Menggunakan enkapsulasi datagram melalui link serial</label>
+        </div>
+    </div>
+
+    <!-- Soal 38 -->
+    <div class="question" id="q38">
+        <p>38. Bilangan biner dari 203.118.75.99 adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q38" value="A"> A. 11001011 01110110 01001010 01100011</label>
+            <label><input type="radio" name="q38" value="B"> B. 11001011 01110110 01001011 01100011</label>
+            <label><input type="radio" name="q38" value="C"> C. 11001011 01110101 01001011 01100011</label>
+            <label><input type="radio" name="q38" value="D"> D. 11001011 01110110 01001011 01100010</label>
+        </div>
+    </div>
+
+    <!-- Soal 39 -->
+    <div class="question" id="q39">
+        <p>39. Jumlah host dalam subnet mask 255.255.255.128 (/25) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q39" value="A"> A. 128</label>
+            <label><input type="radio" name="q39" value="B"> B. 64</label>
+            <label><input type="radio" name="q39" value="C"> C. 126</label>
+            <label><input type="radio" name="q39" value="D"> D. 62</label>
+        </div>
+    </div>
+
+    <!-- Soal 40 -->
+    <div class="question" id="q40">
+        <p>40. Urutan penggunaan FTP untuk mengunduh file (i.FTP Login, ii.GET, iii.CD/PW, iv.QUIT, v.LIST) yang logis adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q40" value="A"> A. i -> iii -> v -> ii -> iv</label>
+            <label><input type="radio" name="q40" value="B"> B. i -> ii -> iii -> v -> iv</label>
+            <label><input type="radio" name="q40" value="C"> C. iii -> i -> ii -> v -> iv</label>
+            <label><input type="radio" name="q40" value="D"> D. ii -> i -> v -> iii -> iv</label>
+        </div>
+    </div>
+
+    <!-- Soal 41 -->
+    <div class="question" id="q41">
+        <p>41. Alamat network dari IP 12.168.10.5 dengan subnet mask default (Kelas A) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q41" value="A"> A. 12.168.0.0</label>
+            <label><input type="radio" name="q41" value="B"> B. 12.0.0.0</label>
+            <label><input type="radio" name="q41" value="C"> C. 12.168.10.0</label>
+            <label><input type="radio" name="q41" value="D"> D. 12.168.10.5</label>
+        </div>
+    </div>
+
+    <!-- Soal 42 -->
+    <div class="question" id="q42">
+        <p>42. IP address 223.150.67.89 termasuk kelas...</p>
+        <div class="answers">
+            <label><input type="radio" name="q42" value="A"> A. Kelas A</label>
+            <label><input type="radio" name="q42" value="B"> B. Kelas B</label>
+            <label><input type="radio" name="q42" value="C"> C. Kelas C</label>
+            <label><input type="radio" name="q42" value="D"> D. Kelas D</label>
+        </div>
+    </div>
+
+    <!-- Soal 43 -->
+    <div class="question" id="q43">
+        <p>43. REXEC (Remote Execution) memanfaatkan port...</p>
+        <div class="answers">
+            <label><input type="radio" name="q43" value="A"> A. 20</label>
+            <label><input type="radio" name="q43" value="B"> B. 22</label>
+            <label><input type="radio" name="q43" value="C"> C. 512</label>
+            <label><input type="radio" name="q43" value="D"> D. 514</label>
+        </div>
+    </div>
+
+    <!-- Soal 44 -->
+    <div class="question" id="q44">
+        <p>44. Konektor dengan mekanisme "Stick and Twist" (putar) seperti bayonet adalah tipe...</p>
+        <div class="answers">
+            <label><input type="radio" name="q44" value="A"> A. LC</label>
+            <label><input type="radio" name="q44" value="B"> B. SC</label>
+            <label><input type="radio" name="q44" value="C"> C. FDDI</label>
+            <label><input type="radio" name="q44" value="D"> D. ST</label>
+        </div>
+    </div>
+
+    <!-- Soal 45 -->
+    <div class="question" id="q45">
+        <p>45. Media transmisi tembaga dengan inti di tengah dan serabut sisi samping dipisah isolator adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q45" value="A"> A. Coaxial</label>
+            <label><input type="radio" name="q45" value="B"> B. Fiber optic</label>
+            <label><input type="radio" name="q45" value="C"> C. Satelit</label>
+            <label><input type="radio" name="q45" value="D"> D. UTP</label>
+        </div>
+    </div>
+
+    <!-- Soal 46 -->
+    <div class="question" id="q46">
+        <p>46. Menghubungkan PC ke Switch menggunakan kabel UTP jenis...</p>
+        <div class="answers">
+            <label><input type="radio" name="q46" value="A"> A. Straight Through</label>
+            <label><input type="radio" name="q46" value="B"> B. Cross over</label>
+            <label><input type="radio" name="q46" value="C"> C. Roll over</label>
+            <label><input type="radio" name="q46" value="D"> D. Straight over</label>
+        </div>
+    </div>
+
+    <!-- Soal 47 -->
+    <div class="question" id="q47">
+        <p>47. Kabel UTP Cat 2 (untuk Token Ring) memiliki data rate maksimal...</p>
+        <div class="answers">
+            <label><input type="radio" name="q47" value="A"> A. 1 Mbps</label>
+            <label><input type="radio" name="q47" value="B"> B. 4 Mbps</label>
+            <label><input type="radio" name="q47" value="C"> C. 10 Mbps</label>
+            <label><input type="radio" name="q47" value="D"> D. 100 Mbps</label>
+        </div>
+    </div>
+
+    <!-- Soal 48 -->
+    <div class="question" id="q48">
+        <p>48. Format header datagram UDP berisi...</p>
+        <div class="answers">
+            <label><input type="radio" name="q48" value="A"> A. Source port, Dest port, Sequence, Ack</label>
+            <label><input type="radio" name="q48" value="B"> B. Source port, Dest port, Length, Checksum</label>
+            <label><input type="radio" name="q48" value="C"> C. Source IP, Dest IP</label>
+            <label><input type="radio" name="q48" value="D"> D. MAC address awal dan akhir</label>
+        </div>
+    </div>
+
+    <!-- Soal 49 -->
+    <div class="question" id="q49">
+        <p>49. Tipe Autonomous System (AS) yang terkoneksi ke 2 atau lebih AS tetapi tidak meneruskan trafik transit adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q49" value="A"> A. Transit</label>
+            <label><input type="radio" name="q49" value="B"> B. Stub</label>
+            <label><input type="radio" name="q49" value="C"> C. Multihomed</label>
+            <label><input type="radio" name="q49" value="D"> D. NLRI</label>
+        </div>
+    </div>
+
+    <!-- Soal 50 -->
+    <div class="question" id="q50">
+        <p>50. Protokol wireless LAN 802.11ac bekerja pada frekuensi 5GHz dengan kecepatan sangat tinggi. Ciri utamanya adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q50" value="A"> A. 54 Mbps, 2.4 GHz</label>
+            <label><input type="radio" name="q50" value="B"> B. Hingga 1 Gbps+, 5 GHz, Modulasi 256 QAM</label>
+            <label><input type="radio" name="q50" value="C"> C. 11 Mbps</label>
+            <label><input type="radio" name="q50" value="D"> D. Hanya 2.4 GHz</label>
+        </div>
+    </div>
+
+    <!-- Soal 51 -->
+    <div class="question" id="q51">
+        <p>51. Kegunaan utama teknologi Frame Relay dalam koneksi WAN adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q51" value="A"> A. Koneksi point-to-point dedicated untuk kecepatan tinggi.</label>
+            <label><input type="radio" name="q51" value="B"> B. Menyediakan layanan telepon dan data terpadu (digital).</label>
+            <label><input type="radio" name="q51" value="C"> C. Mentransmisikan sel-sel data berukuran tetap (ATM).</label>
+            <label><input type="radio" name="q51" value="D"> D. Menghubungkan LAN ke tulang punggung (backbone) untuk koneksi WAN.</label>
+        </div>
+    </div>
+
+    <!-- Soal 52 -->
+    <div class="question" id="q52">
+        <p>52. Layer pada model OSI yang bertanggung jawab untuk mengatur dan mengakhiri sesi komunikasi antar aplikasi adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q52" value="A"> A. Session</label>
+            <label><input type="radio" name="q52" value="B"> B. Presentation</label>
+            <label><input type="radio" name="q52" value="C"> C. Transport</label>
+            <label><input type="radio" name="q52" value="D"> D. Application</label>
+        </div>
+    </div>
+
+    <!-- Soal 53 -->
+    <div class="question" id="q53">
+        <p>53. Protokol routing OSPF (Open Shortest Path First) memiliki karakteristik sebagai protokol...</p>
+        <div class="answers">
+            <label><input type="radio" name="q53" value="A"> A. Distance Vector, menggunakan metrik hop count.</label>
+            <label><input type="radio" name="q53" value="B"> B. Link State, memiliki tabel topologi (LSDB).</label>
+            <label><input type="radio" name="q53" value="C"> C. Hybrid, menggunakan metrik bandwidth.</label>
+            <label><input type="radio" name="q53" value="D"> D. Exterior Gateway Protocol (EGP).</label>
+        </div>
+    </div>
+
+    <!-- Soal 54 -->
+    <div class="question" id="q54">
+        <p>54. Fungsi utama dari protokol Secure Shell (SSH) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q54" value="A"> A. Mentransfer file secara aman.</label>
+            <label><input type="radio" name="q54" value="B"> B. Menjalankan perintah non-interaktif jarak jauh.</label>
+            <label><input type="radio" name="q54" value="C"> C. Memberikan alamat IP otomatis.</label>
+            <label><input type="radio" name="q54" value="D"> D. Mengakses perangkat jaringan dari jarak jauh dengan aman.</label>
+        </div>
+    </div>
+
+    <!-- Soal 55 -->
+    <div class="question" id="q55">
+        <p>55. Media transmisi yang tidak terpandu (unguided) dalam jaringan komputer adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q55" value="A"> A. Twisted Pair Cable</label>
+            <label><input type="radio" name="q55" value="B"> B. Fiber Optic</label>
+            <label><input type="radio" name="q55" value="C"> C. Coaxial Cable</label>
+            <label><input type="radio" name="q55" value="D"> D. Gelombang radio</label>
+        </div>
+    </div>
+
+    <!-- Soal 56 -->
+    <div class="question" id="q56">
+        <p>56. Lapisan pada model OSI yang bertanggung jawab untuk translasi, enkripsi/dekripsi, dan kompresi data adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q56" value="A"> A. Data Link</label>
+            <label><input type="radio" name="q56" value="B"> B. Presentation</label>
+            <label><input type="radio" name="q56" value="C"> C. Application</label>
+            <label><input type="radio" name="q56" value="D"> D. Session</label>
+        </div>
+    </div>
+
+    <!-- Soal 57 -->
+    <div class="question" id="q57">
+        <p>57. Topologi jaringan yang setiap node-nya terhubung ke perangkat pusat (Hub/Switch) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q57" value="A"> A. Star</label>
+            <label><input type="radio" name="q57" value="B"> B. Bus</label>
+            <label><input type="radio" name="q57" value="C"> C. Ring</label>
+            <label><input type="radio" name="q57" value="D"> D. Mesh</label>
+        </div>
+    </div>
+
+    <!-- Soal 58 -->
+    <div class="question" id="q58">
+        <p>58. Protokol yang tidak menjamin pengiriman data tiba (unreliable) dan tidak memerlukan koneksi awal (connectionless) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q58" value="A"> A. TCP</label>
+            <label><input type="radio" name="q58" value="B"> B. IP</label>
+            <label><input type="radio" name="q58" value="C"> C. UDP</label>
+            <label><input type="radio" name="q58" value="D"> D. ARP</label>
+        </div>
+    </div>
+
+    <!-- Soal 59 -->
+    <div class="question" id="q59">
+        <p>59. Subnet mask default untuk kelas IP C adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q59" value="A"> A. 255.0.0.0</label>
+            <label><input type="radio" name="q59" value="B"> B. 255.255.0.0</label>
+            <label><input type="radio" name="q59" value="C"> C. 255.255.255.192</label>
+            <label><input type="radio" name="q59" value="D"> D. 255.255.255.0</label>
+        </div>
+    </div>
+
+    <!-- Soal 60 -->
+    <div class="question" id="q60">
+        <p>60. Protokol yang digunakan untuk memetakan alamat IP menjadi alamat fisik (MAC address) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q60" value="A"> A. RARP</label>
+            <label><input type="radio" name="q60" value="B"> B. ARP</label>
+            <label><input type="radio" name="q60" value="C"> C. ICMP</label>
+            <label><input type="radio" name="q60" value="D"> D. IGMP</label>
+        </div>
+    </div>
+
+    <!-- Soal 61 -->
+    <div class="question" id="q61">
+        <p>61. Router ID dalam OSPF biasanya dipilih berdasarkan...</p>
+        <div class="answers">
+            <label><input type="radio" name="q61" value="A"> A. Alamat IP tertinggi dari loopback atau interface fisik (jika loopback tidak ada).</label>
+            <label><input type="radio" name="q61" value="B"> B. Alamat IP terendah dari interface fisik yang aktif.</label>
+            <label><input type="radio" name="q61" value="C"> C. Alamat MAC terendah dari interface.</label>
+            <label><input type="radio" name="q61" value="D"> D. Nilai Cost paling rendah dari semua interface.</label>
+        </div>
+    </div>
+
+    <!-- Soal 62 -->
+    <div class="question" id="q62">
+        <p>62. Layer pada model OSI yang bertanggung jawab untuk menentukan jalur terbaik (*path determination*) untuk paket data antar jaringan adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q62" value="A"> A. Data Link</label>
+            <label><input type="radio" name="q62" value="B"> B. Network</label>
+            <label><input type="radio" name="q62" value="C"> C. Transport</label>
+            <label><input type="radio" name="q62" value="D"> D. Physical</label>
+        </div>
+    </div>
+
+    <!-- Soal 63 -->
+    <div class="question" id="q63">
+        <p>63. Alamat IP 192.168.1.1 termasuk dalam kelas...</p>
+        <div class="answers">
+            <label><input type="radio" name="q63" value="A"> A. Kelas A</label>
+            <label><input type="radio" name="q63" value="B"> B. Kelas B</label>
+            <label><input type="radio" name="q63" value="C"> C. Kelas C</label>
+            <label><input type="radio" name="q63" value="D"> D. Kelas D</label>
+        </div>
+    </div>
+
+    <!-- Soal 64 -->
+    <div class="question" id="q64">
+        <p>64. Perangkat jaringan yang dapat memecah domain *broadcast* dan menghubungkan jaringan yang berbeda adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q64" value="A"> A. Switch</label>
+            <label><input type="radio" name="q64" value="B"> B. Hub</label>
+            <label><input type="radio" name="q64" value="C"> C. Router</label>
+            <label><input type="radio" name="q64" value="D"> D. Repeater</label>
+        </div>
+    </div>
+
+    <!-- Soal 65 -->
+    <div class="question" id="q65">
+        <p>65. Perintah jaringan yang digunakan untuk melacak rute (jalur) yang dilewati paket data hingga mencapai tujuan, termasuk router-router perantara, adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q65" value="A"> A. ping</label>
+            <label><input type="radio" name="q65" value="B"> B. netstat</label>
+            <label><input type="radio" name="q65" value="C"> C. ipconfig/ifconfig</label>
+            <label><input type="radio" name="q65" value="D"> D. traceroute/tracert</label>
+        </div>
+    </div>
+
+    <!-- Soal 66 -->
+    <div class="question" id="q66">
+        <p>66. Format Protocol Data Unit (PDU) pada Layer Transport yang menggunakan TCP adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q66" value="A"> A. Frame</label>
+            <label><input type="radio" name="q66" value="B"> B. Packet</label>
+            <label><input type="radio" name="q66" value="C"> C. Segment</label>
+            <label><input type="radio" name="q66" value="D"> D. Datagram</label>
+        </div>
+    </div>
+
+    <!-- Soal 67 -->
+    <div class="question" id="q67">
+        <p>67. Rentang alamat IP Private untuk Kelas B adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q67" value="A"> A. 10.0.0.0 - 10.255.255.255</label>
+            <label><input type="radio" name="q67" value="B"> B. 172.16.0.0 - 172.31.255.255</label>
+            <label><input type="radio" name="q67" value="C"> C. 192.168.0.0 - 192.168.255.255</label>
+            <label><input type="radio" name="q67" value="D"> D. 169.254.0.0 - 169.254.255.255</label>
+        </div>
+    </div>
+
+    <!-- Soal 68 -->
+    <div class="question" id="q68">
+        <p>68. Mekanisme yang memungkinkan perangkat di jaringan lokal (IP Private) untuk mengakses internet (menggunakan IP Public) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q68" value="A"> A. NAT (Network Address Translation)</label>
+            <label><input type="radio" name="q68" value="B"> B. DHCP</label>
+            <label><input type="radio" name="q68" value="C"> C. ARP</label>
+            <label><input type="radio" name="q68" value="D"> D. DNS</label>
+        </div>
+    </div>
+
+    <!-- Soal 69 -->
+    <div class="question" id="q69">
+        <p>69. Jenis koneksi WAN yang secara fisik membuat jalur dedicated selama durasi koneksi (seperti pada sambungan telepon tradisional) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q69" value="A"> A. Circuit Switching</label>
+            <label><input type="radio" name="q69" value="B"> B. Packet Switching</label>
+            <label><input type="radio" name="q69" value="C"> C. Frame Relay</label>
+            <label><input type="radio" name="q69" value="D"> D. Cell Switching</label>
+        </div>
+    </div>
+
+    <!-- Soal 70 -->
+    <div class="question" id="q70">
+        <p>70. Protokol yang digunakan untuk *remote login* (akses baris perintah jarak jauh) tetapi mengirim data dalam bentuk teks biasa (tidak aman) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q70" value="A"> A. SSH</label>
+            <label><input type="radio" name="q70" value="B"> B. FTP</label>
+            <label><input type="radio" name="q70" value="C"> C. Telnet</label>
+            <label><input type="radio" name="q70" value="D"> D. RDP</label>
+        </div>
+    </div>
+
+    <!-- Soal 71 -->
+    <div class="question" id="q71">
+        <p>71. Dari segi kecepatan konvergensi, protokol routing yang berbasis Link State (seperti OSPF) umumnya memiliki keunggulan karena...</p>
+        <div class="answers">
+            <label><input type="radio" name="q71" value="A"> A. Hanya mengirimkan update ke tetangga terdekat.</label>
+            <label><input type="radio" name="q71" value="B"> B. Menggunakan algoritma Bellman-Ford yang sederhana.</label>
+            <label><input type="radio" name="q71" value="C"> C. Memiliki pandangan topologi jaringan yang lengkap dan menggunakan algoritma Dijkstra.</label>
+            <label><input type="radio" name="q71" value="D"> D. Menggunakan *hop count* sebagai metrik utama.</label>
+        </div>
+    </div>
+
+    <!-- Soal 72 -->
+    <div class="question" id="q72">
+        <p>72. Standar Wireless LAN 802.11n dikenal dengan kemampuannya, yaitu...</p>
+        <div class="answers">
+            <label><input type="radio" name="q72" value="A"> A. 11 Mbps pada frekuensi 2.4 GHz.</label>
+            <label><input type="radio" name="q72" value="B"> B. 54 Mbps pada frekuensi 5 GHz.</label>
+            <label><input type="radio" name="q72" value="C"> C. Hingga 600 Mbps, 2.4/5 GHz, menggunakan teknologi MIMO.</label>
+            <label><input type="radio" name="q72" value="D"> D. Hingga 1 Gbps+, menggunakan frekuensi 5 GHz saja.</label>
+        </div>
+    </div>
+
+    <!-- Soal 73 -->
+    <div class="question" id="q73">
+        <p>73. Protokol HTTP (HyperText Transfer Protocol) secara default menggunakan port...</p>
+        <div class="answers">
+            <label><input type="radio" name="q73" value="A"> A. 80</label>
+            <label><input type="radio" name="q73" value="B"> B. 443</label>
+            <label><input type="radio" name="q73" value="C"> C. 23</label>
+            <label><input type="radio" name="q73" value="D"> D. 25</label>
+        </div>
+    </div>
+
+    <!-- Soal 74 -->
+    <div class="question" id="q74">
+        <p>74. Fungsi utama dari protokol DHCP (Dynamic Host Configuration Protocol) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q74" value="A"> A. Mengamankan koneksi jarak jauh.</label>
+            <label><input type="radio" name="q74" value="B"> B. Menerjemahkan IP ke MAC address.</label>
+            <label><input type="radio" name="q74" value="C"> C. Menerjemahkan nama domain ke IP address.</label>
+            <label><input type="radio" name="q74" value="D"> D. Memberikan alamat IP dan konfigurasi jaringan secara otomatis.</label>
+        </div>
+    </div>
+
+    <!-- Soal 75 -->
+    <div class="question" id="q75">
+        <p>75. Jika sebuah jaringan memiliki alamat network 192.168.1.0/24, maka alamat IP Broadcast-nya adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q75" value="A"> A. 192.168.1.1</label>
+            <label><input type="radio" name="q75" value="B"> B. 192.168.1.0</label>
+            <label><input type="radio" name="q75" value="C"> C. 192.168.1.254</label>
+            <label><input type="radio" name="q75" value="D"> D. 192.168.1.255</label>
+        </div>
+    </div>
+
+    <!-- Soal 76 -->
+    <div class="question" id="q76">
+        <p>76. Dalam model TCP/IP, lapisan yang setara dengan Presentation Layer dan Session Layer pada model OSI adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q76" value="A"> A. Internet</label>
+            <label><input type="radio" name="q76" value="B"> B. Network Access</label>
+            <label><input type="radio" name="q76" value="C"> C. Transport</label>
+            <label><input type="radio" name="q76" value="D"> D. Application</label>
+        </div>
+    </div>
+
+    <!-- Soal 77 -->
+    <div class="question" id="q77">
+        <p>77. Protokol yang bertanggung jawab untuk menerjemahkan nama domain (seperti www.google.com) menjadi alamat IP adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q77" value="A"> A. HTTP</label>
+            <label><input type="radio" name="q77" value="B"> B. DNS</label>
+            <label><input type="radio" name="q77" value="C"> C. ARP</label>
+            <label><input type="radio" name="q77" value="D"> D. SMTP</label>
+        </div>
+    </div>
+
+    <!-- Soal 78 -->
+    <div class="question" id="q78">
+        <p>78. Protokol SNMP (Simple Network Management Protocol) yang digunakan untuk memonitor dan mengelola perangkat jaringan, beroperasi pada layer...</p>
+        <div class="answers">
+            <label><input type="radio" name="q78" value="A"> A. Transport</label>
+            <label><input type="radio" name="q78" value="B"> B. Network</label>
+            <label><input type="radio" name="q78" value="C"> C. Data Link</label>
+            <label><input type="radio" name="q78" value="D"> D. Application</label>
+        </div>
+    </div>
+
+    <!-- Soal 79 -->
+    <div class="question" id="q79">
+        <p>79. Jenis kabel UTP (Unshielded Twisted Pair) yang paling umum digunakan untuk Gigabit Ethernet saat ini adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q79" value="A"> A. Cat 3</label>
+            <label><input type="radio" name="q79" value="B"> B. Cat 5</label>
+            <label><input type="radio" name="q79" value="C"> C. Cat 5e / Cat 6</label>
+            <label><input type="radio" name="q79" value="D"> D. Cat 7</label>
+        </div>
+    </div>
+
+    <!-- Soal 80 -->
+    <div class="question" id="q80">
+        <p>80. Alamat fisik perangkat jaringan (MAC Address) bekerja pada lapisan model OSI...</p>
+        <div class="answers">
+            <label><input type="radio" name="q80" value="A"> A. Physical</label>
+            <label><input type="radio" name="q80" value="B"> B. Data Link</label>
+            <label><input type="radio" name="q80" value="C"> C. Network</label>
+            <label><input type="radio" name="q80" value="D"> D. Transport</label>
+        </div>
+    </div>
+
+    <!-- Soal 81 -->
+    <div class="question" id="q81">
+        <p>81. Konsep yang digunakan untuk membagi satu jaringan fisik besar menjadi beberapa domain *broadcast* logis yang lebih kecil adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q81" value="A"> A. VLAN (Virtual Local Area Network)</label>
+            <label><input type="radio" name="q81" value="B"> B. Subnetting</label>
+            <label><input type="radio" name="q81" value="C"> C. NAT</label>
+            <label><input type="radio" name="q81" value="D"> D. Trunks</label>
+        </div>
+    </div>
+
+    <!-- Soal 82 -->
+    <div class="question" id="q82">
+        <p>82. Alamat IP yang digunakan untuk komunikasi dari satu sumber ke sekelompok tujuan (multicast) berada pada kelas...</p>
+        <div class="answers">
+            <label><input type="radio" name="q82" value="A"> A. Kelas A</label>
+            <label><input type="radio" name="q82" value="B"> B. Kelas B</label>
+            <label><input type="radio" name="q82" value="C"> C. Kelas C</label>
+            <label><input type="radio" name="q82" value="D"> D. Kelas D</label>
+        </div>
+    </div>
+
+    <!-- Soal 83 -->
+    <div class="question" id="q83">
+        <p>83. Jenis kabel fiber optik yang memiliki inti kecil dan memungkinkan transmisi data jarak sangat jauh adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q83" value="A"> A. Single Mode</label>
+            <label><input type="radio" name="q83" value="B"> B. Multi Mode</label>
+            <label><input type="radio" name="q83" value="C"> C. Plastik Optik</label>
+            <label><input type="radio" name="q83" value="D"> D. Coaxial</label>
+        </div>
+    </div>
+
+    <!-- Soal 84 -->
+    <div class="question" id="q84">
+        <p>84. Fungsi dari *Default Gateway* pada konfigurasi IP sebuah host adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q84" value="A"> A. Menerjemahkan nama domain.</label>
+            <label><input type="radio" name="q84" value="B"> B. Memberikan alamat MAC.</label>
+            <label><input type="radio" name="q84" value="C"> C. Alamat IP yang digunakan host untuk mengirim paket ke jaringan lain (di luar subnetnya).</label>
+            <label><input type="radio" name="q84" value="D"> D. Alamat IP untuk *broadcast* ke seluruh subnet.</label>
+        </div>
+    </div>
+
+    <!-- Soal 85 -->
+    <div class="question" id="q85">
+        <p>85. Protokol RARP (Reverse Address Resolution Protocol) digunakan untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q85" value="A"> A. Mencari alamat MAC dari alamat IP.</label>
+            <label><input type="radio" name="q85" value="B"> B. Mencari nama domain dari alamat IP.</label>
+            <label><input type="radio" name="q85" value="C"> C. Memberikan alamat IP secara dinamis.</label>
+            <label><input type="radio" name="q85" value="D"> D. Mencari IP address dari alamat MAC.</label>
+        </div>
+    </div>
+
+    <!-- Soal 86 -->
+    <div class="question" id="q86">
+        <p>86. Perbedaan paling mendasar antara TCP dan UDP adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q86" value="A"> A. TCP bekerja di Layer 3, UDP di Layer 4.</label>
+            <label><input type="radio" name="q86" value="B"> B. TCP *connection-oriented* dan reliable, UDP *connectionless* dan unreliable.</label>
+            <label><input type="radio" name="q86" value="C"> C. TCP digunakan untuk streaming, UDP untuk transfer file.</label>
+            <label><input type="radio" name="q86" value="D"> D. TCP menggunakan port, UDP tidak.</label>
+        </div>
+    </div>
+
+    <!-- Soal 87 -->
+    <div class="question" id="q87">
+        <p>87. Alamat IP 10.10.10.1 termasuk dalam kelas...</p>
+        <div class="answers">
+            <label><input type="radio" name="q87" value="A"> A. Kelas A</label>
+            <label><input type="radio" name="q87" value="B"> B. Kelas B</label>
+            <label><input type="radio" name="q87" value="C"> C. Kelas C</label>
+            <label><input type="radio" name="q87" value="D"> D. Kelas D</label>
+        </div>
+    </div>
+
+    <!-- Soal 88 -->
+    <div class="question" id="q88">
+        <p>88. Protocol Data Unit (PDU) pada Layer Network adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q88" value="A"> A. Frame</label>
+            <label><input type="radio" name="q88" value="B"> B. Packet</label>
+            <label><input type="radio" name="q88" value="C"> C. Segment</label>
+            <label><input type="radio" name="q88" value="D"> D. Bit</label>
+        </div>
+    </div>
+
+    <!-- Soal 89 -->
+    <div class="question" id="q89">
+        <p>89. Subnet mask 255.255.255.240 (/28) dapat menghasilkan jumlah subnet sebanyak...</p>
+        <div class="answers">
+            <label><input type="radio" name="q89" value="A"> A. 4 subnet</label>
+            <label><input type="radio" name="q89" value="B"> B. 8 subnet</label>
+            <label><input type="radio" name="q89" value="C"> C. 16 subnet</label>
+            <label><input type="radio" name="q89" value="D"> D. 32 subnet</label>
+        </div>
+    </div>
+
+    <!-- Soal 90 -->
+    <div class="question" id="q90">
+        <p>90. Jenis koneksi WAN yang menyediakan *dedicated link* 24 jam sehari, 7 hari seminggu antara dua titik adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q90" value="A"> A. Dedicated Digital / Leased Line</label>
+            <label><input type="radio" name="q90" value="B"> B. Dial-up Modem</label>
+            <label><input type="radio" name="q90" value="C"> C. ISDN</label>
+            <label><input type="radio" name="q90" value="D"> D. Frame Relay</label>
+        </div>
+    </div>
+
+    <!-- Soal 91 -->
+    <div class="question" id="q91">
+        <p>91. Karakteristik utama dari kabel Coaxial adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q91" value="A"> A. Memiliki inti tembaga di tengah, dikelilingi isolator dan pelindung jaring.</label>
+            <label><input type="radio" name="q91" value="B"> B. Mengandung pasangan kabel yang dipilin tanpa pelindung luar.</label>
+            <label><input type="radio" name="q91" value="C"> C. Mengirimkan data dalam bentuk pulsa cahaya.</label>
+            <label><input type="radio" name="q91" value="D"> D. Digunakan hanya untuk jaringan Token Ring.</label>
+        </div>
+    </div>
+
+    <!-- Soal 92 -->
+    <div class="question" id="q92">
+        <p>92. Protokol routing yang menggunakan metrik berupa *Cost* (berbanding terbalik dengan bandwidth) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q92" value="A"> A. RIP</label>
+            <label><input type="radio" name="q92" value="B"> B. EIGRP</label>
+            <label><input type="radio" name="q92" value="C"> C. OSPF</label>
+            <label><input type="radio" name="q92" value="D"> D. BGP</label>
+        </div>
+    </div>
+
+    <!-- Soal 93 -->
+    <div class="question" id="q93">
+        <p>93. Protokol ICMP (Internet Control Message Protocol) digunakan untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q93" value="A"> A. Mengamankan koneksi internet.</label>
+            <label><input type="radio" name="q93" value="B"> B. Memberikan pesan kontrol, *error reporting*, dan *diagnostics* (misalnya ping).</label>
+            <label><input type="radio" name="q93" value="C"> C. Menerjemahkan alamat IP ke nama domain.</label>
+            <label><input type="radio" name="q93" value="D"> D. Mengalokasikan alamat IP secara dinamis.</label>
+        </div>
+    </div>
+
+    <!-- Soal 94 -->
+    <div class="question" id="q94">
+        <p>94. Konfigurasi kabel Straight-Through (Lurus) digunakan ketika...</p>
+        <div class="answers">
+            <label><input type="radio" name="q94" value="A"> A. Ujung 1 dan Ujung 2 memiliki urutan warna yang sama (T568B - T568B).</label>
+            <label><input type="radio" name="q94" value="B"> B. Ujung 1 menggunakan T568A dan Ujung 2 menggunakan T568B.</label>
+            <label><input type="radio" name="q94" value="C"> C. Digunakan untuk menghubungkan dua perangkat sejenis (misal PC ke PC).</label>
+            <label><input type="radio" name="q94" value="D"> D. Digunakan untuk konsol akses router.</label>
+        </div>
+    </div>
+
+    <!-- Soal 95 -->
+    <div class="question" id="q95">
+        <p>95. Dalam konteks jaringan, *Latensi* (Latency) merujuk pada...</p>
+        <div class="answers">
+            <label><input type="radio" name="q95" value="A"> A. Volume data yang dapat ditransfer per satuan waktu.</label>
+            <label><input type="radio" name="q95" value="B"> B. Jumlah *hop* (lompatan) yang diperlukan untuk mencapai tujuan.</label>
+            <label><input type="radio" name="q95" value="C"> C. Tingkat kehilangan paket (packet loss) dalam transmisi.</label>
+            <label><input type="radio" name="q95" value="D"> D. Waktu tunda yang dibutuhkan paket data untuk bergerak dari sumber ke tujuan.</label>
+        </div>
+    </div>
+
+    <!-- Soal 96 -->
+    <div class="question" id="q96">
+        <p>96. Lapisan pada model OSI yang bertanggung jawab untuk pengalamatan *port number* (seperti 80, 21, 23, dll.) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q96" value="A"> A. Network</label>
+            <label><input type="radio" name="q96" value="B"> B. Session</label>
+            <label><input type="radio" name="q96" value="C"> C. Transport</label>
+            <label><input type="radio" name="q96" value="D"> D. Data Link</label>
+        </div>
+    </div>
+
+    <!-- Soal 97 -->
+    <div class="question" id="q97">
+        <p>97. Alamat IP yang selalu merujuk ke perangkat lokal itu sendiri (digunakan untuk pengujian) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q97" value="A"> A. 0.0.0.0</label>
+            <label><input type="radio" name="q97" value="B"> B. 255.255.255.255</label>
+            <label><input type="radio" name="q97" value="C"> C. 169.254.0.0</label>
+            <label><input type="radio" name="q97" value="D"> D. 127.0.0.1 (Loopback)</label>
+        </div>
+    </div>
+
+    <!-- Soal 98 -->
+    <div class="question" id="q98">
+        <p>98. Perangkat lunak atau server yang bertindak sebagai perantara antara pengguna dan internet, sering digunakan untuk *caching* dan keamanan, adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q98" value="A"> A. DNS Server</label>
+            <label><input type="radio" name="q98" value="B"> B. Proxy Server</label>
+            <label><input type="radio" name="q98" value="C"> C. DHCP Server</label>
+            <label><input type="radio" name="q98" value="D"> D. File Server</label>
+        </div>
+    </div>
+
+    <!-- Soal 99 -->
+    <div class="question" id="q99">
+        <p>99. Konektor yang umum digunakan untuk kabel UTP (Cat 5e/Cat 6) dalam jaringan Ethernet adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q99" value="A"> A. RJ-11</label>
+            <label><input type="radio" name="q99" value="B"> B. BNC</label>
+            <label><input type="radio" name="q99" value="C"> C. RJ-45</label>
+            <label><input type="radio" name="q99" value="D"> D. SC</label>
+        </div>
+    </div>
+
+    <!-- Soal 100 -->
+    <div class="question" id="q100">
+        <p>100. Protokol transfer yang digunakan oleh aplikasi seperti Telnet dan SSH, yang memerlukan pengiriman data yang terjamin dan berurutan, adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q100" value="A"> A. TCP</label>
+            <label><input type="radio" name="q100" value="B"> B. UDP</label>
+            <label><input type="radio" name="q100" value="C"> C. IP</label>
+            <label><input type="radio" name="q100" value="D"> D. ICMP</label>
+        </div>
+    </div>
+
+    <!-- Soal 101 -->
+    <div class="question" id="q101">
+        <p>101. Teknologi ADSL (Asymmetric Digital Subscriber Line) menggunakan jalur telepon yang termasuk jenis koneksi WAN...</p>
+        <div class="answers">
+            <label><input type="radio" name="q101" value="A"> A. Circuit Switching (Modifikasi)</label>
+            <label><input type="radio" name="q101" value="B"> B. Dedicated Digital</label>
+            <label><input type="radio" name="q101" value="C"> C. Cell Switching</label>
+            <label><input type="radio" name="q101" value="D"> D. Packet Switching (Murni)</label>
+        </div>
+    </div>
+
+    <!-- Soal 102 -->
+    <div class="question" id="q102">
+        <p>102. Perangkat jaringan yang beroperasi di Layer 1 (Physical) model OSI dan hanya berfungsi untuk memperkuat sinyal adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q102" value="A"> A. Bridge</label>
+            <label><input type="radio" name="q102" value="B"> B. Router</label>
+            <label><input type="radio" name="q102" value="C"> C. Switch</label>
+            <label><input type="radio" name="q102" value="D"> D. Repeater / Hub</label>
+        </div>
+    </div>
+
+    <!-- Soal 103 -->
+    <div class="question" id="q103">
+        <p>103. Kegunaan utama dari protokol FTP (File Transfer Protocol) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q103" value="A"> A. Mengakses halaman web.</label>
+            <label><input type="radio" name="q103" value="B"> B. Mengirim email.</label>
+            <label><input type="radio" name="q103" value="C"> C. Transfer file antara klien dan server.</label>
+            <label><input type="radio" name="q103" value="D"> D. *Remote login* yang aman.</label>
+        </div>
+    </div>
+
+    <!-- Soal 104 -->
+    <div class="question" id="q104">
+        <p>104. Metode routing Distance Vector memiliki karakteristik mengirimkan informasi routing berupa...</p>
+        <div class="answers">
+            <label><input type="radio" name="q104" value="A"> A. Peta lengkap topologi jaringan ke semua router.</label>
+            <label><input type="radio" name="q104" value="B"> B. Seluruh tabel routing ke tetangga terdekat secara berkala.</label>
+            <label><input type="radio" name="q104" value="C"> C. Hanya perubahan link state saat terjadi perubahan topologi.</label>
+            <label><input type="radio" name="q104" value="D"> D. Informasi tentang AS (Autonomous System) lain.</label>
+        </div>
+    </div>
+
+    <!-- Soal 105 -->
+    <div class="question" id="q105">
+        <p>105. Kelas IP yang secara khusus dicadangkan untuk alamat Multicast (komunikasi satu-ke-banyak) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q105" value="A"> A. Kelas A</label>
+            <label><input type="radio" name="q105" value="B"> B. Kelas B</label>
+            <label><input type="radio" name="q105" value="C"> C. Kelas C</label>
+            <label><input type="radio" name="q105" value="D"> D. Kelas D</label>
+        </div>
+    </div>
+    
+    <!-- End of Questions -->
+
+    <!-- Tombol Aksi -->
+    <div class="btn-container">
+        <button type="button" id="submitBtn" onclick="checkAnswers()">Submit Jawaban</button>
+        <button type="button" id="resetBtn" onclick="resetQuiz()" style="display:none;">Ulangi Ujian</button>
+    </div>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    // Kunci Jawaban (Total 105 Soal)
+    const answerKey = {
+        q1: "A", q2: "C", q3: "C", q4: "C", q5: "B",
+        q6: "B", q7: "B", q8: "C", q9: "A", q10: "C",
+        q11: "B", q12: "C", q13: "C", q14: "B", q15: "C",
+        q16: "A", q17: "A", q18: "C", q19: "A", q20: "A",
+        q21: "A", q22: "B", q23: "B", q24: "D", q25: "A",
+        q26: "A", q27: "B", q28: "C", q29: "B", q30: "C",
+        q31: "D", q32: "D", q33: "A", q34: "C", q35: "A",
+        q36: "C", q37: "D", q38: "B", q39: "C", q40: "A",
+        q41: "B", q42: "C", q43: "C", q44: "D", q45: "A",
+        q46: "A", q47: "B", q48: "B", q49: "C", q50: "B",
+        q51: "D", q52: "A", q53: "B", q54: "D", q55: "D",
+        q56: "B", q57: "A", q58: "C", q59: "D", q60: "B",
+        q61: "A", q62: "B", q63: "C", q64: "C", q65: "D",
+        q66: "C", q67: "B", q68: "A", q69: "A", q70: "C",
+        q71: "C", q72: "C", q73: "A", q74: "D", q75: "D",
+        q76: "D", q77: "B", q78: "D", q79: "C", q80: "B",
+        q81: "A", q82: "D", q83: "A", q84: "C", q85: "D",
+        q86: "B", q87: "A", q88: "B", q89: "C", q90: "A",
+        q91: "A", q92: "C", q93: "B", q94: "A", q95: "D",
+        q96: "C", q97: "D", q98: "B", q99: "C", q100: "A",
+        q101: "A", q102: "D", q103: "C", q104: "B", q105: "D"
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        let total = 105; // Total soal diperbarui menjadi 105
+
+        for (let i = 1; i <= total; i++) {
+            const qID = "q" + i;
+            const qEl = document.getElementById(qID);
+            const radios = document.getElementsByName(qID);
+            const correctAns = answerKey[qID];
+            let answered = false;
+
+            // Reset styles
+            qEl.classList.remove("correct", "wrong");
+            const labels = qEl.getElementsByTagName("label");
+            for(let lbl of labels) lbl.classList.remove("highlight-correct");
+
+            for (const r of radios) {
+                if (r.checked) {
+                    answered = true;
+                    if (r.value === correctAns) {
+                        score++;
+                        qEl.classList.add("correct");
+                    } else {
+                        qEl.classList.add("wrong");
+                    }
+                }
+                r.disabled = true; // Disable input after submit
+            }
+
+            // Highlight jawaban benar jika salah atau tidak dijawab
+            if (!answered || (answered && !qEl.classList.contains("correct"))) {
+                // Pastikan question box tetap ditandai salah jika tidak dijawab atau salah
+                if (!qEl.classList.contains("correct")) {
+                    qEl.classList.add("wrong");
+                }
+                
+                for (const r of radios) {
+                    // Cari label yang mengandung jawaban benar
+                    if (r.value === correctAns) {
+                        // Periksa apakah labelnya ada sebelum mencoba menambahkan class
+                        if (r.parentElement) {
+                            r.parentElement.classList.add("highlight-correct");
+                        }
+                    }
+                }
+            }
+        }
+
+        const resultDiv = document.getElementById("result");
+        const percentage = (score/total) * 100;
+        resultDiv.innerHTML = `Skor Anda: ${score} dari ${total} (${percentage.toFixed(2)}%)`;
+        resultDiv.style.color = score >= (total * 0.7) ? "#28a745" : "#dc3545"; // Warna hijau jika skor di atas 70%
+        
+        document.getElementById("submitBtn").style.display = "none";
+        document.getElementById("resetBtn").style.display = "block";
+        window.scrollTo(0, 0); // Gulir ke atas untuk melihat hasil
+    }
+
+    function resetQuiz() {
+        for (let i = 1; i <= 105; i++) {
+            const qID = "q" + i;
+            const qEl = document.getElementById(qID);
+            const radios = document.getElementsByName(qID);
+            
+            qEl.classList.remove("correct", "wrong");
+            const labels = qEl.getElementsByTagName("label");
+            for(let lbl of labels) lbl.classList.remove("highlight-correct");
+
+            for (const r of radios) {
+                r.checked = false;
+                r.disabled = false;
+            }
+        }
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("submitBtn").style.display = "block";
+        document.getElementById("resetBtn").style.display = "none";
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</body>
+</html>
