@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawaban Ujian Rekayasa Perangkat Lunak (RPL) - Versi 1 & 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        /* Style untuk membuka konten saat checkbox tercentang */
+        .accordion-input:checked + .accordion-header + .accordion-content {
+            max-height: 3000px; /* Diperbesar untuk menampung konten diagram yang lebih panjang */
+            transition: max-height 0.8s ease-in-out;
+        }
+        /* CSS untuk Justify Text */
+        .text-justify {
+            text-align: justify;
+        }
+        
+        /* Styling Umum untuk Diagram */
+        .diagram-container {
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        
+        /* Styling untuk Use Case Diagram (V1) */
+        .actor {
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
+        }
+        .use-case {
+            background-color: #eff6ff;
+            border: 1px solid #93c5fd;
+            border-radius: 50%;
+            padding: 15px 30px;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e40af;
+        }
+        
+        /* Styling untuk DFD (V1 & V2) */
+        .dfd-process-box, .dfd-entity-box, .dfd-datastore-box {
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+        .dfd-process-box { border: 2px solid #06b6d4; background-color: #ecfeff; }
+        .dfd-entity-box { border: 2px solid #4ade80; background-color: #f0fdf4; }
+        .dfd-datastore-box { 
+            border: 2px solid #f97316; 
+            background-color: #fff7ed; 
+            border-bottom: 5px double #f97316;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        .arrow-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.875rem; 
+            font-weight: 500; 
+            color: #4f46e5; 
+            white-space: nowrap;
+        }
+        
+        /* Styling untuk Activity Diagram (V2) */
+        .activity-start {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #1f2937; /* Gray-900 */
+        }
+        .activity-end {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid #1f2937;
+            background-color: white;
+            position: relative;
+        }
+        .activity-end::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #1f2937;
+        }
+        .activity-step {
+            background-color: #d1d5db; /* Gray-300 */
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            width: 90%; /* Sesuaikan agar pas di swimlane */
+        }
+        .activity-decision {
+            border: 0;
+            width: 50px;
+            height: 50px;
+            background-color: #ef4444; /* Red-500 */
+            transform: rotate(45deg);
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .activity-decision-label {
+             position: absolute;
+             transform: rotate(-45deg); 
+             color: white; 
+             font-size: 0.7rem;
+             font-weight: bold;
+             white-space: nowrap;
+        }
+        .activity-flow {
+            width: 1px;
+            height: 20px;
+            background-color: #1f2937;
+            margin: 0 auto;
+        }
+        .swimlane-header {
+            background-color: #e5e7eb;
+            font-weight: 700;
+            padding: 10px 0;
+            text-align: center;
+            border-right: 2px solid #9ca3af;
+        }
+        .swimlane-content {
+            border-right: 2px solid #9ca3af;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 500px; /* Diperpanjang untuk menampung flow */
+        }
+        .border-r-0 { border-right: none !important; }
+
+        /* Untuk panah decision */
+        .flow-line {
+            position: relative;
+            margin: 5px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.75rem;
+            color: #374151;
+            font-weight: 600;
+        }
+        .flow-line::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: #1f2937;
+        }
+        
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+    <div class="max-w-5xl mx-auto bg-white shadow-2xl rounded-xl p-6 md:p-12">
+
+        <!-- Header Ujian -->
+        <header class="text-center mb-10 pb-4 border-b-4 border-blue-600">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800">
+                Kisi Kisi Ujian Rekayasa Perangkat Lunak (RPL)
+            </h1>
+        </header>
+
+        <!-- CONTAINER UNTUK VERSI 1 -->
+        <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b border-gray-300 pb-2">
+            VERSI 1
+        </h2>
+        <main class="space-y-10">
+
+            <!-- V1 - JAWABAN SOAL NO. 1: SOFTWARE QUALITY ASSURANCE (SQA) -->
+            <div class="rounded-xl shadow-lg bg-white border border-blue-200">
+                <input type="checkbox" id="v1-jawaban-1" class="hidden accordion-input">
+                <label for="v1-jawaban-1" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-blue-600 text-white rounded-t-xl hover:bg-blue-700 transition duration-150">
+                    <span class="text-xl font-bold">Soal 1 : Permasalahan yang Harus Digali Tim SQA</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </label>
+                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
+                    <p class="text-sm italic mb-4">SKOR: 20</p>
+                    <h2 class="text-2xl font-semibold text-blue-800 mb-4">Esai: Dimensi Kualitas Fundamental dalam Tugas SQA</h2>
+                    
+                    <p class="leading-relaxed mb-4 indent-8 text-justify">
+                        <strong class="font-bold">Software Quality Assurance (SQA)</strong> atau Jaminan Kualitas Perangkat Lunak adalah fungsi krusial yang memastikan proses dan produk pengembangan perangkat lunak sesuai dengan standar kualitas yang telah ditetapkan. Tim SQA harus proaktif, tidak hanya menguji, tetapi juga menggali potensi masalah yang mungkin dialami pengguna. Dengan mengacu pada karakteristik kualitas perangkat lunak (seperti yang sering dibahas dalam ISO 9126), terdapat beberapa dimensi fundamental yang harus digali oleh tim SQA dalam melaksanakan tugasnya, yaitu:
+                    </p>
+
+                    <ol class="list-decimal list-inside space-y-4 ml-4">
+                        <li>
+                            <strong class="text-blue-700">Fungsionalitas (Functionality)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Apakah perangkat lunak secara akurat melakukan semua tugas yang dibutuhkan pengguna?</strong>
+                                <br>Penjelasan : Tim SQA harus memastikan setiap fitur, modul, dan operasi sesuai dengan spesifikasi kebutuhan yang didokumentasikan. Fokus utamanya adalah validitas, akurasi, dan keamanan fungsional. Jika gagal, pengguna akan mengalami masalah <strong class="font-semibold">ketidakmampuan sistem untuk menjalankan tugas inti</strong> atau output yang salah.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-blue-700">Keandalan (Reliability)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Seberapa sering perangkat lunak mengalami kegagalan (crash) dalam kondisi operasi normal?</strong>
+                                <br>Penjelasan : Keandalan mengukur kemampuan sistem untuk beroperasi tanpa error dalam jangka waktu tertentu. SQA harus menguji daya tahan dan pemulihan kesalahan. Jika keandalan rendah, pengguna akan menghadapi masalah <strong class="font-semibold">sistem sering hang atau crash, serta kehilangan data</strong> yang belum disimpan, menciptakan ketidakpercayaan terhadap sistem.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-blue-700">Kemudahan Penggunaan (Usability)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Seberapa mudah pengguna mempelajari, mengoperasikan, dan memahami antarmuka perangkat lunak?</strong>
+                                <br>Penjelasan : SQA harus memastikan antarmuka (user interface/UX) intuitif, alur kerja logis, dan pesan kesalahan yang mudah dipahami. Jika usability buruk, pengguna akan mengalami masalah <strong class="font-semibold">kebingungan navigasi, kesalahan input, dan peningkatan waktu yang dibutuhkan</strong> untuk menyelesaikan tugas, yang memerlukan biaya pelatihan dan dukungan yang lebih tinggi.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-blue-700">Kinerja (Performance)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Seberapa cepat perangkat lunak merespons input dan memproses data di bawah beban kerja yang diharapkan?</strong>
+                                <br>Penjelasan : SQA harus melakukan pengujian beban (*load testing*) dan kecepatan. Permasalahan yang digali adalah potensi <strong class="font-semibold">keterlambatan sistem (lag) atau timeout</strong> saat jumlah pengguna atau data meningkat. Kinerja yang buruk secara langsung mengurangi efisiensi kerja pengguna.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-blue-700">Keterawatan (Maintainability)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Seberapa mudah kode sumber diperbaiki dari bug atau dimodifikasi untuk pembaruan fitur di masa depan?</strong>
+                                <br>Penjelasan : Meskipun internal, maintainability berdampak pada pengguna. SQA harus memastikan kepatuhan terhadap standar pengkodean dan kualitas desain arsitektur. Jika maintainability rendah, pengguna akan menghadapi masalah <strong class="font-semibold">perbaikan bug yang sangat lambat dan pembaruan fitur yang tertunda</strong> karena kompleksitas kode.
+                            </p>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+
+            <!-- V1 - JAWABAN SOAL NO. 2: DOKUMENTASI PERANGKAT LUNAK -->
+            <div class="rounded-xl shadow-lg bg-white border border-green-200">
+                <input type="checkbox" id="v1-jawaban-2" class="hidden accordion-input">
+                <label for="v1-jawaban-2" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-green-600 text-white rounded-t-xl hover:bg-green-700 transition duration-150">
+                    <span class="text-xl font-bold">Soal 2 : Perbedaan Dokumentasi Fungsional dan Manual Pengenalan</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </label>
+                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
+                    <p class="text-sm italic mb-4">SKOR: 20</p>
+                    <h2 class="text-2xl font-semibold text-green-800 mb-4">Analisis Perbedaan Dokumentasi Produk Perangkat Lunak</h2>
+                    
+                    <p class="leading-relaxed mb-6 indent-8 text-justify">
+                        Dalam pengembangan perangkat lunak yang baik tentunya tidak akan lepas dari produk yang nantinya akan dikirim ke kostumer atau digunakan oleh user. Dokumentasi berfungsi sebagai jembatan komunikasi antara pengembang dan pengguna. Dua jenis dokumentasi yang seringkali memiliki target audiens dan tujuan yang berbeda adalah <strong class="font-bold">Dokumentasi Deskripsi Fungsi (Functional Description)</strong> dan <strong class="font-bold">Dokumentasi Petunjuk Pengenalan (Introductory Manual)</strong>. Berikut adalah analisis perbedaannya:
+                    </p>
+
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <!-- Kolom 1: Functional Description -->
+                        <div class="md:w-1/2 p-4 border-2 border-green-300 rounded-lg bg-green-50 shadow-md">
+                            <h3 class="text-xl font-bold text-green-700 border-b pb-2 mb-3">1. Dokumentasi Deskripsi Fungsi</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li class="text-justify">
+                                    <strong class="font-semibold">Tujuan Utama:</strong> Mendefinisikan secara detail <em class="italic">apa</em> yang dilakukan oleh perangkat lunak dari sudut pandang fungsional.
+                                </li>
+                                <li class="text-justify">
+                                    <strong class="font-semibold">Target Audiens:</strong> Manajer proyek, analis sistem, desainer, penguji (tester), dan terkadang klien.
+                                </li>
+                                <li class="text-justify">
+                                    <strong class="font-semibold">Isi Fokus:</strong> Berisi spesifikasi mendalam tentang input, proses, output, alur data, aturan bisnis, dan batasan sistem.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Kolom 2: Introductory Manual -->
+                        <div class="md:w-1/2 p-4 border-2 border-yellow-300 rounded-lg bg-yellow-50 shadow-md">
+                            <h3 class="text-xl font-bold text-yellow-700 border-b pb-2 mb-3">2. Dokumentasi Petunjuk Pengenalan</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li class="text-justify">
+                                    <strong class="font-semibold">Tujuan Utama:</strong> Melatih pengguna baru tentang <em class="italic">bagaimana</em> cara mulai menggunakan dan berinteraksi dengan perangkat lunak.
+                                </li>
+                                <li class="text-justify">
+                                    <strong class="font-semibold">Target Audiens:</strong> Pengguna akhir (end-user) dan pengguna baru.
+                                </li>
+                                <li class="text-justify">
+                                    <strong class="font-semibold">Isi Fokus:</strong> Berisi panduan langkah demi langkah (tutorial), quick start guide, dan panduan navigasi dasar.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="leading-relaxed mt-6 indent-8 text-justify">
+                        <strong class="font-bold">Kesimpulan:</strong> Perbedaan esensial terletak pada <strong class="font-semibold">tujuan</strong> dan <strong class="font-semibold">audiens</strong>. Deskripsi Fungsi adalah cetak biru teknis untuk pengembang (what it does), sedangkan Petunjuk Pengenalan adalah panduan praktis untuk pengguna (how to use it). Keduanya sama-sama penting, tetapi melayani fase dan pemangku kepentingan yang berbeda dalam siklus hidup perangkat lunak.
+                    </p>
+                </div>
+            </div>
+
+            <!-- V1 - JAWABAN SOAL NO. 3: USE CASE DIAGRAM -->
+            <div class="rounded-xl shadow-lg bg-white border border-red-200">
+                <input type="checkbox" id="v1-jawaban-3" class="hidden accordion-input">
+                <label for="v1-jawaban-3" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-red-600 text-white rounded-t-xl hover:bg-red-700 transition duration-150">
+                    <span class="text-xl font-bold">Soal 3 : Use Case Diagram Aplikasi Manajemen Knowledge</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </label>
+                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
+                    <p class="text-sm italic mb-4">SKOR: 30</p>
+                    <h2 class="text-2xl font-semibold text-red-800 mb-4">Pembuatan Use Case Diagram</h2>
+
+                    <p class="leading-relaxed mb-6 text-justify">
+                        Berikut adalah pemodelan <strong class="font-semibold">Use Case Diagram</strong> untuk aplikasi manajemen <em class="italic">knowledge</em> yang melibatkan dua aktor utama, yaitu <strong class="font-semibold">Pengguna (User)</strong> dan <strong class="font-semibold">Administrator (Admin)</strong>.
+                    </p>
+
+                    <!-- Area Diagram Sederhana -->
+                    <div class="diagram-container use-case-container mx-auto max-w-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Boundary: Aplikasi Manajemen Knowledge</h3>
+                        
+                        <div class="flex justify-between w-full mb-4">
+                            <!-- Aktor 1: Pengguna -->
+                            <div class="actor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-red-600 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M12 21v-2c-2.76 0-5-2.24-5-5h10c0 2.76-2.24 5-5 5v2"></path></svg>
+                                <span class="block font-semibold text-red-600">Pengguna</span>
+                            </div>
+                            <!-- Aktor 2: Administrator -->
+                            <div class="actor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-red-600 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l-5 5h10zM12 22l5-5H7zM2 12l5-5v10zM22 12l-5 5V7z"></path></svg>
+                                <span class="block font-semibold text-red-600">Administrator</span>
+                            </div>
+                        </div>
+
+                        <div class="border-2 border-dashed border-gray-400 p-4 rounded-lg w-full">
+                            <h4 class="text-lg font-semibold text-gray-600 mb-2">Use Cases</h4>
+                            <div class="flex flex-col items-center">
+                                <div class="use-case">Preview File</div>
+                                <div class="use-case">Note File</div>
+                                <div class="use-case">Pencarian File</div>
+                                <div class="use-case">Download File</div>
+                                
+                                <div class="w-full text-center my-3"><span class="text-sm font-semibold text-gray-500">--- Khusus Admin ---</span></div>
+
+                                <div class="use-case bg-pink-100 border-pink-400 text-pink-700">Upload Data</div>
+                                <div class="use-case bg-pink-100 border-pink-400 text-pink-700">Edit Data</div>
+                                <div class="use-case bg-pink-100 border-pink-400 text-pink-700">Edit Folder</div>
+                                <div class="use-case bg-pink-100 border-pink-400 text-pink-700">Edit Kategori</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-red-800 mt-6 mb-2">Daftar Use Case:</h3>
+                    <ul class="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                        <li><strong class="font-semibold">Preview File :</strong> Melihat isi dokumen/file. (Aktor : Pengguna, Admin)</li>
+                        <li><strong class="font-semibold">Note File :</strong> Menambahkan catatan pada file. (Aktor : Pengguna, Admin)</li>
+                        <li><strong class="font-semibold">Pencarian File :</strong> Mencari file. (Aktor : Pengguna, Admin)</li>
+                        <li><strong class="font-semibold">Download File :</strong> Mengunduh file. (Aktor : Pengguna, Admin)</li>
+                        <li><strong class="font-semibold">Upload Data :</strong> Mengunggah file/dokumen baru. (Aktor : Administrator)</li>
+                        <li><strong class="font-semibold">Edit Data :</strong> Memodifikasi konten file yang sudah ada. (Aktor : Administrator)</li>
+                        <li><strong class="font-semibold">Edit Folder :</strong> Mengatur struktur folder. (Aktor : Administrator)</li>
+                        <li><strong class="font-semibold">Edit Kategori :</strong> Memodifikasi kategori konten. (Aktor : Administrator)</li>
+                    </ul>
+
+                </div>
+            </div>
+            
+            <!-- V1 - JAWABAN SOAL NO. 4: DFD LEVEL 1 PEMINJAMAN KENDARAAN -->
+            <div class="rounded-xl shadow-lg bg-white border border-indigo-200">
+                <input type="checkbox" id="v1-jawaban-4" class="hidden accordion-input">
+                <label for="v1-jawaban-4" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-indigo-600 text-white rounded-t-xl hover:bg-indigo-700 transition duration-150">
+                    <span class="text-xl font-bold">Soal 4 : DFD Level 1 Sistem Peminjaman Kendaraan</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </label>
+                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
+                    <p class="text-sm italic mb-4">SKOR: 30</p>
+                    <h2 class="text-2xl font-semibold text-indigo-800 mb-4">Diagram Alir Data (DFD) Level 1</h2>
+
+                    <p class="leading-relaxed mb-6 text-justify">
+                        DFD Level 1 ini menggambarkan tiga proses utama di dalam sistem Peminjaman Kendaraan : Peminjaman (1.0), Pengembalian (2.0), dan Pelaporan (3.0), serta interaksinya dengan Entitas Eksternal (Customer, Manajer) dan Data Store (DS1, DS2).
+                    </p>
+
+                    <!-- DFD Visualisasi Textual Sederhana (Hanya representasi struktur) -->
+                    <div class="diagram-container border-indigo-400 p-4 bg-indigo-50 mb-6 space-y-6">
+                        <h3 class="text-lg font-bold text-indigo-700 mb-4 border-b border-indigo-300 pb-2">Struktur DFD Level 1</h3>
+
+                        <div class="grid grid-cols-1 gap-4">
+                            <!-- Proses 1.0 Peminjaman Kendaraan -->
+                            <div class="p-3 bg-white rounded-lg shadow">
+                                <div class="dfd-process-box mx-auto w-fit mb-2">1.0 Peminjaman Kendaraan</div>
+                                <div class="text-sm">Aliran Data : Permintaan Peminjaman (dari Customer), Tagihan Peminjaman (ke Customer), Cek/Update Status (ke DS1 Kendaraan), Catat Peminjaman (ke DS2 Peminjaman).</div>
+                            </div>
+
+                            <!-- Proses 2.0 Pengembalian Kendaraan -->
+                            <div class="p-3 bg-white rounded-lg shadow">
+                                <div class="dfd-process-box mx-auto w-fit mb-2 bg-teal-100 border-teal-500">2.0 Pengembalian Kendaraan</div>
+                                <div class="text-sm">Aliran Data : Info Pengembalian (dari Customer), Bukti Pengembalian (ke Customer), Update Status (ke DS1 Kendaraan), Update Status (ke DS2 Peminjaman).</div>
+                            </div>
+                            
+                            <!-- Proses 3.0 Pembuatan Laporan -->
+                            <div class="p-3 bg-white rounded-lg shadow">
+                                <div class="dfd-process-box mx-auto w-fit mb-2 bg-yellow-100 border-yellow-500 text-gray-800">3.0 Pembuatan Laporan</div>
+                                <div class="text-sm">Aliran Data : Permintaan Laporan (dari Manajer), Data Peminjaman (dari DS2 Peminjaman), Laporan Peminjaman (ke Manajer).</div>
+                            </div>
+
+                            <!-- Data Stores -->
+                            <div class="flex justify-around mt-4">
+                                <div class="dfd-datastore-box w-1/3">DS1 Kendaraan</div>
+                                <div class="dfd-datastore-box w-1/3 ml-4">DS2 Peminjaman</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-indigo-800 mt-6 mb-3">Tabel Penjelasan Komponen</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-lg shadow-sm">
+                            <thead class="bg-indigo-100">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-bold text-indigo-700 uppercase tracking-wider">Komponen</th>
+                                    <th class="px-6 py-3 text-left text-xs font-bold text-indigo-700 uppercase tracking-wider">Deskripsi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="bg-gray-50"><td colspan="2" class="px-6 py-2 text-sm font-semibold text-gray-900">Entitas Eksternal</td></tr>
+                                <tr><td class="px-6 py-2 text-sm font-medium">Customer, Manajer</td><td class="px-6 py-2 text-sm text-justify">Pihak luar yang berinteraksi langsung dengan sistem untuk pinjam/kembali atau meminta laporan.</td></tr>
+                                <tr class="bg-gray-50"><td colspan="2" class="px-6 py-2 text-sm font-semibold text-gray-900">Proses (Level 1)</td></tr>
+                                <tr><td class="px-6 py-2 text-sm font-medium">1.0, 2.0, 3.0</td><td class="px-6 py-2 text-sm text-justify">Fungsi utama sistem : Peminjaman, Pengembalian, dan Pembuatan Laporan.</td></tr>
+                                <tr class="bg-gray-50"><td colspan="2" class="px-6 py-2 text-sm font-semibold text-gray-900">Data Store</td></tr>
+                                <tr><td class="px-6 py-2 text-sm font-medium">DS1 Kendaraan, DS2 Peminjaman</td><td class="px-6 py-2 text-sm text-justify">Penyimpanan data status ketersediaan kendaraan dan data historis/status peminjaman.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Garis Pemisah dan Header untuk Versi 2 -->
+        <hr class="my-12 border-4 border-gray-400 rounded-full">
+        <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b border-gray-300 pb-2">
+        VERSI 2
+        </h2>
+
+        <!-- CONTAINER UNTUK VERSI 2 -->
+        <main class="space-y-10">
+            
+            <!-- V2 - JAWABAN SOAL NO. 1: SOFTWARE QUALITY ASSURANCE (SQA) (COPY DARI V1) -->
+            <div class="rounded-xl shadow-lg bg-white border border-violet-200">
+                <input type="checkbox" id="v2-jawaban-1" class="hidden accordion-input">
+                <label for="v2-jawaban-1" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-violet-600 text-white rounded-t-xl hover:bg-violet-700 transition duration-150">
+                    <span class="text-xl font-bold">Soal 1 : Permasalahan yang Harus Digali Tim SQA</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </label>
+                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
+                    <p class="text-sm italic mb-4">SKOR: 20</p>
+                    <h2 class="text-2xl font-semibold text-violet-800 mb-4">Dimensi Kualitas Fundamental dalam Tugas SQA</h2>
+                    
+                    <p class="leading-relaxed mb-4 indent-8 text-justify">
+                        <strong class="font-bold">Software Quality Assurance (SQA)</strong> atau Jaminan Kualitas Perangkat Lunak adalah fungsi krusial yang memastikan proses dan produk pengembangan perangkat lunak sesuai dengan standar kualitas yang telah ditetapkan. Tim SQA harus proaktif, tidak hanya menguji, tetapi juga menggali potensi masalah yang mungkin dialami pengguna. Dengan mengacu pada karakteristik kualitas perangkat lunak (seperti yang sering dibahas dalam ISO 9126), terdapat beberapa dimensi fundamental yang harus digali oleh tim SQA dalam melaksanakan tugasnya, yaitu:
+                    </p>
+
+                    <ol class="list-decimal list-inside space-y-4 ml-4">
+                        <li>
+                            <strong class="text-violet-700">Fungsionalitas (Functionality)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Apakah perangkat lunak secara akurat melakukan semua tugas yang dibutuhkan pengguna?</strong>
+                                <br>Penjelasan : Tim SQA harus memastikan setiap fitur, modul, dan operasi sesuai dengan spesifikasi kebutuhan yang didokumentasikan. Fokus utamanya adalah validitas, akurasi, dan keamanan fungsional. Jika gagal, pengguna akan mengalami masalah <strong class="font-semibold">ketidakmampuan sistem untuk menjalankan tugas inti</strong> atau output yang salah.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-violet-700">Keandalan (Reliability)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Seberapa sering perangkat lunak mengalami kegagalan (crash) dalam kondisi operasi normal?</strong>
+                                <br>Penjelasan : Keandalan mengukur kemampuan sistem untuk beroperasi tanpa error dalam jangka waktu tertentu. SQA harus menguji daya tahan dan pemulihan kesalahan. Jika keandalan rendah, pengguna akan menghadapi masalah <strong class="font-semibold">sistem sering hang atau crash, serta kehilangan data</strong> yang belum disimpan, menciptakan ketidakpercayaan terhadap sistem.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-violet-700">Kemudahan Penggunaan (Usability)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Seberapa mudah pengguna mempelajari, mengoperasikan, dan memahami antarmuka perangkat lunak?</strong>
+                                <br>Penjelasan : SQA harus memastikan antarmuka (user interface/UX) intuitif, alur kerja logis, dan pesan kesalahan yang mudah dipahami. Jika usability buruk, pengguna akan mengalami masalah <strong class="font-semibold">kebingungan navigasi, kesalahan input, dan peningkatan waktu yang dibutuhkan</strong> untuk menyelesaikan tugas, yang memerlukan biaya pelatihan dan dukungan yang lebih tinggi.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-violet-700">Kinerja (Performance)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Seberapa cepat perangkat lunak merespons input dan memproses data di bawah beban kerja yang diharapkan?</strong>
+                                <br>Penjelasan : SQA harus melakukan pengujian beban (load testing) dan kecepatan. Permasalahan yang digali adalah potensi <strong class="font-semibold">keterlambatan sistem (lag) atau timeout</strong> saat jumlah pengguna atau data meningkat. Kinerja yang buruk secara langsung mengurangi efisiensi kerja pengguna.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-violet-700">Keterawatan (Maintainability)</strong>
+                            <p class="ml-4 text-justify">
+                                Permasalahan yang digali : <strong class="italic">Seberapa mudah kode sumber diperbaiki dari bug atau dimodifikasi untuk pembaruan fitur di masa depan?</strong>
+                                <br>Penjelasan : Meskipun internal, maintainability berdampak pada pengguna. SQA harus memastikan kepatuhan terhadap standar pengkodean dan kualitas desain arsitektur. Jika maintainability rendah, pengguna akan menghadapi masalah <strong class="font-semibold">perbaikan bug yang sangat lambat dan pembaruan fitur yang tertunda</strong> karena kompleksitas kode.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- V2 - JAWABAN SOAL NO. 2: STANDARISASI DOKUMENTASI (REVISI) -->
+            <div class="rounded-xl shadow-lg bg-white border border-orange-200">
+                <input type="checkbox" id="v2-jawaban-2" class="hidden accordion-input" checked>
+                <label for="v2-jawaban-2" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-orange-600 text-white rounded-t-xl hover:bg-orange-700 transition duration-150">
+                    <span class="text-xl font-bold">Soal 2 : Pentingnya Standarisasi Dokumentasi Perangkat Lunak</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </label>
+                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
+                    <p class="text-sm italic mb-4">SKOR: 20</p>
+                    <h2 class="text-2xl font-semibold text-orange-800 mb-4">Analisis Pentingnya Standarisasi Dokumentasi</h2>
+                    
+                    <p class="leading-relaxed mb-6 indent-8 text-justify">
+                        Standarisasi dokumentasi perangkat lunak merujuk pada penetapan aturan, format, dan struktur yang konsisten untuk semua dokumen yang dihasilkan selama siklus hidup pengembangan (SDLC). Pentingnya standarisasi ini dapat dianalisis dari berbagai aspek kunci dalam proses rekayasa perangkat lunak, antara lain :
+                    </p>
+
+                    <ol class="list-decimal list-inside space-y-4 ml-4">
+                        <li>
+                            <strong class="text-orange-700">Konsistensi dan Kejelasan (Clarity and Consistency)</strong>
+                            <p class="ml-4 text-justify">
+                                Standar memastikan bahwa semua dokumenmulai dari spesifikasi persyaratan hingga manual pengguna menggunakan istilah, simbol, dan format yang sama. Hal ini menghilangkan ambiguitas, membuat dokumen lebih mudah dibaca, dan meminimalkan salah interpretasi oleh tim pengembang, penguji, maupun pengguna akhir.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-orange-700">Efisiensi Transfer Pengetahuan (Knowledge Transfer Efficiency)</strong>
+                            <p class="ml-4 text-justify">
+                                Dalam proyek jangka panjang, tim pengembang seringkali berganti-ganti (turnover). Dokumentasi yang terstandarisasi memungkinkan anggota tim baru atau tim pemeliharaan memahami arsitektur dan logika kode dengan cepat tanpa membuang waktu untuk menafsirkan gaya penulisan yang berbeda-beda.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-orange-700">Dukungan Pemeliharaan (Maintainability Support)</strong>
+                            <p class="ml-4 text-justify">
+                                Pemeliharaan (maintenance) adalah fase SDLC yang memakan biaya dan waktu terbesar. Standar dokumentasi, terutama yang berkaitan dengan desain dan kode (misalnya, komentar kode yang seragam), mempermudah proses identifikasi bug, implementasi perubahan, dan penambahan fitur baru, yang secara langsung mengurangi biaya pemeliharaan.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-orange-700">Kualitas dan Pengujian (Quality and Testing)</strong>
+                            <p class="ml-4 text-justify">
+                                Standarisasi dokumen persyaratan (SRS) menyediakan basis yang kokoh dan terukur untuk pengujian (testing). Penguji dapat membuat kasus uji (test cases) yang lebih akurat dan menyeluruh karena dokumen yang diacu bersifat konsisten, memastikan perangkat lunak memenuhi kriteria kualitas yang telah disepakati.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="text-orange-700">Kepatuhan dan Audit (Compliance and Auditing)</strong>
+                            <p class="ml-4 text-justify">
+                                Dalam industri yang diatur ketat (misalnya, kesehatan, keuangan), dokumentasi yang terstandarisasi (seringkali mengikuti standar internasional seperti ISO/IEC) sangat penting untuk audit dan kepatuhan hukum. Standar menunjukkan profesionalisme dan tanggung jawab dalam proses pengembangan.
+                            </p>
+                        </li>
+                    </ol>
+
+                    <p class="leading-relaxed mt-6 indent-8 text-justify">
+                        <strong class="font-bold">Kesimpulan:</strong> Tanpa standarisasi, dokumentasi akan menjadi kumpulan teks yang tidak terstruktur, sulit diakses, dan cepat usang. Standarisasi mengubah dokumentasi dari beban menjadi <strong class="font-semibold">aset proyek</strong> yang menjamin kualitas, efisiensi, dan kelangsungan hidup perangkat lunak dalam jangka panjang.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- V2 - JAWABAN SOAL NO. 3: ACTIVITY DIAGRAM MESIN TIKET (REVISI TAMPILAN) -->
+            <div class="rounded-xl shadow-lg bg-white border border-yellow-200">
+                <input type="checkbox" id="v2-jawaban-3" class="hidden accordion-input">
+                <label for="v2-jawaban-3" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-yellow-600 text-white rounded-t-xl hover:bg-yellow-700 transition duration-150">
+                    <span class="text-xl font-bold">Soal 3 : Activity Diagram Mesin Tiket Kereta</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </label>
+                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
+                    <p class="text-sm italic mb-4">SKOR: 30</p>
+                    <h2 class="text-2xl font-semibold text-yellow-800 mb-4">Pembuatan Activity Diagram</h2>
+
+                    <p class="leading-relaxed mb-6 text-justify">
+                        Activity Diagram ini memodelkan alur proses pembelian tiket kereta menggunakan mesin otomatis, melibatkan dua <em class="italic">swimlane</em>: <strong class="font-semibold">Penumpang</strong> dan <strong class="font-semibold">Mesin Tiket</strong>. Alur mencakup proses sukses hingga keputusan pembayaran.
+                    </p>
+                    
+                    <!-- Activity Diagram dengan Swimlane (Representasi Textual & Visual) -->
+                    <div class="diagram-container overflow-x-auto min-w-full">
+                        <div class="flex">
+                            <!-- Swimlane 1: Penumpang -->
+                            <div class="w-1/2 flex flex-col items-center">
+                                <div class="swimlane-header w-full bg-yellow-400 text-gray-900">PENUMPANG</div>
+                                <div class="swimlane-content w-full border-yellow-500">
+                                    <div class="activity-start mt-4"></div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-yellow-200">Memulai Sesi Order Pembelian</div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-yellow-200">Memilih Jadwal Perjalanan</div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-yellow-200">Memproses Pembayaran (Tunai / Debit)</div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-yellow-200">Menerima Tiket</div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-end"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Swimlane 2: Mesin Tiket -->
+                            <div class="w-1/2 flex flex-col items-center">
+                                <div class="swimlane-header w-full bg-yellow-400 text-gray-900 border-r-0">MESIN TIKET</div>
+                                <div class="swimlane-content w-full border-yellow-500 border-r-0">
+                                    <div class="activity-flow invisible mt-4"></div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-gray-200">Mengolah Info Jadwal Perjalanan</div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-gray-200">Memproses & Membuat Billing</div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-gray-200">Menampilkan Info Pembayaran</div>
+                                    <div class="activity-flow"></div>
+                                    <!-- Decision Node: Pembayaran -->
+                                    <div class="activity-decision relative"><span class="activity-decision-label">Pembayaran Selesai?</span></div>
+                                    
+                                    <!-- Flow Line (SUCCESS PATH) -->
+                                    <div class="flow-line h-4">
+                                        <span class="absolute top-0 right-1/2 translate-x-1/2 bg-yellow-50 px-1 italic text-gray-700 font-normal">[Ya]</span>
+                                    </div>
+
+                                    <div class="activity-step bg-gray-200">Memproses Tiket</div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-gray-200">Menyerahkan Tiket ke Penumpang</div>
+                                    <div class="activity-flow"></div>
+                                    <div class="activity-step bg-gray-200">Menampilkan Ucapan Terima Kasih</div>
+                                    <div class="activity-flow invisible"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-yellow-800 mt-6 mb-2">Alur Proses (Deskripsi Rinci)</h3>
+                    <ol class="list-decimal list-inside space-y-2 ml-4 text-gray-700">
+                        <li><strong class="font-semibold">Start & Order :</strong> Penumpang memulai sesi order, dan Mesin Tiket merespons dengan mengolah dan menampilkan jadwal perjalanan yang tersedia.</li>
+                        <li><strong class="font-semibold">Pilihan Jadwal & Billing :</strong> Penumpang memilih jadwal yang dikehendaki, Mesin Tiket memproses dan membuat billing, lalu menampilkan jumlah yang harus dibayar.</li>
+                        <li><strong class="font-semibold">Pembayaran :</strong> Penumpang memproses pembayaran (tunai atau debit).</li>
+                        <li><strong class="font-semibold">Keputusan Pembayaran :</strong> Mesin Tiket memverifikasi pembayaran.
+                            <ul class="list-disc list-inside ml-4 italic">
+                                <li>Jika Ya (Berhasil), proses berlanjut.</li>
+                                <li>(Jika Tidak/Gagal, secara umum alur akan kembali ke langkah Pembayaran atau membatalkan sesi.)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="font-semibold">Cetak Tiket:</strong> Mesin Tiket memproses (mencetak) tiket dan menyerahkannya ke Penumpang.</li>
+                        <li><strong class="font-semibold">Akhir:</strong> Mesin Tiket menampilkan ucapan terima kasih. Penumpang menerima tiket. Sesi selesai.</li>
+                    </ol>
+
+                </div>
+            </div>
+            
+            <!-- V2 - JAWABAN SOAL NO. 4: DFD LEVEL 0 & 1 PENERIMAAN SISWA BARU -->
+            <div class="rounded-xl shadow-lg bg-white border border-teal-200">
+                <input type="checkbox" id="v2-jawaban-4" class="hidden accordion-input">
+                <label for="v2-jawaban-4" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-teal-600 text-white rounded-t-xl hover:bg-teal-700 transition duration-150">
+                    <span class="text-xl font-bold">Soal 4 : DFD Level 0 & 1 Penerimaan Siswa Baru</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </label>
+                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
+                    <p class="text-sm italic mb-4">SKOR: 30</p>
+                    <h2 class="text-2xl font-semibold text-teal-800 mb-4">Diagram Alir Data (DFD) Level 0 & 1</h2>
+
+                    <!-- DFD Level 0 (Context Diagram) -->
+                    <h3 class="text-xl font-bold text-teal-700 mb-3">DFD Level 0 (Diagram Konteks)</h3>
+                    <div class="diagram-container p-6 flex flex-col items-center mb-6">
+                        <div class="dfd-entity-box">Calon Siswa</div>
+                        <div class="h-8 border-l border-dashed border-gray-400"></div>
+                        
+                        <div class="dfd-process-box w-2/3 max-w-sm bg-teal-200 border-teal-600">
+                            Sistem Penerimaan Siswa Baru
+                        </div>
+                        
+                        <div class="h-8 border-l border-dashed border-gray-400"></div>
+                        <div class="flex justify-around w-full max-w-md">
+                            <div class="dfd-entity-box bg-gray-200 border-gray-600">Bank</div>
+                            <div class="dfd-entity-box bg-gray-200 border-gray-600">Operator</div>
+                        </div>
+                    </div>
+                    <p class="text-sm italic mb-6 text-justify">
+                        Level 0 hanya menunjukkan satu proses tunggal (Sistem Penerimaan Siswa Baru) dan tiga entitas eksternal yang berinteraksi: Calon Siswa (input data), Bank (verifikasi pembayaran), dan Operator (output laporan).
+                    </p>
+
+                    <!-- DFD Level 1 -->
+                    <h3 class="text-xl font-bold text-teal-700 mb-3">DFD Level 1</h3>
+                    <p class="leading-relaxed mb-4 text-justify">
+                        DFD Level 1 memecah sistem menjadi proses-proses utama: 1.0 Pendaftaran, 2.0 Verifikasi Pembayaran, 3.0 Tes Seleksi, dan 4.0 Pembuatan Laporan.
+                    </p>
+
+                    <div class="diagram-container p-4 bg-teal-50 space-y-6">
+                        <!-- Struktur Proses -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="dfd-process-box">1.0 Pendaftaran</div>
+                            <div class="dfd-process-box">2.0 Verifikasi Pembayaran</div>
+                            <div class="dfd-process-box">3.0 Tes Seleksi</div>
+                            <div class="dfd-process-box">4.0 Pembuatan Laporan</div>
+                        </div>
+                        
+                        <!-- Struktur Data Stores -->
+                        <div class="flex justify-around gap-4 mt-4">
+                            <div class="dfd-datastore-box flex-1">DS1 Data Siswa</div>
+                            <div class="dfd-datastore-box flex-1">DS2 Data Pembayaran</div>
+                            <div class="dfd-datastore-box flex-1">DS3 Data Hasil Tes</div>
+                        </div>
+
+                        <h4 class="text-lg font-semibold text-teal-600 pt-4 border-t border-teal-300">Aliran Data Penting:</h4>
+                        <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                            <li>Calon Siswa mengirim Formulir Pendaftaran ke 1.0</li>
+                            <li>1.0 mencatat Data Siswa ke DS1</li>
+                            <li>Calon Siswa melakukan Pembayaran ke Bank</li>
+                            <li>Bank mengirimkan Bukti Pembayaran ke 2.0</li>
+                            <li>2.0 mencatat Data Pembayaran ke DS2</li>
+                            <li>Calon Siswa melakukan Tes Seleksi, hasilnya masuk ke 3.0</li>
+                            <li>3.0 mencatat Hasil Tes ke DS3</li>
+                            <li>Operator meminta Laporan ke 4.0</li>
+                            <li>4.0 mengakses DS1, DS2, DS3** untuk menghasilkan Laporan Siswa, Laporan Pembayaran, dan Laporan Hasil Tes (ke Operator).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Catatan Akhir Global -->
+        <div class="mt-10 pt-4 border-t border-gray-300 text-center text-sm text-gray-500">
+            <p>Dokumen ini menyajikan gabungan Jawaban Ujian Rekayasa Perangkat Lunak (RPL) dari dua versi soal, dirapikan dengan perataan rata kanan-kiri dan tampilan interaktif.</p>
+        </div>
+
+    </div>
+
+    <!-- Script Interaktivitas Accordion -->
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                
+                const checkbox = header.previousElementSibling;
+                const icon = header.querySelector('svg');
+                const willBeChecked = !checkbox.checked; 
+
+                // Tutup semua accordion yang sedang terbuka
+                document.querySelectorAll('.accordion-input').forEach(otherCheckbox => {
+                    if (otherCheckbox !== checkbox && otherCheckbox.checked) {
+                        otherCheckbox.checked = false;
+                        const otherIcon = otherCheckbox.nextElementSibling.querySelector('svg');
+                        if (otherIcon) {
+                           otherIcon.style.transform = 'rotate(0deg)'; 
+                        }
+                    }
+                });
+
+                // Lakukan toggle status checkbox yang diklik
+                checkbox.checked = willBeChecked;
+
+                // Perbarui rotasi ikon panah
+                if (icon) {
+                    icon.style.transform = willBeChecked ? 'rotate(180deg)' : 'rotate(0deg)';
+                }
+            });
+            
+            // Inisialisasi rotasi ikon saat halaman dimuat
+            const checkbox = header.previousElementSibling;
+            const icon = header.querySelector('svg');
+            if (checkbox.checked && icon) {
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    </script>
+</body>
+</html>
