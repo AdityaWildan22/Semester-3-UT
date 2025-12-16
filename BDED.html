@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Modul Belajar di Era Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Konfigurasi Dasar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7f9fc; /* Latar belakang sangat lembut */
+            margin: 0;
+            padding: 30px 0;
+        }
+
+        .quiz-container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Bayangan lebih halus */
+        }
+
+        /* Header */
+        h2 {
+            text-align: center;
+            color: #1a202c; /* Teks gelap modern */
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #4c51bf; /* Warna ungu yang elegan */
+            font-weight: 700;
+        }
+
+        /* Kotak Pertanyaan */
+        .question {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0; /* Garis tepi lembut */
+            transition: all 0.3s ease;
+        }
+
+        .question p {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        /* Pilihan Jawaban */
+        .answers label {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid #edf2f7;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .answers label:hover {
+            background-color: #f7fafc;
+            border-color: #4c51bf;
+        }
+
+        .answers input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.3);
+            accent-color: #4c51bf; /* Warna radio button ungu */
+        }
+
+        /* Tombol - Lebih Elegan */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            padding: 14px 35px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(76, 81, 191, 0.5); /* Focus ring ungu */
+        }
+
+        #submitBtn {
+            background-color: #4c51bf; /* Ungu utama */
+            color: white;
+        }
+
+        #submitBtn:hover {
+            background-color: #5a62c7;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(76, 81, 191, 0.3);
+        }
+
+        #resetBtn {
+            background-color: #a0aec0; /* Abu-abu sekunder */
+            color: white;
+            display: none;
+        }
+
+        #resetBtn:hover {
+            background-color: #718096;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(160, 174, 192, 0.3);
+        }
+
+        /* Hasil */
+        #result {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 35px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #e6fffa; /* Biru kehijauan lembut */
+            color: #2c5282;
+            border: 2px solid #b2f5ea;
+        }
+
+        /* Kelas Highlight */
+        .correct-answer {
+            background-color: #f0fff4; /* Hijau muda pucat untuk soal benar */
+            border-left: 6px solid #48bb78; /* Garis hijau kuat */
+        }
+
+        .wrong-question {
+            background-color: #fff5f5; /* Merah muda pucat untuk soal salah */
+            border-left: 6px solid #f56565; /* Garis merah kuat */
+        }
+
+        /* Highlight Jawaban Benar (Kunci) */
+        .answers .correct-key {
+            background-color: #c6f6d5 !important; /* Hijau yang terlihat jelas */
+            font-weight: 700;
+            color: #276749;
+            border: 1px solid #48bb78;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>Kuis Pilihan Ganda: Belajar di Era Digital (50 Soal)</h2>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+        <p>1. Apa salah satu karakteristik utama pekerjaan di Era Digital yang menuntut adaptasi cepat?</p>
+        <div class="answers">
+            <label><input type="radio" name="q1" value="A"> A. Berfokus pada tugas manual.</label>
+            <label><input type="radio" name="q1" value="B"> B. Membutuhkan stabilitas karir jangka panjang.</label>
+            <label><input type="radio" name="q1" value="C"> C. Perubahan cepat dan pekerjaan berbasis pengetahuan.</label>
+            <label><input type="radio" name="q1" value="D"> D. Memerlukan gelar akademis tunggal.</label>
+        </div>
+    </div>
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+        <p>2. Keterampilan yang paling dibutuhkan dalam Pendidikan Tinggi di Era Digital adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q2" value="A"> A. Menghafal fakta.</label>
+            <label><input type="radio" name="q2" value="B"> B. Keterampilan memecahkan masalah kompleks dan berpikir kritis.</label>
+            <label><input type="radio" name="q2" value="C"> C. Menulis surat formal.</label>
+            <label><input type="radio" name="q2" value="D"> D. Menggunakan mesin tik.</label>
+        </div>
+    </div>
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+        <p>3. Apa yang dimaksud dengan Literasi Digital?</p>
+        <div class="answers">
+            <label><input type="radio" name="q3" value="A"> A. Kemampuan membaca buku cetak.</label>
+            <label><input type="radio" name="q3" value="B"> B. Kemampuan menggunakan komputer saja.</label>
+            <label><input type="radio" name="q3" value="C"> C. Kemampuan memproduksi media digital.</label>
+            <label><input type="radio" name="q3" value="D"> D. Kemampuan untuk mengakses, memahami, membuat, dan mengevaluasi informasi dari berbagai sumber digital.</label>
+        </div>
+    </div>
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+        <p>4. Pembelajaran Digital Alternatif seringkali mengacu pada penggunaan apa untuk mendukung proses belajar mengajar?</p>
+        <div class="answers">
+            <label><input type="radio" name="q4" value="A"> A. Papan tulis kapur.</label>
+            <label><input type="radio" name="q4" value="B"> B. Buku teks konvensional.</label>
+            <label><input type="radio" name="q4" value="C"> C. Teknologi digital dan internet.</label>
+            <label><input type="radio" name="q4" value="D"> D. Kuliah tatap muka saja.</label>
+        </div>
+    </div>
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+        <p>5. Salah satu kriteria utama dalam Mengevaluasi Materi Pembelajaran Terbuka (OER) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q5" value="A"> A. Biaya yang mahal.</label>
+            <label><input type="radio" name="q5" value="B"> B. Hanya tersedia dalam format cetak.</label>
+            <label><input type="radio" name="q5" value="C"> C. Relevansi, Akurasi, dan Otoritas sumber.</label>
+            <label><input type="radio" name="q5" value="D"> D. Jumlah halaman yang banyak.</label>
+        </div>
+    </div>
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+        <p>6. Teknik membaca efektif yang melibatkan pemeriksaan cepat terhadap materi untuk mendapatkan gambaran umum adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q6" value="A"> A. Deep reading (Membaca mendalam).</label>
+            <label><input type="radio" name="q6" value="B"> B. Skimming dan Scanning.</label>
+            <label><input type="radio" name="q6" value="C"> C. Menghafal.</label>
+            <label><input type="radio" name="q6" value="D"> D. Menulis ulang seluruh bab.</label>
+        </div>
+    </div>
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+        <p>7. Apa tujuan utama dari Menulis Refleksi dalam proses pembelajaran?</p>
+        <div class="answers">
+            <label><input type="radio" name="q7" value="A"> A. Mendapatkan nilai sempurna.</label>
+            <label><input type="radio" name="q7" value="B"> B. Mencatat semua yang dikatakan dosen.</label>
+            <label><input type="radio" name="q7" value="C"> C. Menganalisis dan mengevaluasi pengalaman belajar sendiri.</label>
+            <label><input type="radio" name="q7" value="D"> D. Menyalin materi dari internet.</label>
+        </div>
+    </div>
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+        <p>8. Media Massa tradisional umumnya meliputi...</p>
+        <div class="answers">
+            <label><input type="radio" name="q8" value="A"> A. Media sosial dan blog.</label>
+            <label><input type="radio" name="q8" value="B"> B. Surat kabar, radio, dan televisi.</label>
+            <label><input type="radio" name="q8" value="C"> C. Email dan pesan instan.</label>
+            <label><input type="radio" name="q8" value="D"> D. Podcast eksklusif.</label>
+        </div>
+    </div>
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+        <p>9. Literasi Media membantu individu untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q9" value="A"> A. Mengkonsumsi media tanpa berpikir kritis.</label>
+            <label><input type="radio" name="q9" value="B"> B. Mengakses, menganalisis, mengevaluasi, dan memproduksi media dalam berbagai bentuk.</label>
+            <label><input type="radio" name="q9" value="C"> C. Hanya menonton televisi.</label>
+            <label><input type="radio" name="q9" value="D"> D. Percaya semua informasi dari pers tanpa verifikasi.</label>
+        </div>
+    </div>
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+        <p>10. Salah satu tantangan utama Media Massa Digital dibandingkan Media Tradisional adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q10" value="A"> A. Kurangnya kecepatan penyebaran informasi.</label>
+            <label><input type="radio" name="q10" value="B"> B. Munculnya *fake news* dan misinformasi.</label>
+            <label><input type="radio" name="q10" value="C"> C. Biaya produksi yang sangat tinggi.</label>
+            <label><input type="radio" name="q10" value="D"> D. Keterbatasan interaksi dengan pembaca.</label>
+        </div>
+    </div>
+    <!-- Question 11 -->
+    <div class="question" id="q11">
+        <p>11. Kemampuan untuk menggunakan perangkat lunak, aplikasi, dan platform secara efisien disebut...</p>
+        <div class="answers">
+            <label><input type="radio" name="q11" value="A"> A. Keterampilan Digital.</label>
+            <label><input type="radio" name="q11" value="B"> B. Literasi Membaca.</label>
+            <label><input type="radio" name="q11" value="C"> C. Keterampilan Fisik.</label>
+            <label><input type="radio" name="q11" value="D"> D. Literasi Media.</label>
+        </div>
+    </div>
+    <!-- Question 12 -->
+    <div class="question" id="q12">
+        <p>12. Model Pendidikan Tinggi di Era Digital yang memungkinkan mahasiswa mengambil kursus dari universitas mana pun di dunia dikenal sebagai...</p>
+        <div class="answers">
+            <label><input type="radio" name="q12" value="A"> A. Pembelajaran Terbuka Global.</label>
+            <label><input type="radio" name="q12" value="B"> B. Kuliah Tertutup Lokal.</label>
+            <label><input type="radio" name="q12" value="C"> C. Pendidikan Klasik.</label>
+            <label><input type="radio" name="q12" value="D"> D. Seminar Tatap Muka.</label>
+        </div>
+    </div>
+    <!-- Question 13 -->
+    <div class="question" id="q13">
+        <p>13. Istilah yang menggambarkan warga negara yang menggunakan teknologi informasi untuk berpartisipasi dalam masyarakat dan politik adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q13" value="A"> A. Netizen Pasif.</label>
+            <label><input type="radio" name="q13" value="B"> B. Digital Citizenship.</label>
+            <label><input type="radio" name="q13" value="C"> C. Analisis Data.</label>
+            <label><input type="radio" name="q13" value="D"> D. Jurnalistik Cetak.</label>
+        </div>
+    </div>
+    <!-- Question 14 -->
+    <div class="question" id="q14">
+        <p>14. Apa yang membedakan Jurnalisme Warga (Citizen Jurnalism) dari Jurnalisme profesional?</p>
+        <div class="answers">
+            <label><input type="radio" name="q14" value="A"> A. Membutuhkan izin resmi pemerintah.</label>
+            <label><input type="radio" name="q14" value="B"> B. Dilakukan oleh masyarakat umum tanpa pelatihan formal.</label>
+            <label><input type="radio" name="q14" value="C"> C. Hanya fokus pada berita internasional.</label>
+            <label><input type="radio" name="q14" value="D"> D. Hanya menggunakan kamera video mahal.</label>
+        </div>
+    </div>
+    <!-- Question 15 -->
+    <div class="question" id="q15">
+        <p>15. Dalam konteks Pembelajaran Digital, MOOCs adalah singkatan dari...</p>
+        <div class="answers">
+            <label><input type="radio" name="q15" value="A"> A. Massive Open Online Classes.</label>
+            <label><input type="radio" name="q15" value="B"> B. Massive Open Online Courses.</label>
+            <label><input type="radio" name="q15" value="C"> C. Modern Only Offline Courses.</label>
+            <label><input type="radio" name="q15" value="D"> D. Mobile Open-source Online Curriculum.</label>
+        </div>
+    </div>
+    <!-- Question 16 -->
+    <div class="question" id="q16">
+        <p>16. Saat Mencari Materi Pembelajaran Terbuka, mengapa lisensi menjadi hal yang penting untuk diperhatikan?</p>
+        <div class="answers">
+            <label><input type="radio" name="q16" value="A"> A. Menentukan harga materi.</label>
+            <label><input type="radio" name="q16" value="B"> B. Menunjukkan popularitas materi.</label>
+            <label><input type="radio" name="q16" value="C"> C. Menentukan bagaimana materi dapat digunakan, dimodifikasi, dan didistribusikan.</label>
+            <label><input type="radio" name="q16" value="D"> D. Menghitung jumlah halaman.</label>
+        </div>
+    </div>
+    <!-- Question 17 -->
+    <div class="question" id="q17">
+        <p>17. Dalam teknik mencatat, metode Cornell membagi halaman catatan menjadi berapa bagian utama?</p>
+        <div class="answers">
+            <label><input type="radio" name="q17" value="A"> A. Tiga (kolom isyarat, catatan, dan ringkasan).</label>
+            <label><input type="radio" name="q17" value="B"> B. Dua (kiri dan kanan).</label>
+            <label><input type="radio" name="q17" value="C"> C. Empat (atas, bawah, kiri, dan kanan).</label>
+            <label><input type="radio" name="q17" value="D"> D. Satu (teks penuh).</label>
+        </div>
+    </div>
+    <!-- Question 18 -->
+    <div class="question" id="q18">
+        <p>18. Kemampuan yang berfokus pada pemahaman tentang cara kerja media, siapa yang memilikinya, dan bagaimana media memengaruhi audiensnya disebut...</p>
+        <div class="answers">
+            <label><input type="radio" name="q18" value="A"> A. Literasi Media.</label>
+            <label><input type="radio" name="q18" value="B"> B. Literasi Numerik.</label>
+            <label><input type="radio" name="q18" value="C"> C. Literasi Keuangan.</label>
+            <label><input type="radio" name="q18" value="D"> D. Literasi Bahasa.</label>
+        </div>
+    </div>
+    <!-- Question 19 -->
+    <div class="question" id="q19">
+        <p>19. Proses "UpStream" dalam Literasi Informasi merujuk pada...</p>
+        <div class="answers">
+            <label><input type="radio" name="q19" value="A"> A. Hanya membaca berita di permukaan.</label>
+            <label><input type="radio" name="q19" value="B"> B. Menyelidiki sumber asli informasi sebelum dibagikan.</label>
+            <label><input type="radio" name="q19" value="C"> C. Mengalirkan air ke hulu.</label>
+            <label><input type="radio" name="q19" value="D"> D. Menggunakan media sosial sebanyak mungkin.</label>
+        </div>
+    </div>
+    <!-- Question 20 -->
+    <div class="question" id="q20">
+        <p>20. "Fake News" paling baik didefinisikan sebagai...</p>
+        <div class="answers">
+            <label><input type="radio" name="q20" value="A"> A. Informasi yang sengaja salah atau menyesatkan, disajikan sebagai berita.</label>
+            <label><input type="radio" name="q20" value="B"> B. Berita yang tidak disukai oleh pembaca.</label>
+            <label><input type="radio" name="q20" value="C"> C. Opini pribadi seorang jurnalis.</label>
+            <label><input type="radio" name="q20" value="D"> D. Laporan cuaca yang salah.</label>
+        </div>
+    </div>
+    <!-- Question 21 -->
+    <div class="question" id="q21">
+        <p>21. Di Era Digital, peran dosen berubah dari penyampai informasi menjadi...</p>
+        <div class="answers">
+            <label><input type="radio" name="q21" value="A"> A. Fasilitator dan kurator pengetahuan.</label>
+            <label><input type="radio" name="q21" value="B"> B. Penjaga gerbang perpustakaan.</label>
+            <label><input type="radio" name="q21" value="C"> C. Pengguna papan tulis saja.</label>
+            <label><input type="radio" name="q21" value="D"> D. Penulis buku teks tunggal.</label>
+        </div>
+    </div>
+    <!-- Question 22 -->
+    <div class="question" id="q22">
+        <p>22. Istilah "Big Data" dalam konteks pekerjaan Era Digital paling sering berkaitan dengan...</p>
+        <div class="answers">
+            <label><input type="radio" name="q22" value="A"> A. Ukuran perusahaan yang besar.</label>
+            <label><input type="radio" name="q22" value="B"> B. Volume data yang sangat besar yang dianalisis untuk wawasan.</label>
+            <label><input type="radio" name="q22" value="C"> C. Komputer dengan layar besar.</label>
+            <label><input type="radio" name="q22" value="D"> D. Dokumen cetak yang tebal.</label>
+        </div>
+    </div>
+    <!-- Question 23 -->
+    <div class="question" id="q23">
+        <p>23. Pembelajaran yang terjadi secara sinkron (waktu nyata) dan asinkron (tidak harus pada waktu yang sama) merupakan karakteristik dari...</p>
+        <div class="answers">
+            <label><input type="radio" name="q23" value="A"> A. Pembelajaran Campuran (Blended Learning).</label>
+            <label><input type="radio" name="q23" value="B"> B. Kuliah Monolog.</label>
+            <label><input type="radio" name="q23" value="C"> C. Latihan Fisik.</label>
+            <label><input type="radio" name="q23" value="D"> D. Ujian Akhir Semester.</label>
+        </div>
+    </div>
+    <!-- Question 24 -->
+    <div class="question" id="q24">
+        <p>24. Apa yang dimaksud dengan Akurasi dalam mengevaluasi materi pembelajaran?</p>
+        <div class="answers">
+            <label><input type="radio" name="q24" value="A"> A. Seberapa menarik materi tersebut.</label>
+            <label><input type="radio" name="q24" value="B"> B. Biaya untuk mengakses materi.</label>
+            <label><input type="radio" name="q24" value="C"> C. Keandalan dan kebenaran konten yang disajikan.</label>
+            <label><input type="radio" name="q24" value="D"> D. Jumlah gambar yang ada.</label>
+        </div>
+    </div>
+    <!-- Question 25 -->
+    <div class="question" id="q25">
+        <p>25. Dalam model membaca efektif, langkah pertama yang harus dilakukan setelah membaca teks adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q25" value="A"> A. Merangkum/Mencatat poin-poin penting.</label>
+            <label><input type="radio" name="q25" value="B"> B. Tidur siang.</label>
+            <label><input type="radio" name="q25" value="C"> C. Langsung mengerjakan ujian.</label>
+            <label><input type="radio" name="q25" value="D"> D. Menutup buku.</label>
+        </div>
+    </div>
+    <!-- Question 26 -->
+    <div class="question" id="q26">
+        <p>26. Kualitas refleksi yang baik ditandai dengan...</p>
+        <div class="answers">
+            <label><input type="radio" name="q26" value="A"> A. Analisis yang mendalam dan pemikiran kritis terhadap pengalaman.</label>
+            <label><input type="radio" name="q26" value="B"> B. Hanya deskripsi singkat tentang suatu peristiwa.</label>
+            <label><input type="radio" name="q26" value="C"> C. Meniru refleksi orang lain.</label>
+            <label><input type="radio" name="q26" value="D"> D. Tidak mencantumkan tanggal.</label>
+        </div>
+    </div>
+    <!-- Question 27 -->
+    <div class="question" id="q27">
+        <p>27. Menurut Modul 03, fungsi utama Media Massa adalah untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q27" value="A"> A. Menyebarkan gosip.</label>
+            <label><input type="radio" name="q27" value="B"> B. Memberi informasi, mendidik, menghibur, dan mempengaruhi publik.</label>
+            <label><input type="radio" name="q27" value="C"> C. Menjual produk tertentu saja.</label>
+            <label><input type="radio" name="q27" value="D"> D. Mencetak buku cerita.</label>
+        </div>
+    </div>
+    <!-- Question 28 -->
+    <div class="question" id="q28">
+        <p>28. Istilah yang digunakan untuk menggambarkan penyebaran informasi palsu tanpa niat buruk (biasanya karena ketidaktahuan) adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q28" value="A"> A. Misinformasi.</label>
+            <label><input type="radio" name="q28" value="B"> B. Disinformasi (dengan niat buruk).</label>
+            <label><input type="radio" name="q28" value="C"> C. Jurnalistik Investigatif.</label>
+            <label><input type="radio" name="q28" value="D"> D. Berita Opini.</label>
+        </div>
+    </div>
+    <!-- Question 29 -->
+    <div class="question" id="q29">
+        <p>29. Salah satu etika penting dalam menggunakan Internet dan Media Sosial adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q29" value="A"> A. Menghormati privasi orang lain.</label>
+            <label><input type="radio" name="q29" value="B"> B. Menyebar kebencian.</label>
+            <label><input type="radio" name="q29" value="C"> C. Mengambil konten orang lain tanpa atribusi.</label>
+            <label><input type="radio" name="q29" value="D"> D. Menggunakan identitas palsu.</label>
+        </div>
+    </div>
+    <!-- Question 30 -->
+    <div class="question" id="q30">
+        <p>30. "Read Literall" dalam konteks Literasi Informasi berarti...</p>
+        <div class="answers">
+            <label><input type="radio" name="q30" value="A"> A. Membaca teks secara harfiah untuk memahami makna yang tersurat.</label>
+            <label><input type="radio" name="q30" value="B"> B. Membaca di antara baris untuk menemukan makna tersembunyi.</label>
+            <label><input type="radio" name="q30" value="C"> C. Tidak membaca sama sekali.</label>
+            <label><input type="radio" name="q30" value="D"> D. Hanya melihat gambar.</label>
+        </div>
+    </div>
+    <!-- Question 31 -->
+    <div class="question" id="q31">
+        <p>31. Salah satu ciri utama Pendidikan di Era Digital adalah fokus pada hasil pembelajaran (learning outcomes) berupa...</p>
+        <div class="answers">
+            <label><input type="radio" name="q31" value="A"> A. Sertifikat kelulusan SMA.</label>
+            <label><input type="radio" name="q31" value="B"> B. Kemampuan mengetik cepat.</label>
+            <label><input type="radio" name="q31" value="C"> C. Kompetensi dan Keterampilan.</label>
+            <label><input type="radio" name="q31" value="D"> D. Penguasaan satu buku teks.</label>
+        </div>
+    </div>
+    <!-- Question 32 -->
+    <div class="question" id="q32">
+        <p>32. Pemanfaatan teknologi seperti AI dan *machine learning* untuk menganalisis kinerja dan preferensi siswa dalam Pembelajaran Digital dikenal sebagai...</p>
+        <div class="answers">
+            <label><input type="radio" name="q32" value="A"> A. Kuliah Umum.</label>
+            <label><input type="radio" name="q32" value="B"> B. Pembelajaran Adaptif (Adaptive Learning).</label>
+            <label><input type="radio" name="q32" value="C"> C. Pendidikan Konservatif.</label>
+            <label><input type="radio" name="q32" value="D"> D. Pendaftaran Online.</label>
+        </div>
+    </div>
+    <!-- Question 33 -->
+    <div class="question" id="q33">
+        <p>33. Konsep *Copyright* (Hak Cipta) dalam materi pembelajaran terbuka sangat terkait dengan lisensi...</p>
+        <div class="answers">
+            <label><input type="radio" name="q33" value="A"> A. Creative Commons (CC).</label>
+            <label><input type="radio" name="q33" value="B"> B. Lisensi Microsoft.</label>
+            <label><input type="radio" name="q33" value="C"> C. Lisensi Pengemudi.</label>
+            <label><input type="radio" name="q33" value="D"> D. Hak Paten Industri.</label>
+        </div>
+    </div>
+    <!-- Question 34 -->
+    <div class="question" id="q34">
+        <p>34. Ketika mencari informasi di internet, menggunakan kata kunci yang spesifik dan operator Boolean (AND, OR, NOT) adalah bagian dari keterampilan...</p>
+        <div class="answers">
+            <label><input type="radio" name="q34" value="A"> A. Membaca Cepat.</label>
+            <label><input type="radio" name="q34" value="B"> B. Mencari Informasi yang Efektif.</label>
+            <label><input type="radio" name="q34" value="C"> C. Menulis Fiksi.</label>
+            <label><input type="radio" name="q34" value="D"> D. Menonton Video.</label>
+        </div>
+    </div>
+    <!-- Question 35 -->
+    <div class="question" id="q35">
+        <p>35. Mencatat dengan membuat peta konsep (mind mapping) paling efektif untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q35" value="A"> A. Mencatat ceramah linier.</label>
+            <label><input type="radio" name="q35" value="B"> B. Menghitung data statistik.</label>
+            <label><input type="radio" name="q35" value="C"> C. Memvisualisasikan hubungan dan hierarki ide.</label>
+            <label><input type="radio" name="q35" value="D"> D. Menyusun daftar belanja.</label>
+        </div>
+    </div>
+    <!-- Question 36 -->
+    <div class="question" id="q36">
+        <p>36. Refleksi yang melibatkan tindakan dan perencanaan perubahan perilaku di masa depan disebut refleksi...</p>
+        <div class="answers">
+            <label><input type="radio" name="q36" value="A"> A. Deskriptif.</label>
+            <label><input type="radio" name="q36" value="B"> B. Aksi (Action-Oriented).</label>
+            <label><input type="radio" name="q36" value="C"> C. Sejarah.</label>
+            <label><input type="radio" name="q36" value="D"> D. Spontan.</label>
+        </div>
+    </div>
+    <!-- Question 37 -->
+    <div class="question" id="q37">
+        <p>37. Media Pers memiliki peran penting dalam masyarakat, yaitu sebagai...</p>
+        <div class="answers">
+            <label><input type="radio" name="q37" value="A"> A. Alat propaganda pemerintah.</label>
+            <label><input type="radio" name="q37" value="B"> B. Sumber hiburan eksklusif.</label>
+            <label><input type="radio" name="q37" value="C"> C. Pilar keempat demokrasi (pengawas pemerintah).</label>
+            <label><input type="radio" name="q37" value="D"> D. Pemasok kertas cetak.</label>
+        </div>
+    </div>
+    <!-- Question 38 -->
+    <div class="question" id="q38">
+        <p>38. Yang termasuk dalam bentuk Literasi Digital selain kemampuan teknis adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q38" value="A"> A. Berpikir Kritis dan Mengevaluasi Konten.</label>
+            <label><input type="radio" name="q38" value="B"> B. Memasak.</label>
+            <label><input type="radio" name="q38" value="C"> C. Berenang.</label>
+            <label><input type="radio" name="q38" value="D"> D. Bermain catur.</label>
+        </div>
+    </div>
+    <!-- Question 39 -->
+    <div class="question" id="q39">
+        <p>39. Apa yang menjadi fokus utama Digital Citizenship?</p>
+        <div class="answers">
+            <label><input type="radio" name="q39" value="A"> A. Memiliki akun media sosial.</label>
+            <label><input type="radio" name="q39" value="B"> B. Penggunaan teknologi yang bertanggung jawab dan etis.</label>
+            <label><input type="radio" name="q39" value="C"> C. Membeli perangkat digital terbaru.</label>
+            <label><input type="radio" name="q39" value="D"> D. Mengetik sangat cepat.</label>
+        </div>
+    </div>
+    <!-- Question 40 -->
+    <div class="question" id="q40">
+        <p>40. Media sosial seringkali disebut sebagai "Media Massa Digital" karena kemampuannya untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q40" value="A"> A. Menyebarkan pesan kepada audiens massal dengan cepat.</label>
+            <label><input type="radio" name="q40" value="B"> B. Hanya menghubungkan dua orang.</label>
+            <label><input type="radio" name="q40" value="C"> C. Memproduksi film panjang.</label>
+            <label><input type="radio" name="q40" value="D"> D. Menghitung populasi dunia.</label>
+        </div>
+    </div>
+    <!-- Question 41 -->
+    <div class="question" id="q41">
+        <p>41. Tren pekerjaan di Era Digital banyak mengarah pada ekonomi...</p>
+        <div class="answers">
+            <label><input type="radio" name="q41" value="A"> A. Gig Economy (pekerjaan berbasis proyek atau lepas).</label>
+            <label><input type="radio" name="q41" value="B"> B. Ekonomi Pertanian.</label>
+            <label><input type="radio" name="q41" value="C"> C. Ekonomi Pertambangan.</label>
+            <label><input type="radio" name="q41" value="D"> D. Ekonomi Pabrik Tradisional.</label>
+        </div>
+    </div>
+    <!-- Question 42 -->
+    <div class="question" id="q42">
+        <p>42. Kemampuan untuk mengidentifikasi dan menghindari jebakan logika atau bias kognitif dalam suatu informasi adalah bagian dari...</p>
+        <div class="answers">
+            <label><input type="radio" name="q42" value="A"> A. Literasi Numerik.</label>
+            <label><input type="radio" name="q42" value="B"> B. Keterampilan Komunikasi Verbal.</label>
+            <label><input type="radio" name="q42" value="C"> C. Berpikir Kritis.</label>
+            <label><input type="radio" name="q42" value="D"> D. Mengetik 10 jari.</label>
+        </div>
+    </div>
+    <!-- Question 43 -->
+    <div class="question" id="q43">
+        <p>43. Dalam Pembelajaran Digital, interaksi yang melibatkan komunikasi dua arah antara siswa dan pengajar atau siswa dan konten disebut...</p>
+        <div class="answers">
+            <label><input type="radio" name="q43" value="A"> A. Monolog.</label>
+            <label><input type="radio" name="q43" value="B"> B. Pembelajaran Interaktif.</label>
+            <label><input type="radio" name="q43" value="C"> C. Ujian Tertulis.</label>
+            <label><input type="radio" name="q43" value="D"> D. Membaca Buku.</label>
+        </div>
+    </div>
+    <!-- Question 44 -->
+    <div class="question" id="q44">
+        <p>44. Konsep "Otoritas" dalam evaluasi sumber pembelajaran menanyakan tentang...</p>
+        <div class="answers">
+            <label><input type="radio" name="q44" value="A"> A. Kredibilitas dan kualifikasi penulis atau organisasi penerbit.</label>
+            <label><input type="radio" name="q44" value="B"> B. Ukuran font materi.</label>
+            <label><input type="radio" name="q44" value="C"> C. Warna sampul materi.</label>
+            <label><input type="radio" name="q44" value="D"> D. Jumlah iklan.</label>
+        </div>
+    </div>
+    <!-- Question 45 -->
+    <div class="question" id="q45">
+        <p>45. Mencatat secara efektif tidak hanya berarti menyalin, tetapi juga melibatkan proses...</p>
+        <div class="answers">
+            <label><input type="radio" name="q45" value="A"> A. Sintesis dan restrukturisasi informasi.</label>
+            <label><input type="radio" name="q45" value="B"> B. Menghapus semua informasi.</label>
+            <label><input type="radio" name="q45" value="C"> C. Hanya menggambar.</label>
+            <label><input type="radio" name="q45" value="D"> D. Mengubah bahasa menjadi bahasa asing.</label>
+        </div>
+    </div>
+    <!-- Question 46 -->
+    <div class="question" id="q46">
+        <p>46. Menurut Modul 04, karakteristik pesan di Media Massa Digital cenderung...</p>
+        <div class="answers">
+            <label><input type="radio" name="q46" value="A"> A. Ringkas, cepat, dan multimedia.</label>
+            <label><input type="radio" name="q46" value="B"> B. Sangat panjang dan lambat diunggah.</label>
+            <label><input type="radio" name="q46" value="C"> C. Hanya berupa teks tanpa gambar.</label>
+            <label><input type="radio" name="q46" value="D"> D. Hanya tersedia pada waktu tertentu.</label>
+        </div>
+    </div>
+    <!-- Question 47 -->
+    <div class="question" id="q47">
+        <p>47. Peran Media Massa dalam mendidik publik paling baik diwujudkan melalui...</p>
+        <div class="answers">
+            <label><input type="radio" name="q47" value="A"> A. Pemberian hadiah gratis.</label>
+            <label><input type="radio" name="q47" value="B"> B. Menayangkan program hiburan tanpa henti.</label>
+            <label><input type="radio" name="q47" value="C"> C. Liputan mendalam tentang isu-isu sosial, politik, dan ilmiah.</label>
+            <label><input type="radio" name="q47" value="D"> D. Membatasi akses informasi.</label>
+        </div>
+    </div>
+    <!-- Question 48 -->
+    <div class="question" id="q48">
+        <p>48. Literasi Informasi mencakup kemampuan untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q48" value="A"> A. Menciptakan konten digital tanpa verifikasi.</label>
+            <label><input type="radio" name="q48" value="B"> B. Mengenali kebutuhan informasi, menemukan, mengevaluasi, dan menggunakan informasi.</label>
+            <label><input type="radio" name="q48" value="C"> C. Menghindari semua media.</label>
+            <label><input type="radio" name="q48" value="D"> D. Menjual barang secara online.</label>
+        </div>
+    </div>
+    <!-- Question 49 -->
+    <div class="question" id="q49">
+        <p>49. Mengapa *peer review* (peninjauan sejawat) penting dalam materi pembelajaran ilmiah?</p>
+        <div class="answers">
+            <label><input type="radio" name="q49" value="A"> A. Untuk memastikan validitas dan keandalan konten.</label>
+            <label><input type="radio" name="q49" value="B"> B. Untuk membuat materi lebih mahal.</label>
+            <label><input type="radio" name="q49" value="C"> C. Untuk mengurangi jumlah pembaca.</label>
+            <label><input type="radio" name="q49" value="D"> D. Untuk menambah gambar.</label>
+        </div>
+    </div>
+    <!-- Question 50 -->
+    <div class="question" id="q50">
+        <p>50. Kesadaran untuk melindungi data pribadi dan menghindari penipuan online adalah bagian dari aspek...</p>
+        <div class="answers">
+            <label><input type="radio" name="q50" value="A"> A. Interaksi Sosial di Internet.</label>
+            <label><input type="radio" name="q50" value="B"> B. Keamanan Digital.</label>
+            <label><input type="radio" name="q50" value="C"> C. Jurnalisme Warga.</label>
+            <label><input type="radio" name="q50" value="D"> D. Menulis Refleksi.</label>
+        </div>
+    </div>
+    
+    <div class="btn-container">
+        <button type="button" id="submitBtn" onclick="checkAnswers()">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Kirim Jawaban
+        </button>
+        <button type="button" id="resetBtn" onclick="resetQuiz()">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.962 8.962 0 0120 12c0 1.931-.697 3.717-1.87 5.105M14 10l-2-2m0 0l-2-2m2 2v8m-4-8h4m2 0l2 2m0 0l2 2m-2-2h-4m-4 8h4m-4-8h4"></path></svg>
+            Ulangi Kuis
+        </button>
+    </div>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+    // Kunci jawaban untuk 50 soal
+    const answerKey = {
+        q1: "C", q2: "B", q3: "D", q4: "C", q5: "C", q6: "B", q7: "C", q8: "B", q9: "B", q10: "B",
+        q11: "A", q12: "A", q13: "B", q14: "B", q15: "B", q16: "C", q17: "A", q18: "A", q19: "B", q20: "A",
+        q21: "A", q22: "B", q23: "A", q24: "C", q25: "A", q26: "A", q27: "B", q28: "A", q29: "A", q30: "A",
+        q31: "C", q32: "B", q33: "A", q34: "B", q35: "C", q36: "B", q37: "C", q38: "A", q39: "B", q40: "A",
+        q41: "A", q42: "C", q43: "B", q44: "A", q45: "A", q46: "A", q47: "C", q48: "B", q49: "A", q50: "B"
+    };
+
+    const TOTAL_QUESTIONS = 50;
+
+    function checkAnswers() {
+        let total = 0;
+        const resultDiv = document.getElementById("result");
+
+        for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+            const q = "q" + i;
+            const qDiv = document.getElementById(q);
+            const options = document.getElementsByName(q);
+            const correctAnswer = answerKey[q];
+            
+            // Hapus kelas highlight sebelumnya
+            qDiv.classList.remove("correct-answer", "wrong-question");
+
+            let isCorrect = false;
+            let answered = false;
+
+            // Reset semua label dan cari jawaban terpilih
+            for (const opt of options) {
+                const label = opt.parentNode;
+                label.classList.remove("correct-key"); 
+                label.style.color = "black";
+                label.style.fontWeight = "normal";
+
+                if (opt.checked) {
+                    answered = true;
+                    if (opt.value === correctAnswer) {
+                        isCorrect = true;
+                    }
+                }
+            }
+
+            // Terapkan highlight pada soal
+            if (isCorrect) {
+                qDiv.classList.add("correct-answer");
+                total++;
+            } else {
+                qDiv.classList.add("wrong-question");
+            }
+            
+            // Tunjukkan kunci jawaban yang benar
+            for (const opt of options) {
+                const label = opt.parentNode;
+                if (opt.value === correctAnswer) {
+                    // Tambahkan kelas untuk menyorot kunci jawaban yang benar
+                    label.classList.add("correct-key");
+                }
+                // Nonaktifkan radio button setelah submit
+                opt.disabled = true;
+            }
+        }
+
+        resultDiv.innerHTML =
+            `🎉 **Hasil Anda:** Jumlah jawaban benar: <span style="color:#48bb78;">${total}</span> dari ${TOTAL_QUESTIONS} soal.`;
+
+        // Tampilkan tombol reset
+        document.getElementById("submitBtn").style.display = "none";
+        document.getElementById("resetBtn").style.display = "inline-flex";
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resetQuiz() {
+        const resultDiv = document.getElementById("result");
+
+        for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+            const q = "q" + i;
+            const qDiv = document.getElementById(q);
+            const options = document.getElementsByName(q);
+
+            qDiv.classList.remove("correct-answer", "wrong-question");
+
+            for (const opt of options) {
+                opt.checked = false;
+                opt.disabled = false; // Aktifkan kembali radio button
+                const label = opt.parentNode;
+                label.classList.remove("correct-key");
+                label.style.color = "black";
+                label.style.fontWeight = "normal";
+            }
+        }
+
+        resultDiv.innerHTML = "";
+        document.getElementById("resetBtn").style.display = "none";
+        document.getElementById("submitBtn").style.display = "inline-flex";
+        // Gulir kembali ke atas
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
