@@ -334,7 +334,6 @@
                     </div>
                 </div>
             </div>
-               
             </div>
         </main>
 
@@ -471,76 +470,22 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- V2 - JAWABAN SOAL NO. 4: DFD LEVEL 0 & 1 PENERIMAAN SISWA BARU -->
-            <div class="rounded-xl shadow-lg bg-white border border-teal-200">
-                <input type="checkbox" id="v2-jawaban-4" class="hidden accordion-input">
-                <label for="v2-jawaban-4" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-teal-600 text-white rounded-t-xl hover:bg-teal-700 transition duration-150">
-                    <span class="text-xl font-bold">Soal 4 : DFD Level 0 & 1 Penerimaan Siswa Baru</span>
-                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+             <div class="bg-white p-6 rounded-xl shadow-lg mb-4">
+                <input type="checkbox" id="v2q3" class="accordion-input hidden" checked>
+                <label for="v2q3" class="accordion-header flex justify-between items-center cursor-pointer font-semibold text-lg text-teal-700 hover:text-teal-900 transition duration-150">
+                    <span>Soal 4 : DFD Level 1 Peminjaman Kendaraan</span>
+                    <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </label>
-                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
-                    <p class="text-sm italic mb-4">SKOR: 30</p>
-                    <h2 class="text-2xl font-semibold text-teal-800 mb-4">Diagram Alir Data (DFD) Level 0 & 1</h2>
-
-                    <!-- DFD Level 0 (Context Diagram) -->
-                    <h3 class="text-xl font-bold text-teal-700 mb-3">DFD Level 0 (Diagram Konteks)</h3>
-                    <div class="diagram-container p-6 flex flex-col items-center mb-6">
-                        <div class="dfd-entity-box">Calon Siswa</div>
-                        <div class="h-8 border-l border-dashed border-gray-400"></div>
-                        
-                        <div class="dfd-process-box w-2/3 max-w-sm bg-teal-200 border-teal-600">
-                            Sistem Penerimaan Siswa Baru
-                        </div>
-                        
-                        <div class="h-8 border-l border-dashed border-gray-400"></div>
-                        <div class="flex justify-around w-full max-w-md">
-                            <div class="dfd-entity-box bg-gray-200 border-gray-600">Bank</div>
-                            <div class="dfd-entity-box bg-gray-200 border-gray-600">Operator</div>
-                        </div>
-                    </div>
-                    <p class="text-sm italic mb-6 text-justify">
-                        Level 0 hanya menunjukkan satu proses tunggal (Sistem Penerimaan Siswa Baru) dan tiga entitas eksternal yang berinteraksi: Calon Siswa (input data), Bank (verifikasi pembayaran), dan Operator (output laporan).
-                    </p>
-
-                    <!-- DFD Level 1 -->
-                    <h3 class="text-xl font-bold text-teal-700 mb-3">DFD Level 1</h3>
-                    <p class="leading-relaxed mb-4 text-justify">
-                        DFD Level 1 memecah sistem menjadi proses-proses utama: 1.0 Pendaftaran, 2.0 Verifikasi Pembayaran, 3.0 Tes Seleksi, dan 4.0 Pembuatan Laporan.
-                    </p>
-
-                    <div class="diagram-container p-4 bg-teal-50 space-y-6">
-                        <!-- Struktur Proses -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="dfd-process-box">1.0 Pendaftaran</div>
-                            <div class="dfd-process-box">2.0 Verifikasi Pembayaran</div>
-                            <div class="dfd-process-box">3.0 Tes Seleksi</div>
-                            <div class="dfd-process-box">4.0 Pembuatan Laporan</div>
-                        </div>
-                        
-                        <!-- Struktur Data Stores -->
-                        <div class="flex justify-around gap-4 mt-4">
-                            <div class="dfd-datastore-box flex-1">DS1 Data Siswa</div>
-                            <div class="dfd-datastore-box flex-1">DS2 Data Pembayaran</div>
-                            <div class="dfd-datastore-box flex-1">DS3 Data Hasil Tes</div>
-                        </div>
-
-                        <h4 class="text-lg font-semibold text-teal-600 pt-4 border-t border-teal-300">Aliran Data Penting:</h4>
-                        <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
-                            <li>Calon Siswa mengirim Formulir Pendaftaran ke 1.0</li>
-                            <li>1.0 mencatat Data Siswa ke DS1</li>
-                            <li>Calon Siswa melakukan Pembayaran ke Bank</li>
-                            <li>Bank mengirimkan Bukti Pembayaran ke 2.0</li>
-                            <li>2.0 mencatat Data Pembayaran ke DS2</li>
-                            <li>Calon Siswa melakukan Tes Seleksi, hasilnya masuk ke 3.0</li>
-                            <li>3.0 mencatat Hasil Tes ke DS3</li>
-                            <li>Operator meminta Laporan ke 4.0</li>
-                            <li>4.0 mengakses DS1, DS2, DS3** untuk menghasilkan Laporan Siswa, Laporan Pembayaran, dan Laporan Hasil Tes (ke Operator).</li>
-                        </ul>
+                <div class="accordion-content pt-4">
+                    <p class="mb-3 text-justify">Berikut adalah  DFD Level 1 Peminjaman Kendaraan</p>
+                    <div class="diagram-container">
+                        <h4 class="font-bold text-center mb-2 text-gray-800">DFD Level 1 Peminjaman Kendaraan</h4>
+                        <!-- GAMBAR BARU DARI LINK -->
+                        <img src="https://i.ibb.co.com/RpxGP2Ny/Chat-GPT-Image-Dec-17-2025-10-07-06-AM.png" alt="Activity Diagram Mesin Tiket Kereta" class="w-full h-auto rounded-lg shadow-md border border-gray-200">
                     </div>
                 </div>
             </div>
-
+        </div>
         </main>
 
         <!-- Catatan Akhir Global -->
@@ -591,4 +536,5 @@
 </body>
 
 </html>
+
 
