@@ -304,71 +304,21 @@
                 </div>
             </div>
 
-            <!-- V1 - JAWABAN SOAL NO. 3: USE CASE DIAGRAM -->
-            <div class="rounded-xl shadow-lg bg-white border border-red-200">
-                <input type="checkbox" id="v1-jawaban-3" class="hidden accordion-input">
-                <label for="v1-jawaban-3" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-red-600 text-white rounded-t-xl hover:bg-red-700 transition duration-150">
-                    <span class="text-xl font-bold">Soal 3 : Use Case Diagram Aplikasi Manajemen Knowledge</span>
-                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <div class="bg-white p-6 rounded-xl shadow-lg mb-4">
+                <input type="checkbox" id="v2q3" class="accordion-input hidden" checked>
+                <label for="v2q3" class="accordion-header flex justify-between items-center cursor-pointer font-semibold text-lg text-teal-700 hover:text-teal-900 transition duration-150">
+                    <span>Soal 3 : Use Case Diagram Aplikasi Manajemen Knowledge</span>
+                    <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </label>
-                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
-                    <p class="text-sm italic mb-4">SKOR: 30</p>
-                    <h2 class="text-2xl font-semibold text-red-800 mb-4">Pembuatan Use Case Diagram</h2>
-
-                    <p class="leading-relaxed mb-6 text-justify">
-                        Berikut adalah pemodelan <strong class="font-semibold">Use Case Diagram</strong> untuk aplikasi manajemen <em class="italic">knowledge</em> yang melibatkan dua aktor utama, yaitu <strong class="font-semibold">Pengguna (User)</strong> dan <strong class="font-semibold">Administrator (Admin)</strong>.
-                    </p>
-
-                    <!-- Area Diagram Sederhana -->
-                    <div class="diagram-container use-case-container mx-auto max-w-lg">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Boundary: Aplikasi Manajemen Knowledge</h3>
-                        
-                        <div class="flex justify-between w-full mb-4">
-                            <!-- Aktor 1: Pengguna -->
-                            <div class="actor">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-red-600 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M12 21v-2c-2.76 0-5-2.24-5-5h10c0 2.76-2.24 5-5 5v2"></path></svg>
-                                <span class="block font-semibold text-red-600">Pengguna</span>
-                            </div>
-                            <!-- Aktor 2: Administrator -->
-                            <div class="actor">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-red-600 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l-5 5h10zM12 22l5-5H7zM2 12l5-5v10zM22 12l-5 5V7z"></path></svg>
-                                <span class="block font-semibold text-red-600">Administrator</span>
-                            </div>
-                        </div>
-
-                        <div class="border-2 border-dashed border-gray-400 p-4 rounded-lg w-full">
-                            <h4 class="text-lg font-semibold text-gray-600 mb-2">Use Cases</h4>
-                            <div class="flex flex-col items-center">
-                                <div class="use-case">Preview File</div>
-                                <div class="use-case">Note File</div>
-                                <div class="use-case">Pencarian File</div>
-                                <div class="use-case">Download File</div>
-                                
-                                <div class="w-full text-center my-3"><span class="text-sm font-semibold text-gray-500">--- Khusus Admin ---</span></div>
-
-                                <div class="use-case bg-pink-100 border-pink-400 text-pink-700">Upload Data</div>
-                                <div class="use-case bg-pink-100 border-pink-400 text-pink-700">Edit Data</div>
-                                <div class="use-case bg-pink-100 border-pink-400 text-pink-700">Edit Folder</div>
-                                <div class="use-case bg-pink-100 border-pink-400 text-pink-700">Edit Kategori</div>
-                            </div>
-                        </div>
+                <div class="accordion-content pt-4">
+                    <p class="mb-3 text-justify">Berikut adalah  Use Case Diagram Aplikasi Manajemen Knowledge</p>
+                    <div class="diagram-container">
+                        <h4 class="font-bold text-center mb-2 text-gray-800"> Use Case Diagram Aplikasi Manajemen Knowledge</h4>
+                        <!-- GAMBAR BARU DARI LINK -->
+                        <img src="https://i.ibb.co.com/21gTxBRY/Chat-GPT-Image-Dec-17-2025-09-48-00-AM.png" alt="Activity Diagram Mesin Tiket Kereta" class="w-full h-auto rounded-lg shadow-md border border-gray-200">
                     </div>
-
-                    <h3 class="text-xl font-semibold text-red-800 mt-6 mb-2">Daftar Use Case:</h3>
-                    <ul class="list-disc list-inside space-y-1 ml-4 text-gray-700">
-                        <li><strong class="font-semibold">Preview File :</strong> Melihat isi dokumen/file. (Aktor : Pengguna, Admin)</li>
-                        <li><strong class="font-semibold">Note File :</strong> Menambahkan catatan pada file. (Aktor : Pengguna, Admin)</li>
-                        <li><strong class="font-semibold">Pencarian File :</strong> Mencari file. (Aktor : Pengguna, Admin)</li>
-                        <li><strong class="font-semibold">Download File :</strong> Mengunduh file. (Aktor : Pengguna, Admin)</li>
-                        <li><strong class="font-semibold">Upload Data :</strong> Mengunggah file/dokumen baru. (Aktor : Administrator)</li>
-                        <li><strong class="font-semibold">Edit Data :</strong> Memodifikasi konten file yang sudah ada. (Aktor : Administrator)</li>
-                        <li><strong class="font-semibold">Edit Folder :</strong> Mengatur struktur folder. (Aktor : Administrator)</li>
-                        <li><strong class="font-semibold">Edit Kategori :</strong> Memodifikasi kategori konten. (Aktor : Administrator)</li>
-                    </ul>
-
                 </div>
             </div>
-            
             <!-- V1 - JAWABAN SOAL NO. 4: DFD LEVEL 1 PEMINJAMAN KENDARAAN -->
             <div class="rounded-xl shadow-lg bg-white border border-indigo-200">
                 <input type="checkbox" id="v1-jawaban-4" class="hidden accordion-input">
@@ -556,88 +506,19 @@
                 </div>
             </div>
             
-            <!-- V2 - JAWABAN SOAL NO. 3: ACTIVITY DIAGRAM MESIN TIKET (REVISI TAMPILAN) -->
-            <div class="rounded-xl shadow-lg bg-white border border-yellow-200">
-                <input type="checkbox" id="v2-jawaban-3" class="hidden accordion-input">
-                <label for="v2-jawaban-3" class="accordion-header flex justify-between items-center p-5 cursor-pointer bg-yellow-600 text-white rounded-t-xl hover:bg-yellow-700 transition duration-150">
-                    <span class="text-xl font-bold">Soal 3 : Activity Diagram Mesin Tiket Kereta</span>
-                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+             <div class="bg-white p-6 rounded-xl shadow-lg mb-4">
+                <input type="checkbox" id="v2q3" class="accordion-input hidden" checked>
+                <label for="v2q3" class="accordion-header flex justify-between items-center cursor-pointer font-semibold text-lg text-teal-700 hover:text-teal-900 transition duration-150">
+                    <span>Soal 3 : Activity Diagram (Mesin Tiket Kereta)</span>
+                    <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </label>
-                <div class="accordion-content p-6 text-gray-700 bg-white rounded-b-xl">
-                    <p class="text-sm italic mb-4">SKOR: 30</p>
-                    <h2 class="text-2xl font-semibold text-yellow-800 mb-4">Pembuatan Activity Diagram</h2>
-
-                    <p class="leading-relaxed mb-6 text-justify">
-                        Activity Diagram ini memodelkan alur proses pembelian tiket kereta menggunakan mesin otomatis, melibatkan dua <em class="italic">swimlane</em>: <strong class="font-semibold">Penumpang</strong> dan <strong class="font-semibold">Mesin Tiket</strong>. Alur mencakup proses sukses hingga keputusan pembayaran.
-                    </p>
-                    
-                    <!-- Activity Diagram dengan Swimlane (Representasi Textual & Visual) -->
-                    <div class="diagram-container overflow-x-auto min-w-full">
-                        <div class="flex">
-                            <!-- Swimlane 1: Penumpang -->
-                            <div class="w-1/2 flex flex-col items-center">
-                                <div class="swimlane-header w-full bg-yellow-400 text-gray-900">PENUMPANG</div>
-                                <div class="swimlane-content w-full border-yellow-500">
-                                    <div class="activity-start mt-4"></div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-yellow-200">Memulai Sesi Order Pembelian</div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-yellow-200">Memilih Jadwal Perjalanan</div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-yellow-200">Memproses Pembayaran (Tunai / Debit)</div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-yellow-200">Menerima Tiket</div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-end"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Swimlane 2: Mesin Tiket -->
-                            <div class="w-1/2 flex flex-col items-center">
-                                <div class="swimlane-header w-full bg-yellow-400 text-gray-900 border-r-0">MESIN TIKET</div>
-                                <div class="swimlane-content w-full border-yellow-500 border-r-0">
-                                    <div class="activity-flow invisible mt-4"></div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-gray-200">Mengolah Info Jadwal Perjalanan</div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-gray-200">Memproses & Membuat Billing</div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-gray-200">Menampilkan Info Pembayaran</div>
-                                    <div class="activity-flow"></div>
-                                    <!-- Decision Node: Pembayaran -->
-                                    <div class="activity-decision relative"><span class="activity-decision-label">Pembayaran Selesai?</span></div>
-                                    
-                                    <!-- Flow Line (SUCCESS PATH) -->
-                                    <div class="flow-line h-4">
-                                        <span class="absolute top-0 right-1/2 translate-x-1/2 bg-yellow-50 px-1 italic text-gray-700 font-normal">[Ya]</span>
-                                    </div>
-
-                                    <div class="activity-step bg-gray-200">Memproses Tiket</div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-gray-200">Menyerahkan Tiket ke Penumpang</div>
-                                    <div class="activity-flow"></div>
-                                    <div class="activity-step bg-gray-200">Menampilkan Ucapan Terima Kasih</div>
-                                    <div class="activity-flow invisible"></div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="accordion-content pt-4">
+                    <p class="mb-3 text-justify">Berikut adalah Activity Diagram untuk proses pembelian tiket pada mesin tiket kereta, mulai dari inisiasi sesi hingga penyerahan tiket dan ucapan terima kasih. Diagram ini telah diperbarui sesuai permintaan Anda.</p>
+                    <div class="diagram-container">
+                        <h4 class="font-bold text-center mb-2 text-gray-800">Activity Diagram Mesin Tiket Kereta</h4>
+                        <!-- GAMBAR BARU DARI LINK -->
+                        <img src="https://i.ibb.co.com/Kpspsqhy/Chat-GPT-Image-Dec-17-2025-09-41-42-AM.png" alt="Activity Diagram Mesin Tiket Kereta" class="w-full h-auto rounded-lg shadow-md border border-gray-200">
                     </div>
-                    
-                    <h3 class="text-xl font-semibold text-yellow-800 mt-6 mb-2">Alur Proses (Deskripsi Rinci)</h3>
-                    <ol class="list-decimal list-inside space-y-2 ml-4 text-gray-700">
-                        <li><strong class="font-semibold">Start & Order :</strong> Penumpang memulai sesi order, dan Mesin Tiket merespons dengan mengolah dan menampilkan jadwal perjalanan yang tersedia.</li>
-                        <li><strong class="font-semibold">Pilihan Jadwal & Billing :</strong> Penumpang memilih jadwal yang dikehendaki, Mesin Tiket memproses dan membuat billing, lalu menampilkan jumlah yang harus dibayar.</li>
-                        <li><strong class="font-semibold">Pembayaran :</strong> Penumpang memproses pembayaran (tunai atau debit).</li>
-                        <li><strong class="font-semibold">Keputusan Pembayaran :</strong> Mesin Tiket memverifikasi pembayaran.
-                            <ul class="list-disc list-inside ml-4 italic">
-                                <li>Jika Ya (Berhasil), proses berlanjut.</li>
-                                <li>(Jika Tidak/Gagal, secara umum alur akan kembali ke langkah Pembayaran atau membatalkan sesi.)</li>
-                            </ul>
-                        </li>
-                        <li><strong class="font-semibold">Cetak Tiket:</strong> Mesin Tiket memproses (mencetak) tiket dan menyerahkannya ke Penumpang.</li>
-                        <li><strong class="font-semibold">Akhir:</strong> Mesin Tiket menampilkan ucapan terima kasih. Penumpang menerima tiket. Sesi selesai.</li>
-                    </ol>
-
                 </div>
             </div>
             
@@ -758,4 +639,5 @@
         });
     </script>
 </body>
+
 </html>
