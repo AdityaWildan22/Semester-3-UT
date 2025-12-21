@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Sistem Operasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #003366;
+        }
+
+        .question {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answers label {
+            display: block;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .answers input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        button {
+            display: inline-block;
+            margin: 20px 5px;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .correct {
+            background-color: #d4edda; /* hijau lembut */
+        }
+
+        .wrong {
+            background-color: #f8d7da; /* merah lembut */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Quiz Sistem Operasi</h2>
+
+    <div class="question" id="q1">
+        <p>1. Salah satu kelebihan sistem operasi dengan pendekatan berlapis (layered system) dalam hal modularitas dan keamanan adalah ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q1" value="A"> A. semua lapisan dirancang agar dapat saling berkomunikasi langsung tanpa batasan, sehingga proses berjalan lebih cepat dan fleksibel.</label>
+            <label><input type="radio" name="q1" value="B"> B. setiap lapisan berfungsi untuk menggabungkan seluruh komponen sistem agar lebih efisien dalam mengakses perangkat keras.</label>
+            <label><input type="radio" name="q1" value="C"> C. setiap lapisan bekerja secara mandiri, hanya berinteraksi dengan lapisan di bawahnya, sehingga kesalahan dapat diisolasi dengan mudah.</label>
+            <label><input type="radio" name="q1" value="D"> D. semua lapisan ditempatkan pada satu ruang sistem operasi agar setiap fungsi dapat digunakan secara bersamaan oleh seluruh modul.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q2">
+        <p>2. Berdasarkan struktur sistem UNIX, sistem operasi ini pada dasarnya terdiri atas dua bagian utama, yaitu kernel dan program sistem. Fungsi utama kernel dalam struktur tersebut adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q2" value="A"> A. menyediakan antarmuka dan perintah bagi pengguna untuk menjalankan aplikasi dan program</label>
+            <label><input type="radio" name="q2" value="B"> B. mengelola sumber daya sistem seperti memori, CPU, dan perangkat I/O melalui layanan system call</label>
+            <label><input type="radio" name="q2" value="C"> C. menyimpan file dan direktori pengguna agar dapat diakses dengan cepat dan efisien</label>
+            <label><input type="radio" name="q2" value="D"> D. menghubungkan program aplikasi dengan pustaka sistem yang digunakan untuk kompilasi</label>
+        </div>
+    </div>
+
+    <div class="question" id="q3">
+        <p>3. Ketika dua proses melakukan update pada variabel yang sama secara bersamaan tanpa mekanisme sinkronisasi, kondisi yang dapat terjadi adalah ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q3" value="A"> A. starvation</label>
+            <label><input type="radio" name="q3" value="B"> B. race condition</label>
+            <label><input type="radio" name="q3" value="C"> C. context switching</label>
+            <label><input type="radio" name="q3" value="D"> D. multithreading</label>
+        </div>
+    </div>
+
+    <div class="question" id="q4">
+        <p>4. Dua proses (P0 dan P1) ingin memasuki critical section. Potongan kode berikut digunakan oleh proses P0:<br>
+        flag[0] = TRUE;<br>
+        turn = 1;<br>
+        while (flag[1] == TRUE && turn == 1) ; // do nothing<br>
+        Tujuan dari perintah turn = 1 adalah ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q4" value="A"> A. memberi kesempatan proses P1 untuk masuk ke critical section jika kedua proses ingin masuk secara bersamaan</label>
+            <label><input type="radio" name="q4" value="B"> B. mengatur agar P1 tidak dapat mengakses critical section</label>
+            <label><input type="radio" name="q4" value="C"> C. memastikan proses P0 langsung masuk critical section tanpa menunggu</label>
+            <label><input type="radio" name="q4" value="D"> D. menandakan proses P0 telah selesai menggunakan critical section</label>
+        </div>
+    </div>
+
+    <div class="question" id="q5">
+        <p>5. Salah satu keunggulan utama dari metode contiguous allocation dalam sistem berkas adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q5" value="A"> A. tidak mengalami fragmentasi eksternal dan mudah dikembangkan</label>
+            <label><input type="radio" name="q5" value="B"> B. memungkinkan file tumbuh dinamis tanpa batasan ruang</label>
+            <label><input type="radio" name="q5" value="C"> C. waktu akses yang cepat karena blok file tersimpan berdekatan</label>
+            <label><input type="radio" name="q5" value="D"> D. tidak membutuhkan perhitungan alamat blok pada saat akses langsung</label>
+        </div>
+    </div>
+
+    <div class="question" id="q6">
+        <p>6. Pada multithreading, implicit threading membantu mengurangi beban programmer karena ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q6" value="A"> A. programmer harus mengatur sinkronisasi thread secara manual</label>
+            <label><input type="radio" name="q6" value="B"> B. sistem atau library yang menangani pembentukan dan pengelolaan thread</label>
+            <label><input type="radio" name="q6" value="C"> C. semua thread dijalankan secara sekuensial tanpa paralelisme</label>
+            <label><input type="radio" name="q6" value="D"> D. thread tidak perlu lagi menggunakan sinkronisasi antar proses</label>
+        </div>
+    </div>
+
+    <div class="question" id="q7">
+        <p>7. Thread adalah unit terkecil dalam proses yang dapat dijadwalkan oleh sistem operasi. Salah satu kelebihan penggunaan thread dibandingkan proses adalah ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q7" value="A"> A. thread selalu berjalan pada prosesor yang berbeda secara fisik</label>
+            <label><input type="radio" name="q7" value="B"> B. thread memiliki ruang memori yang benar-benar terpisah dengan proses induknya</label>
+            <label><input type="radio" name="q7" value="C"> C. thread dapat berbagi memori dan resource dalam satu proses sehingga lebih efisien</label>
+            <label><input type="radio" name="q7" value="D"> D. thread hanya dapat dijalankan jika proses induknya selesai terlebih dahulu</label>
+        </div>
+    </div>
+
+    <div class="question" id="q8">
+        <p>8. Tujuan utama penjadwalan disk dalam sistem operasi adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q8" value="A"> A. menentukan urutan proses yang akan dieksekusi oleh CPU secara bergantian</label>
+            <label><input type="radio" name="q8" value="B"> B. mengatur prioritas proses agar CPU tidak menganggur</label>
+            <label><input type="radio" name="q8" value="C"> C. mengoptimalkan pergerakan head disk agar waktu akses menjadi efisien</label>
+            <label><input type="radio" name="q8" value="D"> D. menentukan ukuran sektor dan jumlah silinder dalam media penyimpanan</label>
+        </div>
+    </div>
+
+    <div class="question" id="q9">
+        <p>9. Dalam desain sistem operasi, pemisahan antara kebijakan (policy) dan mekanisme (mechanism) dilakukan karena….</p>
+        <div class="answers">
+            <label><input type="radio" name="q9" value="A"> A. setiap perubahan kebijakan tidak boleh menyebabkan perubahan mekanisme</label>
+            <label><input type="radio" name="q9" value="B"> B. mekanisme harus berubah setiap kali kebijakan berubah</label>
+            <label><input type="radio" name="q9" value="C"> C. kebijakan digunakan untuk menentukan cara sistem melakukan tindakan teknis</label>
+            <label><input type="radio" name="q9" value="D"> D. pemisahan ini diperlukan untuk menggabungkan seluruh fungsi OS ke dalam satu</label>
+        </div>
+    </div>
+
+    <div class="question" id="q10">
+        <p>10. Manakah pernyataan berikut yang paling tepat menjelaskan pengertian cloud computing beserta manfaatnya dalam konteks sistem operasi….</p>
+        <div class="answers">
+            <label><input type="radio" name="q10" value="A"> A. cloud computing adalah metode untuk mempercepat prosesor komputer, sehingga sistem operasi dapat berjalan lebih cepat tanpa memerlukan internet.</label>
+            <label><input type="radio" name="q10" value="B"> B. cloud computing adalah layanan komputasi melalui internet yang memungkinkan sistem operasi mengakses penyimpanan, aplikasi, dan proses secara remote sehingga meningkatkan fleksibilitas dan efisiensi penggunaan sumber daya.</label>
+            <label><input type="radio" name="q10" value="C"> C. cloud computing adalah teknologi penyimpanan lokal yang terintegrasi dengan sistem operasi untuk mengurangi penggunaan memori fisik.</label>
+            <label><input type="radio" name="q10" value="D"> D. cloud computing adalah fitur sistem operasi yang hanya berfungsi untuk melakukan backup otomatis tanpa interaksi dengan server eksternal.</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q11">
+        <p>11. Manakah pernyataan berikut yang paling tepat menggambarkan fungsi direktori /root, /home, /etc, /usr, dan /var pada Linux?</p>
+        <div class="answers">
+            <label><input type="radio" name="q11" value="A"> A. /root simpan konfigurasi, /home untuk log, /etc untuk akun pengguna.</label>
+            <label><input type="radio" name="q11" value="B"> B. /root home root, /home direktori pengguna, /etc konfigurasi sistem, /usr aplikasi, /var data berubah (log).</label>
+            <label><input type="radio" name="q11" value="C"> C. /root tempat aplikasi, /home untuk kernel, /etc untuk data sementara.</label>
+            <label><input type="radio" name="q11" value="D"> D. Semua direktori tersebut hanya digunakan untuk menyimpan file sementara.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q12">
+        <p>12. Pernyataan yang benar mengenai pengertian proses dalam sistem operasi adalah …</p>
+        <div class="answers">
+            <label><input type="radio" name="q12" value="A"> A. File program yang tersimpan di storage tanpa memerlukan sumber daya.</label>
+            <label><input type="radio" name="q12" value="B"> B. Program yang sedang dieksekusi dan membutuhkan sumber daya (CPU, memori, I/O).</label>
+            <label><input type="radio" name="q12" value="C"> C. Kumpulan data yang tidak berhubungan dengan eksekusi program.</label>
+            <label><input type="radio" name="q12" value="D"> D. Proses hanya merujuk pada program yang belum dieksekusi.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q13">
+        <p>13. Informasi yang disimpan di dalam PCB meliputi state proses, program counter, dan register. Tujuan utama PCB adalah ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q13" value="A"> A. menyimpan seluruh instruksi program secara permanen.</label>
+            <label><input type="radio" name="q13" value="B"> B. menyimpan informasi proses sehingga dapat dikelola oleh sistem operasi.</label>
+            <label><input type="radio" name="q13" value="C"> C. menyimpan file yang sedang digunakan oleh pengguna.</label>
+            <label><input type="radio" name="q13" value="D"> D. menjalankan semua proses secara bersamaan tanpa interupsi.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q14">
+        <p>14. Paging merupakan teknik manajemen memori yang....</p>
+        <div class="answers">
+            <label><input type="radio" name="q14" value="A"> A. membagi memori menjadi segmen logis berdasarkan kebutuhan program.</label>
+            <label><input type="radio" name="q14" value="B"> B. membagi memori menjadi blok-blok kecil berukuran tetap yang disebut frame.</label>
+            <label><input type="radio" name="q14" value="C"> C. menyimpan seluruh proses dalam cache untuk mempercepat eksekusi.</label>
+            <label><input type="radio" name="q14" value="D"> D. menukar isi memori utama dengan memori sekunder secara berkala.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q15">
+        <p>15. Manakah urutan versi Windows yang mencerminkan evolusi GUI dari konvensional menuju modern (touch screen & cloud)?</p>
+        <div class="answers">
+            <label><input type="radio" name="q15" value="A"> A. Windows 10, Windows Vista, Windows XP, Windows 95</label>
+            <label><input type="radio" name="q15" value="B"> B. Windows 95, Windows XP, Windows Vista, Windows 10</label>
+            <label><input type="radio" name="q15" value="C"> C. Windows XP -> Windows 95 -> Windows Vista, Windows 10</label>
+            <label><input type="radio" name="q15" value="D"> D. Windows Vista -> Windows XP -> Windows 95, Windows 10</label>
+        </div>
+    </div>
+
+    <div class="question" id="q16">
+        <p>16. Dalam sistem operasi, perbedaan utama antara alokasi memori single partition dan multiple partition adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q16" value="A"> A. single partition hanya satu proses, multiple partition memungkinkan beberapa proses bersamaan.</label>
+            <label><input type="radio" name="q16" value="B"> B. single partition menggunakan memori virtual, sedangkan multiple tidak.</label>
+            <label><input type="radio" name="q16" value="C"> C. multiple partition hanya digunakan pada sistem batch processing.</label>
+            <label><input type="radio" name="q16" value="D"> D. single partition memiliki efisiensi yang lebih tinggi.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q17">
+        <p>17. Pada Linux, direktori yang menjadi akar dari seluruh struktur (simbol “/”) disebut...</p>
+        <div class="answers">
+            <label><input type="radio" name="q17" value="A"> A. /usr</label>
+            <label><input type="radio" name="q17" value="B"> B. /home</label>
+            <label><input type="radio" name="q17" value="C"> C. /root</label>
+            <label><input type="radio" name="q17" value="D"> D. root directory</label>
+        </div>
+    </div>
+
+    <div class="question" id="q18">
+        <p>18. Tujuan utama dari penjadwalan CPU dalam sistem operasi adalah untuk....</p>
+        <div class="answers">
+            <label><input type="radio" name="q18" value="A"> A. memperlambat eksekusi proses agar CPU tidak terlalu sibuk.</label>
+            <label><input type="radio" name="q18" value="B"> B. memastikan semua proses mendapatkan prioritas tertinggi.</label>
+            <label><input type="radio" name="q18" value="C"> C. memaksimalkan penggunaan CPU dan meningkatkan kinerja sistem.</label>
+            <label><input type="radio" name="q18" value="D"> D. menghentikan proses yang terlalu lama berjalan.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q19">
+        <p>19. Cache memory berfungsi untuk....</p>
+        <div class="answers">
+            <label><input type="radio" name="q19" value="A"> A. menyimpan data secara permanen agar tidak hilang.</label>
+            <label><input type="radio" name="q19" value="B"> B. mempercepat akses data dengan menyimpan salinan data yang sering digunakan.</label>
+            <label><input type="radio" name="q19" value="C"> C. menggantikan fungsi utama dari hard disk.</label>
+            <label><input type="radio" name="q19" value="D"> D. memperbesar kapasitas penyimpanan komputer.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q20">
+        <p>20. Struktur hierarki direktori pada Linux berbeda dengan Windows karena...</p>
+        <div class="answers">
+            <label><input type="radio" name="q20" value="A"> A. Linux struktur tunggal mulai dari (/), Windows memiliki beberapa drive (C:, D:).</label>
+            <label><input type="radio" name="q20" value="B"> B. Linux menggunakan struktur datar, sedangkan Windows menggunakan pohon.</label>
+            <label><input type="radio" name="q20" value="C"> C. Windows tidak memiliki direktori sistem.</label>
+            <label><input type="radio" name="q20" value="D"> D. Windows tidak dapat membuat subdirektori.</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q21">
+        <p>21. Salah satu manfaat utama dari manajemen file dan direktori yang baik dalam sistem operasi adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q21" value="A"> A. menambah kapasitas penyimpanan fisik disk secara otomatis.</label>
+            <label><input type="radio" name="q21" value="B"> B. menghindari fragmentasi file dengan memformat ulang disk.</label>
+            <label><input type="radio" name="q21" value="C"> C. meminimalisir risiko kehilangan data dan memudahkan pencarian file.</label>
+            <label><input type="radio" name="q21" value="D"> D. mempercepat proses eksekusi instruksi dalam CPU saat mengelola disk.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q22">
+        <p>22. Page fault terjadi ketika....</p>
+        <div class="answers">
+            <label><input type="radio" name="q22" value="A"> A. CPU tidak dapat menemukan instruksi di dalam cache memory.</label>
+            <label><input type="radio" name="q22" value="B"> B. halaman yang dibutuhkan tidak terdapat di memori utama (RAM).</label>
+            <label><input type="radio" name="q22" value="C"> C. sistem operasi gagal mengalokasikan ruang memori baru.</label>
+            <label><input type="radio" name="q22" value="D"> D. dua proses mengakses halaman yang sama secara bersamaan.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q23">
+        <p>23. Kondisi ketika dua atau lebih proses saling menunggu sumber daya yang sedang digunakan proses lain sehingga macet disebut....</p>
+        <div class="answers">
+            <label><input type="radio" name="q23" value="A"> A. Livelock</label>
+            <label><input type="radio" name="q23" value="B"> B. starvation</label>
+            <label><input type="radio" name="q23" value="C"> C. Synchronization</label>
+            <label><input type="radio" name="q23" value="D"> D. deadlock</label>
+        </div>
+    </div>
+
+    <div class="question" id="q24">
+        <p>24. Perbedaan utama antara binary semaphore dan counting semaphore adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q24" value="A"> A. binary semaphore hanya digunakan proses prioritas tertinggi.</label>
+            <label><input type="radio" name="q24" value="B"> B. binary bernilai 0 atau 1, sedangkan counting dapat bernilai lebih dari satu.</label>
+            <label><input type="radio" name="q24" value="C"> C. counting semaphore hanya digunakan untuk sinkronisasi antar thread.</label>
+            <label><input type="radio" name="q24" value="D"> D. counting semaphore lebih lambat karena algoritma Peterson.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q25">
+        <p>25. Virtual memory dalam sistem komputer adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q25" value="A"> A. teknik pengaturan ruang penyimpanan fisik tambahan pada hard disk.</label>
+            <label><input type="radio" name="q25" value="B"> B. teknik yang memisahkan memori logis dan memori fisik.</label>
+            <label><input type="radio" name="q25" value="C"> C. bagian dari cache yang digunakan untuk mempercepat proses CPU.</label>
+            <label><input type="radio" name="q25" value="D"> D. sistem pengganti RAM dengan menggunakan register CPU.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q26">
+        <p>26. Tujuan utama dari manajemen ruang kosong (free space management) pada sistem berkas adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q26" value="A"> A. menentukan urutan berkas yang akan dieksekusi oleh CPU.</label>
+            <label><input type="radio" name="q26" value="B"> B. melacak blok disk yang kosong agar dialokasikan untuk berkas baru.</label>
+            <label><input type="radio" name="q26" value="C"> C. mengatur prioritas proses dalam memori utama.</label>
+            <label><input type="radio" name="q26" value="D"> D. menghapus blok data yang tidak digunakan secara otomatis.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q27">
+        <p>27. Berikut ini yang termasuk operasi dasar pada berkas dalam sistem operasi adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q27" value="A"> A. fetching, compiling dan executing</label>
+            <label><input type="radio" name="q27" value="B"> B. compiling, creating dan linking</label>
+            <label><input type="radio" name="q27" value="C"> C. scheduling, deleting dan dispatching</label>
+            <label><input type="radio" name="q27" value="D"> D. creating, reading, writing, dan deleting</label>
+        </div>
+    </div>
+
+    <div class="question" id="q28">
+        <p>28. Pernyataan berikut yang paling tepat menjelaskan perbedaan antara file dan direktori adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q28" value="A"> A. file untuk menyimpan program, direktori hanya menyimpan gambar.</label>
+            <label><input type="radio" name="q28" value="B"> B. file adalah identitas data, direktori sebagai wadah tempat file disimpan.</label>
+            <label><input type="radio" name="q28" value="C"> C. file dan direktori memiliki fungsi yang sama untuk aplikasi.</label>
+            <label><input type="radio" name="q28" value="D"> D. file hanya untuk sistem operasi, direktori hanya untuk pengguna.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q29">
+        <p>29. Salah satu cara tercepat untuk membuka Windows Explorer pada sistem operasi Windows adalah dengan...</p>
+        <div class="answers">
+            <label><input type="radio" name="q29" value="A"> A. Klik kanan pada Desktop dan memilih Properties.</label>
+            <label><input type="radio" name="q29" value="B"> B. Menekan kombinasi tombol Windows + E pada keyboard.</label>
+            <label><input type="radio" name="q29" value="C"> C. Menjalankan perintah “winopen” melalui Command Prompt.</label>
+            <label><input type="radio" name="q29" value="D"> D. Mengakses Control Panel kemudian memilih File Manager.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q30">
+        <p>30. Komponen berbentuk piringan yang berfungsi sebagai media penyimpanan data pada hard disk disebut....</p>
+        <div class="answers">
+            <label><input type="radio" name="q30" value="A"> A. Spindle</label>
+            <label><input type="radio" name="q30" value="B"> B. Platter</label>
+            <label><input type="radio" name="q30" value="C"> C. actuator</label>
+            <label><input type="radio" name="q30" value="D"> D. cache</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q31">
+        <p>31. Manakah pernyataan berikut yang paling tepat menjelaskan fungsi Activity, Intent, Views, dan Widget pada Android?</p>
+        <div class="answers">
+            <label><input type="radio" name="q31" value="A"> A. Activity untuk background, Intent menggambar UI, Views layanan sistem.</label>
+            <label><input type="radio" name="q31" value="B"> B. Activity simpan data, Intent tampilkan aplikasi, Views perintah sistem.</label>
+            <label><input type="radio" name="q31" value="C"> C. Activity akses database, Intent jalankan service, Views fitur animasi UI.</label>
+            <label><input type="radio" name="q31" value="D"> D. Activity adalah layar antarmuka, Intent untuk pindah Activity, Views elemen UI dasar, Widget elemen UI di home screen.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q32">
+        <p>32. Peran manajemen memori utama dan manajemen memori sekunder dalam sistem operasi adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q32" value="A"> A. Menyediakan akses langsung otomatis antara CPU dan perangkat I/O.</label>
+            <label><input type="radio" name="q32" value="B"> B. Menyimpan program di memori utama tanpa perlu pemindahan dari media sekunder.</label>
+            <label><input type="radio" name="q32" value="C"> C. Mengatur pemakaian I/O agar setiap proses memperoleh akses sesuai kebutuhan.</label>
+            <label><input type="radio" name="q32" value="D"> D. Mengatur pembagian ruang penyimpanan sementara serta menyediakan lokasi permanen bagi data.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q33">
+        <p>33. Cara sistem operasi mengatur komunikasi antar proses (Interprocess Communication) adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q33" value="A"> A. Memberikan seluruh memori utama kepada satu proses saja secara bergantian.</label>
+            <label><input type="radio" name="q33" value="B"> B. Mengatur agar setiap proses dapat langsung mengakses data proses lain tanpa batas.</label>
+            <label><input type="radio" name="q33" value="C"> C. Menyediakan mekanisme pertukaran pesan agar proses dapat berinteraksi tanpa saling mengganggu.</label>
+            <label><input type="radio" name="q33" value="D"> D. Menggabungkan semua proses dalam satu ruang eksekusi yang sama.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q34">
+        <p>34. Langkah analisis paling tepat untuk mengidentifikasi sumber perlambatan sistem pada Windows, Linux, dan Android adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q34" value="A"> A. Mengecek thread dan prioritas via Task Manager (Win), htop (Linux), dan Activity Manager (Android) untuk melihat CPU usage.</label>
+            <label><input type="radio" name="q34" value="B"> B. Memeriksa kapasitas penyimpanan tanpa melihat proses yang berjalan.</label>
+            <label><input type="radio" name="q34" value="C"> C. Menghapus aplikasi yang tidak digunakan tanpa memeriksa status proses aktif.</label>
+            <label><input type="radio" name="q34" value="D"> D. Mengubah seluruh aplikasi menjadi background service.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q35">
+        <p>35. Sistem yang terdiri dari prosesor-prosesor melalui LAN yang berbagi memori, I/O, dan resource menggambarkan sistem....</p>
+        <div class="answers">
+            <label><input type="radio" name="q35" value="A"> A. terdistribusi (distributed system)</label>
+            <label><input type="radio" name="q35" value="B"> B. terpusat (centralized system)</label>
+            <label><input type="radio" name="q35" value="C"> C. batch (batch processing system)</label>
+            <label><input type="radio" name="q35" value="D"> D. paralel (parallel system)</label>
+        </div>
+    </div>
+
+    <div class="question" id="q36">
+        <p>36. Penyebab pesan "Permission denied" saat user biasa membuka file /etc/app/config.ini di Linux adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q36" value="A"> A. Linux tidak mengizinkan siapa pun membuka file sistem di direktori /etc.</label>
+            <label><input type="radio" name="q36" value="B"> B. Struktur direktori Linux tidak mendukung file dengan ekstensi .ini.</label>
+            <label><input type="radio" name="q36" value="C"> C. Linux menerapkan izin (rwx) berbasis user-group-others; folder /etc biasanya hanya untuk hak root.</label>
+            <label><input type="radio" name="q36" value="D"> D. File dalam direktori /etc hanya dapat dibaca jika ukurannya kurang dari 1 MB.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q37">
+        <p>37. Karakteristik utama arsitektur Windows 32-bit dalam pengalamatan memori adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q37" value="A"> A. Memiliki ruang alamat sekitar 4 GB yang dibagi antara sistem operasi dan aplikasi.</label>
+            <label><input type="radio" name="q37" value="B"> B. Dapat mengakses memori fisik hingga 64 GB secara langsung.</label>
+            <label><input type="radio" name="q37" value="C"> C. Tidak menggunakan virtual memory sama sekali.</label>
+            <label><input type="radio" name="q37" value="D"> D. Memberi setiap aplikasi ruang alamat tak terbatas.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q38">
+        <p>38. Ciri khas sistem operasi pada generasi ketiga adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q38" value="A"> A. Menggunakan VLSI dan konsep general purpose system.</label>
+            <label><input type="radio" name="q38" value="B"> B. Menggunakan batch system untuk pekerjaan berurutan.</label>
+            <label><input type="radio" name="q38" value="C"> C. Menggunakan IC (Integrated Circuits) dan mendukung multiprogramming.</label>
+            <label><input type="radio" name="q38" value="D"> D. Menggunakan PC dengan antarmuka grafis user friendly.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q39">
+        <p>39. Yang BUKAN termasuk pengertian atau fungsi dasar sistem operasi adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q39" value="A"> A. Software yang mengontrol hardware.</label>
+            <label><input type="radio" name="q39" value="B"> B. Program yang menjadikan hardware lebih mudah digunakan.</label>
+            <label><input type="radio" name="q39" value="C"> C. Sebagai resource manager yang hanya mengatur pengguna mengakses internet.</label>
+            <label><input type="radio" name="q39" value="D"> D. Kumpulan program yang melayani permintaan pemakai hardware.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q40">
+        <p>40. Kesimpulan yang tepat mengenai perbedaan manajemen file Windows, Linux, dan Android adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q40" value="A"> A. Ketiga sistem memiliki struktur file yang identik dan kemudahan akses yang sama.</label>
+            <label><input type="radio" name="q40" value="B"> B. Hanya Linux yang mendukung file manager, sistem lain hanya mendukung terminal.</label>
+            <label><input type="radio" name="q40" value="C"> C. Windows berbasis drive, Linux hierarki tunggal (/), Android membatasi akses demi keamanan.</label>
+            <label><input type="radio" name="q40" value="D"> D. Android memiliki struktur paling bebas sehingga seluruh direktori dapat diakses.</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q41">
+        <p>41. Empat komponen utama yang membentuk suatu sistem komputer adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q41" value="A"> A. CPU, memori, perangkat i/o, dan sistem bus</label>
+            <label><input type="radio" name="q41" value="B"> B. compiler, assembler, text editor, dan database system</label>
+            <label><input type="radio" name="q41" value="C"> C. sistem operasi, hardware, program aplikasi, dan user</label>
+            <label><input type="radio" name="q41" value="D"> D. CPU, sistem operasi, program aplikasi, dan user</label>
+        </div>
+    </div>
+
+    <div class="question" id="q42">
+        <p>42. Fungsi utama sistem operasi sebagai interface antara user dan hardware adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q42" value="A"> A. menghubungkan aplikasi dengan hardware melalui lapisan software seperti device driver.</label>
+            <label><input type="radio" name="q42" value="B"> B. menjalankan langsung instruksi pengguna ke hardware tanpa perantara.</label>
+            <label><input type="radio" name="q42" value="C"> C. mengatur hardware agar berfungsi tanpa bantuan software pendukung.</label>
+            <label><input type="radio" name="q42" value="D"> D. menggantikan fungsi device driver agar aplikasi bicara langsung ke hardware.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q43">
+        <p>43. Kombinasi tools Linux yang paling sesuai untuk mendiagnosis masalah CPU, RAM/Swap, dan mengaktifkan partisi baru adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q43" value="A"> A. ps (swap), mc (CPU), dan fdisk (partisi).</label>
+            <label><input type="radio" name="q43" value="B"> B. top (CPU), free (RAM/swap), dan mount (aktifkan partisi).</label>
+            <label><input type="radio" name="q43" value="C"> C. fdisk (CPU), free (proses), dan ps (partisi).</label>
+            <label><input type="radio" name="q43" value="D"> D. mc (memori), ps (partisi), dan top (filesystem).</label>
+        </div>
+    </div>
+
+    <div class="question" id="q44">
+        <p>44. Mekanisme dual-mode pada sistem operasi monolithic berfungsi untuk….</p>
+        <div class="answers">
+            <label><input type="radio" name="q44" value="A"> A. membedakan eksekusi instruksi user dan OS agar keamanan terjaga.</label>
+            <label><input type="radio" name="q44" value="B"> B. memungkinkan proses pengguna mengakses seluruh memori kernel.</label>
+            <label><input type="radio" name="q44" value="C"> C. menjalankan semua prosedur OS dalam mode pengguna agar efisien.</label>
+            <label><input type="radio" name="q44" value="D"> D. membagi tugas OS menjadi modul kecil di luar kernel.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q45">
+        <p>45. Tujuan utama sinkronisasi proses dalam sistem operasi adalah untuk menjaga ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q45" value="A"> A. kecepatan proses berjalan lebih tinggi.</label>
+            <label><input type="radio" name="q45" value="B"> B. konsistensi dan integritas data selama proses berjalan bersamaan.</label>
+            <label><input type="radio" name="q45" value="C"> C. agar setiap proses selalu mendapatkan akses CPU tanpa henti.</label>
+            <label><input type="radio" name="q45" value="D"> D. penggunaan memori menjadi lebih besar.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q46">
+        <p>46. Berdasarkan mekanisme lock TestAndSet, jika nilai awal lock adalah FALSE, maka proses akan ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q46" value="A"> A. masuk langsung ke critical section karena TestAndSet() mengembalikan FALSE.</label>
+            <label><input type="radio" name="q46" value="B"> B. terjebak dalam busy waiting karena TestAndSet() mengembalikan TRUE.</label>
+            <label><input type="radio" name="q46" value="C"> C. tidak dapat masuk ke critical section karena nilai lock tetap FALSE.</label>
+            <label><input type="radio" name="q46" value="D"> D. menghentikan eksekusi karena perulangan tidak terpenuhi.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q47">
+        <p>47. Yang dimaksud dengan alokasi file dalam sistem berkas adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q47" value="A"> A. penentuan lokasi file di memori utama agar diakses CPU.</label>
+            <label><input type="radio" name="q47" value="B"> B. cara mengatur ruang disk yang digunakan untuk menyimpan file.</label>
+            <label><input type="radio" name="q47" value="C"> C. proses menghubungkan file dengan direktori induk.</label>
+            <label><input type="radio" name="q47" value="D"> D. teknik mengatur hak akses pengguna terhadap file.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q48">
+        <p>48. Salah satu manfaat utama dari multithreading dalam sistem operasi adalah ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q48" value="A"> A. meningkatkan waktu respons dan pemanfaatan CPU.</label>
+            <label><input type="radio" name="q48" value="B"> B. membuat setiap thread memiliki memori terpisah dari induknya.</label>
+            <label><input type="radio" name="q48" value="C"> C. menjamin thread selesai tanpa interupsi.</label>
+            <label><input type="radio" name="q48" value="D"> D. mengurangi kebutuhan penggunaan CPU.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q49">
+        <p>49. Model many-to-one dalam hubungan thread memiliki karakteristik bahwa ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q49" value="A"> A. satu user thread dipetakan ke banyak kernel thread.</label>
+            <label><input type="radio" name="q49" value="B"> B. banyak user thread dipetakan ke satu kernel thread.</label>
+            <label><input type="radio" name="q49" value="C"> C. setiap user thread memiliki kernel thread masing-masing.</label>
+            <label><input type="radio" name="q49" value="D"> D. user thread tidak memerlukan kernel thread.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q50">
+        <p>50. Efisiensi dalam penjadwalan disk terutama dipengaruhi oleh tiga komponen utama, yaitu...</p>
+        <div class="answers">
+            <label><input type="radio" name="q50" value="A"> A. seek time, rotational delay, dan transfer rate.</label>
+            <label><input type="radio" name="q50" value="B"> B. seek time, boot time, dan swap time.</label>
+            <label><input type="radio" name="q50" value="C"> C. read time, write time, dan execute time.</label>
+            <label><input type="radio" name="q50" value="D"> D. access time, buffer size, dan cache hit ratio.</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q51">
+        <p>51. Pernyataan berikut yang benar mengenai konsep mesin virtual (Virtual Machine) adalah …</p>
+        <div class="answers">
+            <label><input type="radio" name="q51" value="A"> A. menggabungkan semua perangkat keras menjadi satu proses besar.</label>
+            <label><input type="radio" name="q51" value="B"> B. memungkinkan satu perangkat keras menjalankan beberapa OS secara bersamaan.</label>
+            <label><input type="radio" name="q51" value="C"> C. ditujukan untuk mempercepat proses kernel agar lebih efisien.</label>
+            <label><input type="radio" name="q51" value="D"> D. hanya bekerja pada sistem operasi berbasis UNIX.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q52">
+        <p>52. Manakah pernyataan berikut yang paling tepat menggambarkan fungsi utama Microsoft Azure….</p>
+        <div class="answers">
+            <label><input type="radio" name="q52" value="A"> A. Platform yang hanya menyediakan layanan penyimpanan file Windows.</label>
+            <label><input type="radio" name="q52" value="B"> B. Platform cloud computing dan portal internet untuk manajemen sumber daya Microsoft.</label>
+            <label><input type="radio" name="q52" value="C"> C. Aplikasi desktop Windows untuk meningkatkan kecepatan prosesor.</label>
+            <label><input type="radio" name="q52" value="D"> D. Sistem operasi baru yang menggantikan Windows dan Linux.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q53">
+        <p>53. Manakah urutan perintah Linux yang tepat untuk: cek posisi, pindah file, hapus folder beserta isinya, dan cek isi folder?</p>
+        <div class="answers">
+            <label><input type="radio" name="q53" value="A"> A. pwd, mv draft.txt update/, rm old, ls update</label>
+            <label><input type="radio" name="q53" value="B"> B. ls, mv draft.txt update/, rm -r old/, pwd update</label>
+            <label><input type="radio" name="q53" value="C"> C. pwd, mv draft.txt update/, rm -r old/, ls update</label>
+            <label><input type="radio" name="q53" value="D"> D. pwd, cp draft.txt update/, rm old/, ls update/</label>
+        </div>
+    </div>
+
+    <div class="question" id="q54">
+        <p>54. Pada siklus hidup proses, suatu proses berpindah dari Running ke Waiting/Blocked jika….</p>
+        <div class="answers">
+            <label><input type="radio" name="q54" value="A"> A. proses selesai dieksekusi oleh CPU.</label>
+            <label><input type="radio" name="q54" value="B"> B. terjadi permintaan I/O atau proses menunggu suatu event.</label>
+            <label><input type="radio" name="q54" value="C"> C. proses siap untuk diproses oleh CPU.</label>
+            <label><input type="radio" name="q54" value="D"> D. proses baru saja dibuat oleh sistem operasi.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q55">
+        <p>55. Tujuan utama dari Context Switching saat menyimpan status proses ke PCB adalah agar proses dapat ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q55" value="A"> A. dihapus dari sistem dan tidak dilanjutkan lagi.</label>
+            <label><input type="radio" name="q55" value="B"> B. melanjutkan eksekusi dari titik terakhir proses sebelumnya.</label>
+            <label><input type="radio" name="q55" value="C"> C. dikompresi ukurannya agar lebih ringan.</label>
+            <label><input type="radio" name="q55" value="D"> D. dipindahkan ke penyimpanan eksternal secara permanen.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q56">
+        <p>56. Segmentasi dalam sistem operasi adalah teknik manajemen memori yang....</p>
+        <div class="answers">
+            <label><input type="radio" name="q56" value="A"> A. membagi memori menjadi blok-blok berukuran tetap.</label>
+            <label><input type="radio" name="q56" value="B"> B. mendukung cara pandang programmer terhadap memori.</label>
+            <label><input type="radio" name="q56" value="C"> C. menyimpan semua proses dalam satu area memori utama.</label>
+            <label><input type="radio" name="q56" value="D"> D. menggabungkan beberapa partisi menjadi satu area besar.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q57">
+        <p>57. Manakah urutan langkah instalasi Windows 10 yang benar menggunakan USB bootable?</p>
+        <div class="answers">
+            <label><input type="radio" name="q57" value="A"> A. 3 &rarr; 1 &rarr; 4 &rarr; 2</label>
+            <label><input type="radio" name="q57" value="B"> B. 1 &rarr; 3 &rarr; 2 &rarr; 4</label>
+            <label><input type="radio" name="q57" value="C"> C. 3 &rarr; 4 &rarr; 1 &rarr; 2</label>
+            <label><input type="radio" name="q57" value="D"> D. 4 &rarr; 1 &rarr; 3 &rarr; 2</label>
+        </div>
+    </div>
+
+    <div class="question" id="q58">
+        <p>58. Manakah urutan kronologis perkembangan Windows yang benar?</p>
+        <div class="answers">
+            <label><input type="radio" name="q58" value="A"> A. (3) – (1) – (2) – (4)</label>
+            <label><input type="radio" name="q58" value="B"> B. (1) – (3) – (2) – (4)</label>
+            <label><input type="radio" name="q58" value="C"> C. (1) – (2) – (3) – (4)</label>
+            <label><input type="radio" name="q58" value="D"> D. (2) – (1) – (4) – (3)</label>
+        </div>
+    </div>
+
+    <div class="question" id="q59">
+        <p>59. Alokasi memori dengan ukuran tetap untuk setiap partisi disebut....</p>
+        <div class="answers">
+            <label><input type="radio" name="q59" value="A"> A. fixed partition</label>
+            <label><input type="radio" name="q59" value="B"> B. dynamic partition</label>
+            <label><input type="radio" name="q59" value="C"> C. variable allocation</label>
+            <label><input type="radio" name="q59" value="D"> D. swapping memory</label>
+        </div>
+    </div>
+
+    <div class="question" id="q60">
+        <p>60. Perintah yang digunakan untuk membuat file kosong baru di sistem operasi Linux adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q60" value="A"> A. mkdir</label>
+            <label><input type="radio" name="q60" value="B"> B. rm</label>
+            <label><input type="radio" name="q60" value="C"> C. touch</label>
+            <label><input type="radio" name="q60" value="D"> D. mv</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q61">
+        <p>61. Penjadwalan CPU yang maksimum diperoleh melalui....</p>
+        <div class="answers">
+            <label><input type="radio" name="q61" value="A"> A. multiprocessing</label>
+            <label><input type="radio" name="q61" value="B"> B. multiprogramming</label>
+            <label><input type="radio" name="q61" value="C"> C. multiprocess</label>
+            <label><input type="radio" name="q61" value="D"> D. multitasking</label>
+        </div>
+    </div>
+
+    <div class="question" id="q62">
+        <p>62. Pengertian cache memory yang tepat adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q62" value="A"> A. memori utama yang digunakan untuk menjalankan sistem operasi.</label>
+            <label><input type="radio" name="q62" value="B"> B. memori tambahan yang menyimpan data sementara untuk mempercepat akses CPU.</label>
+            <label><input type="radio" name="q62" value="C"> C. media penyimpanan eksternal untuk backup data.</label>
+            <label><input type="radio" name="q62" value="D"> D. bagian dari memori sekunder yang menyimpan file pengguna.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q63">
+        <p>63. Perbedaan mendasar antara konsep sistem file di Windows dan Linux adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q63" value="A"> A. Windows berbasis root (/), Linux berbasis drive-letter.</label>
+            <label><input type="radio" name="q63" value="B"> B. Windows berbasis drive-letter (C:, D:), Linux berbasis root (/).</label>
+            <label><input type="radio" name="q63" value="C"> C. Keduanya menggunakan struktur direktori yang sama tapi beda ekstensi.</label>
+            <label><input type="radio" name="q63" value="D"> D. Linux hanya satu partisi, Windows banyak partisi.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q64">
+        <p>64. Manajemen file dan direktori dalam sistem operasi bertujuan utama untuk...</p>
+        <div class="answers">
+            <label><input type="radio" name="q64" value="A"> A. mengatur cara proses dieksekusi dalam CPU secara berurutan.</label>
+            <label><input type="radio" name="q64" value="B"> B. mengatur file serta direktori di dalam media penyimpanan.</label>
+            <label><input type="radio" name="q64" value="C"> C. mengelola penggunaan memori utama oleh aplikasi.</label>
+            <label><input type="radio" name="q64" value="D"> D. mengatur komunikasi antarperangkat keras melalui driver.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q65">
+        <p>65. Page fault dapat diketahui dari….</p>
+        <div class="answers">
+            <label><input type="radio" name="q65" value="A"> A. CPU tidak dapat menemukan instruksi di dalam cache memory.</label>
+            <label><input type="radio" name="q65" value="B"> B. Penggunaan skema bit valid-tidak valid.</label>
+            <label><input type="radio" name="q65" value="C"> C. sistem operasi gagal mengalokasikan ruang memori baru.</label>
+            <label><input type="radio" name="q65" value="D"> D. dua proses mengakses halaman yang sama secara bersamaan.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q66">
+        <p>66. Keadaan di mana suatu proses tidak pernah mendapatkan sumber daya karena didahului proses lain disebut....</p>
+        <div class="answers">
+            <label><input type="radio" name="q66" value="A"> A. deadlock</label>
+            <label><input type="radio" name="q66" value="B"> B. starvation</label>
+            <label><input type="radio" name="q66" value="C"> C. race condition</label>
+            <label><input type="radio" name="q66" value="D"> D. mutual exclusion</label>
+        </div>
+    </div>
+
+    <div class="question" id="q67">
+        <p>67. Semaphore dalam sistem operasi digunakan untuk ....</p>
+        <div class="answers">
+            <label><input type="radio" name="q67" value="A"> A. menghapus proses yang sedang menggunakan sumber daya.</label>
+            <label><input type="radio" name="q67" value="B"> B. mengatur akses ke sumber daya bersama agar tidak terjadi race condition.</label>
+            <label><input type="radio" name="q67" value="C"> C. menggandakan jumlah thread agar proses lebih cepat.</label>
+            <label><input type="radio" name="q67" value="D"> D. menentukan urutan scheduling proses pada CPU.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q68">
+        <p>68. Konsep virtual memory pertama kali diperkenalkan oleh....</p>
+        <div class="answers">
+            <label><input type="radio" name="q68" value="A"> A. Bill Gates</label>
+            <label><input type="radio" name="q68" value="B"> B. Alan Turing</label>
+            <label><input type="radio" name="q68" value="C"> C. John Fotheringham</label>
+            <label><input type="radio" name="q68" value="D"> D. Charles Babbage</label>
+        </div>
+    </div>
+
+    <div class="question" id="q69">
+        <p>69. Pada teknik bit vector (bitmap) dalam pengelolaan ruang kosong, setiap blok disk direpresentasikan oleh...</p>
+        <div class="answers">
+            <label><input type="radio" name="q69" value="A"> A. sebuah pointer yang menunjuk blok kosong berikutnya.</label>
+            <label><input type="radio" name="q69" value="B"> B. sebuah byte yang menyimpan alamat blok disk.</label>
+            <label><input type="radio" name="q69" value="C"> C. sebuah bit yang menunjukkan blok kosong atau telah digunakan.</label>
+            <label><input type="radio" name="q69" value="D"> D. sebuah tabel yang menyimpan nama dan lokasi direktori.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q70">
+        <p>70. Dalam sistem operasi, berkas (file) didefinisikan sebagai....</p>
+        <div class="answers">
+            <label><input type="radio" name="q70" value="A"> A. kumpulan data atau informasi yang disimpan di memori utama sementara.</label>
+            <label><input type="radio" name="q70" value="B"> B. kumpulan data yang saling berhubungan dan diberi nama pada perangkat penyimpanan.</label>
+            <label><input type="radio" name="q70" value="C"> C. struktur data yang hanya digunakan oleh sistem operasi untuk booting.</label>
+            <label><input type="radio" name="q70" value="D"> D. area memori sementara untuk proses yang sedang berjalan.</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q71">
+        <p>71. Berikut ini yang merupakan perbedaan utama antara regular file, directory file, dan special file adalah...</p>
+        <div class="answers">
+            <label><input type="radio" name="q71" value="A"> A. Regular berisi data, directory menyimpan daftar file, special file merepresentasikan perangkat I/O.</label>
+            <label><input type="radio" name="q71" value="B"> B. Regular menyimpan file sistem, directory menyimpan aplikasi, special file menyimpan multimedia.</label>
+            <label><input type="radio" name="q71" value="C"> C. Regular hanya dapat dibaca, directory hanya dapat ditulis, special file tidak dapat diakses.</label>
+            <label><input type="radio" name="q71" value="D"> D. Regular untuk jaringan, directory untuk memori utama, special file untuk penyimpanan sekunder.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q72">
+        <p>72. Dalam sistem operasi Windows, operasi delete file secara permanen tanpa melewati Recycle Bin dapat dilakukan dengan cara...</p>
+        <div class="answers">
+            <label><input type="radio" name="q72" value="A"> A. Menekan tombol Delete pada file yang dipilih.</label>
+            <label><input type="radio" name="q72" value="B"> B. Menekan tombol Ctrl + Delete.</label>
+            <label><input type="radio" name="q72" value="C"> C. Menekan kombinasi tombol Shift + Delete.</label>
+            <label><input type="radio" name="q72" value="D"> D. Menghapus file melalui menu Properties.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q73">
+        <p>73. Dalam struktur fisik hard disk, kumpulan track yang sejajar secara vertikal pada beberapa platter disebut....</p>
+        <div class="answers">
+            <label><input type="radio" name="q73" value="A"> A. sector</label>
+            <label><input type="radio" name="q73" value="B"> B. cluster</label>
+            <label><input type="radio" name="q73" value="C"> C. cylinder</label>
+            <label><input type="radio" name="q73" value="D"> D. block</label>
+        </div>
+    </div>
+
+    <div class="question" id="q74">
+        <p>74. Manakah pernyataan berikut yang paling tepat menggambarkan fungsi utama Google APIs dalam pengembangan Android?</p>
+        <div class="answers">
+            <label><input type="radio" name="q74" value="A"> A. Menyediakan layanan seperti Maps, Location, dan Authentication untuk integrasi layanan Google secara mudah.</label>
+            <label><input type="radio" name="q74" value="B"> B. Berfungsi menggantikan library bawaan Android sehingga tidak perlu framework Android.</label>
+            <label><input type="radio" name="q74" value="C"> C. Hanya menyediakan widget tampilan seperti tombol dan layout untuk membangun UI.</label>
+            <label><input type="radio" name="q74" value="D"> D. Digunakan khusus untuk mengoptimalkan performa hardware seperti CPU dan RAM.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q75">
+        <p>75. Dalam sistem operasi, fungsi utama manajemen proses adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q75" value="A"> A. mengelola pelaksanaan, penundaan, dan penghentian proses pada sistem komputer.</label>
+            <label><input type="radio" name="q75" value="B"> B. mengatur seluruh aktivitas perangkat keras agar dapat bekerja secara paralel.</label>
+            <label><input type="radio" name="q75" value="C"> C. menyediakan mekanisme komunikasi antara pengguna dan sistem file.</label>
+            <label><input type="radio" name="q75" value="D"> D. mengontrol penggunaan perangkat penyimpanan agar tidak terjadi fragmentasi.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q76">
+        <p>76. Fungsi manajemen I/O yang paling berperan dalam meningkatkan efisiensi CPU dengan menyimpan data sementara adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q76" value="A"> A. scheduling</label>
+            <label><input type="radio" name="q76" value="B"> B. spooling</label>
+            <label><input type="radio" name="q76" value="C"> C. buffering</label>
+            <label><input type="radio" name="q76" value="D"> D. driver management</label>
+        </div>
+    </div>
+
+    <div class="question" id="q77">
+        <p>77. Langkah analisis mana yang paling tepat dilakukan menggunakan Task Manager untuk mendiagnosis PC yang freeze?</p>
+        <div class="answers">
+            <label><input type="radio" name="q77" value="A"> A. Membuka File Explorer untuk melihat ukuran aplikasi.</label>
+            <label><input type="radio" name="q77" value="B"> B. Menghapus aplikasi melalui Control Panel secara langsung.</label>
+            <label><input type="radio" name="q77" value="C"> C. Memantau penggunaan CPU, Memory, Disk, dan Network pada tab Processes untuk identifikasi proses berlebih.</label>
+            <label><input type="radio" name="q77" value="D"> D. Mengubah tema Windows menjadi mode ringan.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q78">
+        <p>78. Sistem operasi yang memungkinkan prosesor saling berkomunikasi dan berbagi sumber daya antar komputer dalam satu jaringan disebut….</p>
+        <div class="answers">
+            <label><input type="radio" name="q78" value="A"> A. sistem operasi jaringan.</label>
+            <label><input type="radio" name="q78" value="B"> B. sistem operasi terdistribusi.</label>
+            <label><input type="radio" name="q78" value="C"> C. sistem operasi tunggal.</label>
+            <label><input type="radio" name="q78" value="D"> D. sistem operasi paralel.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q79">
+        <p>79. Cara paling sesuai di Windows Explorer untuk melihat ekstensi file dan navigasi unduhan adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q79" value="A"> A. Menggunakan Command Prompt (DOS).</label>
+            <label><input type="radio" name="q79" value="B"> B. Navigasi ke folder Downloads dan mengatur tampilan melalui View -> File name extensions.</label>
+            <label><input type="radio" name="q79" value="C"> C. Menginstal aplikasi pihak ketiga untuk struktur file.</label>
+            <label><input type="radio" name="q79" value="D"> D. Menggunakan Task Manager untuk modifikasi ekstensi.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q80">
+        <p>80. Penjelasan paling tepat mengenai kaitan antara RAM penuh dan penggunaan paging file (virtual memory) adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q80" value="A"> A. Windows hanya menggunakan RAM fisik dan tidak pernah memakai virtual memory.</label>
+            <label><input type="radio" name="q80" value="B"> B. Saat RAM penuh, sistem memindahkan data ke paging file di disk, yang dapat menurunkan kinerja.</label>
+            <label><input type="radio" name="q80" value="C"> C. Windows menjalankan semua aplikasi langsung dari hard disk tanpa RAM.</label>
+            <label><input type="radio" name="q80" value="D"> D. Windows memblokir aplikasi berat secara otomatis.</label>
+        </div>
+    </div>
+
+<div class="question" id="q81">
+        <p>81. Prinsip kerja dari sistem multiprogramming adalah….</p>
+        <div class="answers">
+            <label><input type="radio" name="q81" value="A"> A. menjalankan beberapa proses di memori utama dengan waktu eksekusi bergantian oleh CPU.</label>
+            <label><input type="radio" name="q81" value="B"> B. mengalokasikan setiap proses ke prosesor yang berbeda agar selesai bersamaan.</label>
+            <label><input type="radio" name="q81" value="C"> C. menyimpan satu proses di memori dan menunggu selesai sebelum memuat proses lain.</label>
+            <label><input type="radio" name="q81" value="D"> D. menjalankan seluruh proses secara paralel dengan membagi sumber daya secara bersamaan.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q82">
+        <p>82. Manakah kesimpulan yang paling sesuai mengenai perbedaan manajemen memori pada Windows 64-bit, Linux, dan Android?</p>
+        <div class="answers">
+            <label><input type="radio" name="q82" value="A"> A. Ketiganya memiliki arsitektur memori yang identik.</label>
+            <label><input type="radio" name="q82" value="B"> B. Linux dan Android tidak menggunakan virtual memory.</label>
+            <label><input type="radio" name="q82" value="C"> C. Android memiliki arsitektur memori paling besar.</label>
+            <label><input type="radio" name="q82" value="D"> D. Windows mengandalkan arsitektur 64-bit, Linux mengoptimalkan buffer-cache, dan Android menggunakan low-memory killer.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q83">
+        <p>83. Fungsi sistem operasi sebagai resource manager adalah....</p>
+        <div class="answers">
+            <label><input type="radio" name="q83" value="A"> A. membatasi pengguna agar tidak menjalankan banyak program.</label>
+            <label><input type="radio" name="q83" value="B"> B. mengalokasikan prosesor, memori, dan perangkat I/O sesuai kebutuhan program.</label>
+            <label><input type="radio" name="q83" value="C"> C. menyimpan semua instruksi sistem di penyimpanan sekunder.</label>
+            <label><input type="radio" name="q83" value="D"> D. menjalankan perintah pengguna secara langsung ke perangkat keras.</label>
+        </div>
+    </div>
+
+    <div class="question" id="q84">
+        <p>84. Tindakan manakah yang paling tepat menggunakan fitur Cleaner di Android untuk memperbaiki performa tanpa menghapus file penting?</p>
+        <div class="answers">
+            <label><input type="radio" name="q84" value="A"> A. Menghapus file sampah, cache aplikasi, dan sisa instalasi agar ruang penyimpanan longgar.</label>
+            <label><input type="radio" name="q84" value="B"> B. Memindahkan semua file ke kartu SD tanpa melihat kategorinya.</label>
+            <label><input type="radio" name="q84" value="C"> C. Menghapus aplikasi sistem bawaan agar penyimpanan bertambah.</label>
+            <label><input type="radio" name="q84" value="D"> D. Melakukan factory reset agar seluruh penyimpanan kembali kosong.</label>
+        </div>
+    </div>
+    
+    <div class="btn-container">
+        <button type="button" id="submitBtn" onclick="checkAnswers()">Submit Jawaban</button>
+        <button type="button" id="resetBtn" onclick="resetQuiz()" style="display:none;">Ulangi Quiz</button>
+    </div>
+
+    <p id="result"></p>
+
+    <script>
+        // Kunci Jawaban yang telah disesuaikan dengan 10 soal di atas
+        const answerKey = {
+           
+    q1: "C", 
+    q2: "B", 
+    q3: "B", 
+    q4: "A", 
+    q5: "C", 
+    q6: "B", 
+    q7: "C", 
+    q8: "C", 
+    q9: "A", 
+    q10: "B",
+    q11: "B",
+    q12: "B",
+    q13: "B",
+    q14: "B",
+    q15: "B",
+    q16: "A",
+    q17: "D",
+    q18: "C",
+    q19: "B",
+    q20: "A",
+    q21: "C",
+    q22: "B",
+    q23: "D",
+    q24: "B",
+    q25: "B",
+    q26: "B",
+    q27: "D",
+    q28: "B",
+    q29: "B",
+    q30: "B",
+    q31: "D",
+    q32: "D",
+    q33: "C",
+    q34: "A",
+    q35: "A",
+    q36: "C",
+    q37: "A",
+    q38: "A",
+    q39: "C",
+    q40: "C",
+    q41: "A",
+    q42: "A",
+    q43: "B",
+    q44: "A",
+    q45: "B",
+    q46: "A",
+    q47: "B",
+    q48: "A",
+    q49: "B",
+    q50: "A",
+    q51: "B",
+    q52: "B",
+    q53: "C",
+    q54: "B",
+    q55: "B",
+    q56: "B",
+    q57: "A",
+    q58: "C",
+    q59: "A",
+    q60: "C",
+    q61: "B",
+    q62: "B",
+    q63: "B",
+    q64: "B",
+    q65: "B",
+    q66: "B",
+    q67: "B",
+    q68: "C",
+    q69: "C",
+    q70: "B",
+    q71: "A",
+    q72: "C",
+    q73: "C",
+    q74: "A",
+    q75: "A",
+    q76: "C",
+    q77: "C",
+    q78: "B",
+    q79: "B",
+    q80: "B",
+    q81: "A",
+    q82: "D",
+    q83: "B",
+    q84: "A",
+        };
+
+        function checkAnswers() {
+            let total = 0;
+            const totalQuestions = 84;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const q = "q" + i;
+                const qDiv = document.getElementById(q);
+                const options = document.getElementsByName(q);
+
+                qDiv.classList.remove("correct", "wrong");
+
+                let answered = false;
+                let correct = false;
+                let selectedValue = "";
+
+                for (const opt of options) {
+                    const label = opt.parentNode;
+                    label.style.fontWeight = "normal";
+                    label.style.color = "black";
+
+                    if (opt.checked) {
+                        answered = true;
+                        selectedValue = opt.value;
+                        if (opt.value === answerKey[q]) correct = true;
+                    }
+                }
+
+                if (correct) {
+                    qDiv.classList.add("correct");
+                    total++;
+                } else {
+                    qDiv.classList.add("wrong");
+                    // Tunjukkan jawaban yang benar dengan warna hijau
+                    for (const opt of options) {
+                        const label = opt.parentNode;
+                        if (opt.value === answerKey[q]) {
+                            label.style.fontWeight = "bold";
+                            label.style.color = "green";
+                        }
+                    }
+                }
+            }
+
+            document.getElementById("result").innerHTML = 
+                `Jumlah jawaban benar: <span style="color:green">${total}</span> dari ${totalQuestions} soal`;
+
+            // tampilkan tombol reset
+            document.getElementById("submitBtn").style.display = "none";
+            document.getElementById("resetBtn").style.display = "inline-block";
+        }
+
+        function resetQuiz() {
+            const totalQuestions = 84;
+            for (let i = 1; i <= totalQuestions; i++) {
+                const q = "q" + i;
+                const qDiv = document.getElementById(q);
+                const options = document.getElementsByName(q);
+
+                qDiv.classList.remove("correct", "wrong");
+
+                for (const opt of options) {
+                    opt.checked = false;
+                    const label = opt.parentNode;
+                    label.style.fontWeight = "normal";
+                    label.style.color = "black";
+                }
+            }
+
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("resetBtn").style.display = "none";
+            document.getElementById("submitBtn").style.display = "inline-block";
+        }
+    </script>
+</body>
+</html>
