@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 20px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    text-align: center;
+    color: #003366;
+  }
+
+  .question {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+  }
+
+  .question p {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .answers label {
+    display: block;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .answers label:hover {
+    background: #f0f7ff;
+  }
+
+  .answers input[type="radio"] {
+    margin-right: 12px;
+  }
+
+  .btn-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  #submitBtn {
+    background-color: #007bff;
+    color: white;
+  }
+
+  #resetBtn {
+    background-color: #6c757d;
+    color: white;
+  }
+
+  #result {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #003366;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .correct-ans {
+    background-color: #d4edda !important; /* hijau lembut */
+    border: 1px solid #c3e6cb;
+  }
+
+  .wrong-ans {
+    background-color: #f8d7da !important; /* merah lembut */
+    border: 1px solid #f5c6cb;
+  }
+
+  .highlight {
+    font-weight: bold;
+    color: #155724;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Latihan Soal UAS Metode Statistika I (SATS4121)</h2>
+  
+  <div id="quiz-container">
+    <div class="question" id="q1">
+      <p>1. Manakah di bawah ini yang merupakan contoh skala pengukuran rasio?</p>
+      <div class="answers">
+        <label><input type="radio" name="q1" value="A"> A. Tingkat kepuasan pelanggan (Puas, Cukup, Kurang)</label>
+        <label><input type="radio" name="q1" value="B"> B. Suhu udara dalam derajat Celsius</label>
+        <label><input type="radio" name="q1" value="C"> C. Berat badan mahasiswa (kg)</label>
+        <label><input type="radio" name="q1" value="D"> D. Jenis pekerjaan (PNS, Swasta, Buruh)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q2">
+      <p>2. Diberikan data: 5, 8, 10, 12, 15. Berapakah nilai rata-rata (mean) dari data tersebut?</p>
+      <div class="answers">
+        <label><input type="radio" name="q2" value="A"> A. 9</label>
+        <label><input type="radio" name="q2" value="B"> B. 10</label>
+        <label><input type="radio" name="q2" value="C"> C. 11</label>
+        <label><input type="radio" name="q2" value="D"> D. 12</label>
+      </div>
+    </div>
+
+    <div class="question" id="q3">
+      <p>3. Jika diketahui sekelompok data memiliki Median = 25 dan Mean = 20, maka distribusi data tersebut cenderung...</p>
+      <div class="answers">
+        <label><input type="radio" name="q3" value="A"> A. Simetris</label>
+        <label><input type="radio" name="q3" value="B"> B. Miring ke kanan (positif)</label>
+        <label><input type="radio" name="q3" value="C"> C. Miring ke kiri (negatif)</label>
+        <label><input type="radio" name="q3" value="D"> D. Normal</label>
+      </div>
+    </div>
+
+    <div class="question" id="q4">
+      <p>4. Berapakah nilai simpangan baku (standard deviation) jika varians suatu kumpulan data adalah 49?</p>
+      <div class="answers">
+        <label><input type="radio" name="q4" value="A"> A. 7</label>
+        <label><input type="radio" name="q4" value="B"> B. 49</label>
+        <label><input type="radio" name="q4" value="C"> C. 24.5</label>
+        <label><input type="radio" name="q4" value="D"> D. 2401</label>
+      </div>
+    </div>
+
+    <div class="question" id="q5">
+      <p>5. Diketahui sekumpulan data: 2, 4, 4, 5, 6, 7, 8, 9, 10. Berapakah nilai Modus-nya?</p>
+      <div class="answers">
+        <label><input type="radio" name="q5" value="A"> A. 4</label>
+        <label><input type="radio" name="q5" value="B"> B. 5</label>
+        <label><input type="radio" name="q5" value="C"> C. 6</label>
+        <label><input type="radio" name="q5" value="D"> D. Tidak ada modus</label>
+      </div>
+    </div>
+
+    <div class="question" id="q6">
+      <p>6. Nilai Q3 (Kuartil Atas) dari data: 10, 12, 15, 17, 20, 22, 25 adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q6" value="A"> A. 12</label>
+        <label><input type="radio" name="q6" value="B"> B. 17</label>
+        <label><input type="radio" name="q6" value="C"> C. 20</label>
+        <label><input type="radio" name="q6" value="D"> D. 22</label>
+      </div>
+    </div>
+
+    <div class="question" id="q7">
+      <p>7. Statistika yang bertujuan untuk menarik kesimpulan mengenai parameter populasi berdasarkan data sampel disebut...</p>
+      <div class="answers">
+        <label><input type="radio" name="q7" value="A"> A. Statistika Deskriptif</label>
+        <label><input type="radio" name="q7" value="B"> B. Statistika Inferensia</label>
+        <label><input type="radio" name="q7" value="C"> C. Statistika Numerik</label>
+        <label><input type="radio" name="q7" value="D"> D. Statistika Terapan</label>
+      </div>
+    </div>
+
+    <div class="question" id="q8">
+      <p>8. Selisih antara nilai pengamatan terbesar dan terkecil dalam kumpulan data disebut...</p>
+      <div class="answers">
+        <label><input type="radio" name="q8" value="A"> A. Varians</label>
+        <label><input type="radio" name="q8" value="B"> B. Deviasi rata-rata</label>
+        <label><input type="radio" name="q8" value="C"> C. Jangkauan (Range)</label>
+        <label><input type="radio" name="q8" value="D"> D. Simpangan Baku</label>
+      </div>
+    </div>
+
+    <div class="question" id="q9">
+      <p>9. Jika setiap nilai dalam data dikalikan dengan 2, maka nilai rata-ratanya akan menjadi...</p>
+      <div class="answers">
+        <label><input type="radio" name="q9" value="A"> A. Tetap sama</label>
+        <label><input type="radio" name="q9" value="B"> B. Bertambah 2</label>
+        <label><input type="radio" name="q9" value="C"> C. Menjadi dua kali lipat</label>
+        <label><input type="radio" name="q9" value="D"> D. Berkurang setengahnya</label>
+      </div>
+    </div>
+
+    <div class="question" id="q10">
+      <p>10. Grafik yang terdiri dari persegi panjang dengan lebar kelas yang sama dan frekuensi sebagai tingginya disebut...</p>
+      <div class="answers">
+        <label><input type="radio" name="q10" value="A"> A. Ogive</label>
+        <label><input type="radio" name="q10" value="B"> B. Poligon frekuensi</label>
+        <label><input type="radio" name="q10" value="C"> C. Histogram</label>
+        <label><input type="radio" name="q10" value="D"> D. Pie Chart</label>
+      </div>
+    </div>
+
+    <div class="question" id="q11">
+      <p>11. Sebuah dadu dilempar satu kali. Berapakah peluang munculnya angka genap?</p>
+      <div class="answers">
+        <label><input type="radio" name="q11" value="A"> A. 1/6</label>
+        <label><input type="radio" name="q11" value="B"> B. 1/3</label>
+        <label><input type="radio" name="q11" value="C"> C. 1/2</label>
+        <label><input type="radio" name="q11" value="D"> D. 2/3</label>
+      </div>
+    </div>
+
+    <div class="question" id="q12">
+      <p>12. Jika P(A) = 0.4 dan P(B) = 0.5, serta A dan B adalah dua kejadian yang saling lepas (mutually exclusive), berapakah P(A atau B)?</p>
+      <div class="answers">
+        <label><input type="radio" name="q12" value="A"> A. 0.9</label>
+        <label><input type="radio" name="q12" value="B"> B. 0.2</label>
+        <label><input type="radio" name="q12" value="C"> C. 0.1</label>
+        <label><input type="radio" name="q12" value="D"> D. 0.45</label>
+      </div>
+    </div>
+
+    <div class="question" id="q13">
+      <p>13. Dua kejadian dikatakan saling bebas (independent) jika...</p>
+      <div class="answers">
+        <label><input type="radio" name="q13" value="A"> A. P(A ∩ B) = 0</label>
+        <label><input type="radio" name="q13" value="B"> B. P(A ∩ B) = P(A) × P(B)</label>
+        <label><input type="radio" name="q13" value="C"> C. P(A ∪ B) = P(A) + P(B)</label>
+        <label><input type="radio" name="q13" value="D"> D. P(A) = P(B)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q14">
+      <p>14. Dari 10 orang siswa, akan dipilih 3 orang sebagai pengurus kelas. Berapa banyak kombinasi pemilihan yang mungkin?</p>
+      <div class="answers">
+        <label><input type="radio" name="q14" value="A"> A. 30</label>
+        <label><input type="radio" name="q14" value="B"> B. 120</label>
+        <label><input type="radio" name="q14" value="C"> C. 720</label>
+        <label><input type="radio" name="q14" value="D"> D. 1000</label>
+      </div>
+    </div>
+
+    <div class="question" id="q15">
+      <p>15. Rumus Bayes digunakan untuk menghitung...</p>
+      <div class="answers">
+        <label><input type="radio" name="q15" value="A"> A. Peluang gabungan</label>
+        <label><input type="radio" name="q15" value="B"> B. Peluang bersyarat (revisi peluang awal)</label>
+        <label><input type="radio" name="q15" value="C"> C. Peluang kejadian saling bebas</label>
+        <label><input type="radio" name="q15" value="D"> D. Harapan matematis</label>
+      </div>
+    </div>
+
+    <div class="question" id="q16">
+      <p>16. Sebuah koin dilempar 3 kali. Berapakah peluang munculnya tepat 2 sisi Gambar?</p>
+      <div class="answers">
+        <label><input type="radio" name="q16" value="A"> A. 1/8</label>
+        <label><input type="radio" name="q16" value="B"> B. 2/8</label>
+        <label><input type="radio" name="q16" value="C"> C. 3/8</label>
+        <label><input type="radio" name="q16" value="D"> D. 4/8</label>
+      </div>
+    </div>
+
+    <div class="question" id="q17">
+      <p>17. Nilai ekspektasi (E[X]) dari variabel acak diskrit didefinisikan sebagai...</p>
+      <div class="answers">
+        <label><input type="radio" name="q17" value="A"> A. Σ x . P(x)</label>
+        <label><input type="radio" name="q17" value="B"> B. Σ P(x)</label>
+        <label><input type="radio" name="q17" value="C"> C. Σ x^2 . P(x)</label>
+        <label><input type="radio" name="q17" value="D"> D. Rata-rata populasi dibagi n</label>
+      </div>
+    </div>
+
+    <div class="question" id="q18">
+      <p>18. Manakah syarat dari percobaan Binomial?</p>
+      <div class="answers">
+        <label><input type="radio" name="q18" value="A"> A. Hanya ada dua kemungkinan hasil (sukses/gagal)</label>
+        <label><input type="radio" name="q18" value="B"> B. Peluang sukses berubah di setiap percobaan</label>
+        <label><input type="radio" name="q18" value="C"> C. Percobaan saling bergantung</label>
+        <label><input type="radio" name="q18" value="D"> D. Variabelnya bersifat kontinu</label>
+      </div>
+    </div>
+
+    <div class="question" id="q19">
+      <p>19. Jika n=10 dan p=0.2 dalam distribusi Binomial, berapakah nilai rata-ratanya (μ)?</p>
+      <div class="answers">
+        <label><input type="radio" name="q19" value="A"> A. 0.2</label>
+        <label><input type="radio" name="q19" value="B"> B. 2</label>
+        <label><input type="radio" name="q19" value="C"> C. 8</label>
+        <label><input type="radio" name="q19" value="D"> D. 1.6</label>
+      </div>
+    </div>
+
+    <div class="question" id="q20">
+      <p>20. Distribusi Poisson biasanya digunakan untuk menghitung...</p>
+      <div class="answers">
+        <label><input type="radio" name="q20" value="A"> A. Jumlah sukses dalam sampel tetap</label>
+        <label><input type="radio" name="q20" value="B"> B. Kejadian langka dalam interval waktu atau ruang tertentu</label>
+        <label><input type="radio" name="q20" value="C"> C. Peluang dalam pengambilan tanpa pengembalian</label>
+        <label><input type="radio" name="q20" value="D"> D. Variabel kontinu yang simetris</label>
+      </div>
+    </div>
+
+    <div class="question" id="q21">
+      <p>21. Diketahui rata-rata kejadian (λ) adalah 2 per jam. Berapakah peluang tidak ada kejadian dalam 1 jam (e^-2 ≈ 0.135)?</p>
+      <div class="answers">
+        <label><input type="radio" name="q21" value="A"> A. 0.135</label>
+        <label><input type="radio" name="q21" value="B"> B. 0.270</label>
+        <label><input type="radio" name="q21" value="C"> C. 0.5</label>
+        <label><input type="radio" name="q21" value="D"> D. 0.067</label>
+      </div>
+    </div>
+
+    <div class="question" id="q22">
+      <p>22. Rumus varians untuk distribusi Binomial adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q22" value="A"> A. np</label>
+        <label><input type="radio" name="q22" value="B"> B. npq</label>
+        <label><input type="radio" name="q22" value="C"> C. √npq</label>
+        <label><input type="radio" name="q22" value="D"> D. p/n</label>
+      </div>
+    </div>
+
+    <div class="question" id="q23">
+      <p>23. Distribusi Normal memiliki nilai rata-rata, median, dan modus yang...</p>
+      <div class="answers">
+        <label><input type="radio" name="q23" value="A"> A. Berbeda jauh</label>
+        <label><input type="radio" name="q23" value="B"> B. Sama nilainya</label>
+        <label><input type="radio" name="q23" value="C"> C. Rata-rata selalu 1</label>
+        <label><input type="radio" name="q23" value="D"> D. Tergantung nilai simpangan baku</label>
+      </div>
+    </div>
+
+    <div class="question" id="q24">
+      <p>24. Luas seluruh area di bawah kurva normal adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q24" value="A"> A. 0.5</label>
+        <label><input type="radio" name="q24" value="B"> B. 1.0</label>
+        <label><input type="radio" name="q24" value="C"> C. 100</label>
+        <label><input type="radio" name="q24" value="D"> D. Tak terhingga</label>
+      </div>
+    </div>
+
+    <div class="question" id="q25">
+      <p>25. Jika nilai X = 85, μ = 70, dan σ = 10. Berapakah nilai Z (skor standar)?</p>
+      <div class="answers">
+        <label><input type="radio" name="q25" value="A"> A. 1.5</label>
+        <label><input type="radio" name="q25" value="B"> B. 15</label>
+        <label><input type="radio" name="q25" value="C"> C. -1.5</label>
+        <label><input type="radio" name="q25" value="D"> D. 0.85</label>
+      </div>
+    </div>
+
+    <div class="question" id="q26">
+      <p>26. Dalam distribusi normal standar, berapa persentase data yang terletak di antara Z = -1 dan Z = 1?</p>
+      <div class="answers">
+        <label><input type="radio" name="q26" value="A"> A. 50%</label>
+        <label><input type="radio" name="q26" value="B"> B. 68%</label>
+        <label><input type="radio" name="q26" value="C"> C. 95%</label>
+        <label><input type="radio" name="q26" value="D"> D. 99.7%</label>
+      </div>
+    </div>
+
+    <div class="question" id="q27">
+      <p>27. Pada distribusi normal standar (Z), nilai rata-rata dan simpangan bakunya adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q27" value="A"> A. μ=1, σ=0</label>
+        <label><input type="radio" name="q27" value="B"> B. μ=0, σ=1</label>
+        <label><input type="radio" name="q27" value="C"> C. μ=100, σ=15</label>
+        <label><input type="radio" name="q27" value="D"> D. μ=50, σ=10</label>
+      </div>
+    </div>
+
+    <div class="question" id="q28">
+      <p>28. Teorema Limit Pusat menyatakan bahwa untuk ukuran sampel besar (n ≥ 30), distribusi sampling rata-rata akan mendekati distribusi...</p>
+      <div class="answers">
+        <label><input type="radio" name="q28" value="A"> A. Binomial</label>
+        <label><input type="radio" name="q28" value="B"> B. Poisson</label>
+        <label><input type="radio" name="q28" value="C"> C. Normal</label>
+        <label><input type="radio" name="q28" value="D"> D. T-student</label>
+      </div>
+    </div>
+
+    <div class="question" id="q29">
+      <p>29. Rumus kesalahan baku (standard error) dari rata-rata sampel adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q29" value="A"> A. σ / n</label>
+        <label><input type="radio" name="q29" value="B"> B. σ / √n</label>
+        <label><input type="radio" name="q29" value="C"> C. σ × √n</label>
+        <label><input type="radio" name="q29" value="D"> D. s² / n</label>
+      </div>
+    </div>
+
+    <div class="question" id="q30">
+      <p>30. Jika populasi berjumlah 1000 dan kita mengambil sampel 100 secara acak tanpa pengembalian, faktor koreksi populasi terbatas perlu digunakan jika n/N lebih besar dari...</p>
+      <div class="answers">
+        <label><input type="radio" name="q30" value="A"> A. 1%</label>
+        <label><input type="radio" name="q30" value="B"> B. 5%</label>
+        <label><input type="radio" name="q30" value="C"> C. 10%</label>
+        <label><input type="radio" name="q30" value="D"> D. 20%</label>
+      </div>
+    </div>
+
+    <div class="question" id="q31">
+      <p>31. Pendugaan parameter populasi yang berupa satu angka tunggal disebut...</p>
+      <div class="answers">
+        <label><input type="radio" name="q31" value="A"> A. Pendugaan Interval</label>
+        <label><input type="radio" name="q31" value="B"> B. Pendugaan Titik</label>
+        <label><input type="radio" name="q31" value="C"> C. Kesalahan Standar</label>
+        <label><input type="radio" name="q31" value="D"> D. Hipotesis</label>
+      </div>
+    </div>
+
+    <div class="question" id="q32">
+      <p>32. Nilai Z untuk tingkat kepercayaan 95% dalam distribusi normal adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q32" value="A"> A. 1.645</label>
+        <label><input type="radio" name="q32" value="B"> B. 1.96</label>
+        <label><input type="radio" name="q32" value="C"> C. 2.575</label>
+        <label><input type="radio" name="q32" value="D"> D. 3.00</label>
+      </div>
+    </div>
+
+    <div class="question" id="q33">
+      <p>33. Diketahui x̄ = 100, n = 25, σ = 10. Berapakah batas bawah interval kepercayaan 95% (Z=1.96)?</p>
+      <div class="answers">
+        <label><input type="radio" name="q33" value="A"> A. 96.08</label>
+        <label><input type="radio" name="q33" value="B"> B. 98.04</label>
+        <label><input type="radio" name="q33" value="C"> C. 99.20</label>
+        <label><input type="radio" name="q33" value="D"> D. 95.50</label>
+      </div>
+    </div>
+
+    <div class="question" id="q34">
+      <p>34. Jika tingkat kepercayaan dinaikkan (misal dari 90% ke 99%), maka lebar interval kepercayaan akan...</p>
+      <div class="answers">
+        <label><input type="radio" name="q34" value="A"> A. Semakin sempit</label>
+        <label><input type="radio" name="q34" value="B"> B. Semakin lebar</label>
+        <label><input type="radio" name="q34" value="C"> C. Tetap sama</label>
+        <label><input type="radio" name="q34" value="D"> D. Menjadi nol</label>
+      </div>
+    </div>
+
+    <div class="question" id="q35">
+      <p>35. Distribusi t-Student digunakan saat...</p>
+      <div class="answers">
+        <label><input type="radio" name="q35" value="A"> A. Sampel besar dan σ diketahui</label>
+        <label><input type="radio" name="q35" value="B"> B. Sampel kecil (n < 30) dan σ tidak diketahui</label>
+        <label><input type="radio" name="q35" value="C"> C. Data bersifat kategorik</label>
+        <label><input type="radio" name="q35" value="D"> D. Menghitung probabilitas binomial</label>
+      </div>
+    </div>
+
+    <div class="question" id="q36">
+      <p>36. Kesalahan menolak Hipotesis Nol (H0) padahal H0 benar disebut...</p>
+      <div class="answers">
+        <label><input type="radio" name="q36" value="A"> A. Kesalahan Tipe I (α)</label>
+        <label><input type="radio" name="q36" value="B"> B. Kesalahan Tipe II (β)</label>
+        <label><input type="radio" name="q36" value="C"> C. Tingkat kepercayaan</label>
+        <label><input type="radio" name="q36" value="D"> D. Kuasa pengujian</label>
+      </div>
+    </div>
+
+    <div class="question" id="q37">
+      <p>37. Jika kita menguji H0: μ = 50 lawan H1: μ ≠ 50, maka kita menggunakan uji...</p>
+      <div class="answers">
+        <label><input type="radio" name="q37" value="A"> A. Satu arah kiri</label>
+        <label><input type="radio" name="q37" value="B"> B. Satu arah kanan</label>
+        <label><input type="radio" name="q37" value="C"> C. Dua arah</label>
+        <label><input type="radio" name="q37" value="D"> D. Uji varians</label>
+      </div>
+    </div>
+
+    <div class="question" id="q38">
+      <p>38. Nilai p (p-value) adalah peluang untuk mendapatkan hasil sampel yang ekstrem jika...</p>
+      <div class="answers">
+        <label><input type="radio" name="q38" value="A"> A. H0 benar</label>
+        <label><input type="radio" name="q38" value="B"> B. H1 benar</label>
+        <label><input type="radio" name="q38" value="C"> C. Sampel salah</label>
+        <label><input type="radio" name="q38" value="D"> D. Populasi normal</label>
+      </div>
+    </div>
+
+    <div class="question" id="q39">
+      <p>39. Jika p-value < α (tingkat signifikansi), maka keputusannya adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q39" value="A"> A. Terima H0</label>
+        <label><input type="radio" name="q39" value="B"> B. Gagal tolak H0</label>
+        <label><input type="radio" name="q39" value="C"> C. Tolak H0</label>
+        <label><input type="radio" name="q39" value="D"> D. Ambil sampel baru</label>
+      </div>
+    </div>
+
+    <div class="question" id="q40">
+      <p>40. Derajat bebas (df) untuk uji-t satu sampel dengan n=20 adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q40" value="A"> A. 20</label>
+        <label><input type="radio" name="q40" value="B"> B. 19</label>
+        <label><input type="radio" name="q40" value="C"> C. 21</label>
+        <label><input type="radio" name="q40" value="D"> D. 10</label>
+      </div>
+    </div>
+
+    <div class="question" id="q41">
+      <p>41. Uji statistik yang digunakan untuk membandingkan rata-rata dari dua populasi independen adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q41" value="A"> A. Uji Chi-Square</label>
+        <label><input type="radio" name="q41" value="B"> B. Independent Sample T-test</label>
+        <label><input type="radio" name="q41" value="C"> C. Paired T-test</label>
+        <label><input type="radio" name="q41" value="D"> D. ANOVA</label>
+      </div>
+    </div>
+
+    <div class="question" id="q42">
+      <p>42. Untuk membandingkan dua varians populasi, statistik uji yang digunakan adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q42" value="A"> A. Z</label>
+        <label><input type="radio" name="q42" value="B"> B. t</label>
+        <label><input type="radio" name="q42" value="C"> C. F</label>
+        <label><input type="radio" name="q42" value="D"> D. Chi-Square</label>
+      </div>
+    </div>
+
+    <div class="question" id="q43">
+      <p>43. Uji berpasangan (paired test) cocok digunakan untuk penelitian...</p>
+      <div class="answers">
+        <label><input type="radio" name="q43" value="A"> A. Berat badan sebelum dan sesudah diet pada orang yang sama</label>
+        <label><input type="radio" name="q43" value="B"> B. Perbedaan tinggi badan pria dan wanita</label>
+        <label><input type="radio" name="q43" value="C"> C. Perbandingan harga barang di dua kota berbeda</label>
+        <label><input type="radio" name="q43" value="D"> D. Efektivitas 3 jenis pupuk berbeda</label>
+      </div>
+    </div>
+
+    <div class="question" id="q44">
+      <p>44. Jika H0: μ1 = μ2, dan hasil uji menunjukkan p-value = 0.08 dengan α = 0.05, maka kesimpulannya...</p>
+      <div class="answers">
+        <label><input type="radio" name="q44" value="A"> A. Ada perbedaan signifikan</label>
+        <label><input type="radio" name="q44" value="B"> B. Tidak cukup bukti untuk menyatakan ada perbedaan</label>
+        <label><input type="radio" name="q44" value="C"> C. Rata-rata populasi 1 pasti lebih besar</label>
+        <label><input type="radio" name="q44" value="D"> D. Sampel tidak valid</label>
+      </div>
+    </div>
+
+    <div class="question" id="q45">
+      <p>45. Koefisien korelasi (r) yang menunjukkan hubungan negatif yang sangat kuat adalah...</p>
+      <div class="answers">
+        <label><input type="radio" name="q45" value="A"> A. 0.01</label>
+        <label><input type="radio" name="q45" value="B"> B. 0.95</label>
+        <label><input type="radio" name="q45" value="C"> C. -0.98</label>
+        <label><input type="radio" name="q45" value="D"> D. -0.10</label>
+      </div>
+    </div>
+
+    <div class="question" id="q46">
+      <p>46. Dalam regresi linear sederhana Y = a + bX, b disebut sebagai...</p>
+      <div class="answers">
+        <label><input type="radio" name="q46" value="A"> A. Intercept</label>
+        <label><input type="radio" name="q46" value="B"> B. Koefisien regresi / Slope</label>
+        <label><input type="radio" name="q46" value="C"> C. Variabel dependen</label>
+        <label><input type="radio" name="q46" value="D"> D. Galat</label>
+      </div>
+    </div>
+
+    <div class="question" id="q47">
+      <p>47. Berapakah nilai t-hitung jika (x̄ - μ) = 5, s = 4, dan n = 16?</p>
+      <div class="answers">
+        <label><input type="radio" name="q47" value="A"> A. 1.25</label>
+        <label><input type="radio" name="q47" value="B"> B. 5</label>
+        <label><input type="radio" name="q47" value="C"> C. 20</label>
+        <label><input type="radio" name="q47" value="D"> D. 2.5</label>
+      </div>
+    </div>
+
+    <div class="question" id="q48">
+      <p>48. Simbol ρ (rho) biasanya digunakan untuk...</p>
+      <div class="answers">
+        <label><input type="radio" name="q48" value="A"> A. Koreksi populasi</label>
+        <label><input type="radio" name="q48" value="B"> B. Korelasi populasi</label>
+        <label><input type="radio" name="q48" value="C"> C. Proporsi sampel</label>
+        <label><input type="radio" name="q48" value="D"> D. Simpangan baku</label>
+      </div>
+    </div>
+
+    <div class="question" id="q49">
+      <p>49. Uji Goodness of Fit menggunakan distribusi...</p>
+      <div class="answers">
+        <label><input type="radio" name="q49" value="A"> A. Normal</label>
+        <label><input type="radio" name="q49" value="B"> B. t</label>
+        <label><input type="radio" name="q49" value="C"> C. Chi-Square</label>
+        <label><input type="radio" name="q49" value="D"> D. Binomial</label>
+      </div>
+    </div>
+
+    <div class="question" id="q50">
+      <p>50. Jika kita ingin menguji hubungan antara dua variabel kategori, kita menggunakan...</p>
+      <div class="answers">
+        <label><input type="radio" name="q50" value="A"> A. Uji Z</label>
+        <label><input type="radio" name="q50" value="B"> B. Uji Independensi Chi-Square</label>
+        <label><input type="radio" name="q50" value="C"> C. Regresi Linear</label>
+        <label><input type="radio" name="q50" value="D"> D. Korelasi Pearson</label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="btn-container">
+    <button type="button" id="submitBtn" onclick="checkAnswers()">Submit Jawaban</button>
+    <button type="button" id="resetBtn" onclick="resetQuiz()" style="display:none;">Ulangi Quiz</button>
+  </div>
+
+  <p id="result"></p>
+</div>
+
+<script>
+// Kunci Jawaban
+const answerKey = {
+  q1:"C", q2:"C", q3:"C", q4:"A", q5:"A", q6:"D", q7:"B", q8:"C", q9:"C", q10:"C",
+  q11:"C", q12:"A", q13:"B", q14:"B", q15:"B", q16:"C", q17:"A", q18:"A", q19:"B", q20:"B",
+  q21:"A", q22:"B", q23:"B", q24:"B", q25:"A", q26:"B", q27:"B", q28:"C", q29:"B", q30:"B",
+  q31:"B", q32:"B", q33:"A", q34:"B", q35:"B", q36:"A", q37:"C", q38:"A", q39:"C", q40:"B",
+  q41:"B", q42:"C", q43:"A", q44:"B", q45:"C", q46:"B", q47:"B", q48:"B", q49:"C", q50:"B"
+};
+
+function checkAnswers() {
+  let total = 0;
+  const totalQuestions = 50;
+
+  for (let i = 1; i <= totalQuestions; i++) {
+    const qName = "q" + i;
+    const qDiv = document.getElementById(qName);
+    const options = document.getElementsByName(qName);
+    
+    let userAns = "";
+    for (const opt of options) {
+      if (opt.checked) userAns = opt.value;
+    }
+
+    // Hilangkan styling lama
+    qDiv.classList.remove("correct-ans", "wrong-ans");
+    
+    // Beri highlight jawaban benar
+    for (const opt of options) {
+      const label = opt.parentNode;
+      label.style.color = "black";
+      label.style.fontWeight = "normal";
+      
+      if (opt.value === answerKey[qName]) {
+        label.classList.add("highlight");
+        label.innerHTML += " ← (Jawaban Benar)";
+      }
+    }
+
+    if (userAns === answerKey[qName]) {
+      total++;
+      qDiv.classList.add("correct-ans");
+    } else {
+      qDiv.classList.add("wrong-ans");
+    }
+  }
+
+  const resultP = document.getElementById("result");
+  resultP.innerHTML = `Jumlah jawaban benar: <span style="color:green; font-size:24px;">${total}</span> dari ${totalQuestions} soal.`;
+  
+  document.getElementById("submitBtn").style.display = "none";
+  document.getElementById("resetBtn").style.display = "inline-block";
+  window.scrollTo(0, 0);
+}
+
+function resetQuiz() {
+  const totalQuestions = 50;
+  for (let i = 1; i <= totalQuestions; i++) {
+    const qName = "q" + i;
+    const qDiv = document.getElementById(qName);
+    const options = document.getElementsByName(qName);
+
+    qDiv.classList.remove("correct-ans", "wrong-ans");
+    for (const opt of options) {
+      opt.checked = false;
+      const label = opt.parentNode;
+      label.classList.remove("highlight");
+      label.style.color = "black";
+      label.style.fontWeight = "normal";
+      // Bersihkan teks tambahan
+      label.innerHTML = label.innerHTML.replace(" ← (Jawaban Benar)", "");
+    }
+  }
+
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("submitBtn").style.display = "inline-block";
+  document.getElementById("resetBtn").style.display = "none";
+}
+</script>
+</body>
+</html>
