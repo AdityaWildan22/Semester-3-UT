@@ -47,17 +47,26 @@
     background: #f8f9fa;
     border-radius: 6px;
     cursor: pointer;
-    border: 1px solid transparent;
-    transition: 0.2s;
-  }
-
-  .answers label:hover {
-    background: #e8f0fe;
-    border-color: #1a73e8;
+    border: 2px solid transparent;
+    transition: 0.3s;
   }
 
   .answers input[type="radio"] {
     margin-right: 12px;
+  }
+
+  /* Style untuk highlight jawaban */
+  .correct-highlight {
+    background-color: #e6ffed !important;
+    border-color: #34a853 !important;
+    color: #155724;
+    font-weight: bold;
+  }
+
+  .wrong-highlight {
+    background-color: #fff5f5 !important;
+    border-color: #ea4335 !important;
+    color: #721c24;
   }
 
   .btn-container {
@@ -77,16 +86,17 @@
     box-shadow: 0 4px 6px rgba(26,115,232,0.3);
   }
 
+  button:hover {
+    background-color: #1669d6;
+  }
+
   #result {
     text-align: center;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     margin-top: 25px;
     color: #1a73e8;
   }
-
-  .correct-ans { background-color: #e6ffed !important; border: 1px solid #34a853 !important; }
-  .wrong-ans { background-color: #fff5f5 !important; border: 1px solid #ea4335 !important; }
 </style>
 </head>
 <body>
@@ -178,10 +188,10 @@
     <div class="question" id="q9">
       <p>9. Seorang tukang cat ingin mengetahui rata-rata waktu yang dipergunakan untuk mengeringkan dinding gedung bertingkat. Untuk itu dipilih secara random 49 tempat (dinding) yang ukurannya sama dan akan diperoleh mean waktu pengeringan adalah 60 menit dengan deviasi standar 9 menit.Interval konfidensi 95% untuk u adalah</p>
       <div class="answers">
-        <label><input type="radio" name="q9" value="A"> A. 55.02 ≤ p ≤ 64.98</label>
-        <label><input type="radio" name="q9" value="B"> B. 57.48 ≤ p ≤ 62.52</label>
-        <label><input type="radio" name="q9" value="C"> C. 53.91 ≤ p ≤ 64.09</label>
-        <label><input type="radio" name="q9" value="D"> D. 54.02 ≤ p ≤ 62.89</label>
+        <label><input type="radio" name="q9" value="A"> A. 55.02 ≤ u ≤ 64.98</label>
+        <label><input type="radio" name="q9" value="B"> B. 57.48 ≤ u ≤ 62.52</label>
+        <label><input type="radio" name="q9" value="C"> C. 53.91 ≤ u ≤ 64.09</label>
+        <label><input type="radio" name="q9" value="D"> D. 54.02 ≤ u ≤ 62.89</label>
       </div>
     </div>
 
@@ -201,8 +211,8 @@
       <div class="answers">
         <label><input type="radio" name="q11" value="A"> A. 8</label>
         <label><input type="radio" name="q11" value="B"> B. 6</label>
-        <label><input type="radio" name="q11" value="C"> C. 5</label>
-        <label><input type="radio" name="q11" value="D"> D. 8</label>
+        <label><input type="radio" name="q11" value="C"> C. 3</label>
+        <label><input type="radio" name="q11" value="D"> D. 5</label>
       </div>
     </div>
 
@@ -245,7 +255,6 @@
         <label><input type="radio" name="q15" value="D"> D. 2.475</label>
       </div>
     </div>
-
   </div>
 
   <div class="btn-container">
@@ -255,7 +264,6 @@
 </div>
 
 <script>
-// Kunci Jawaban Berdasarkan Perhitungan Statistik yang Benar
 const key = {
   q1: "D", q2: "C", q3: "B", q4: "B", q5: "A", 
   q6: "D", q7: "B", q8: "C", q9: "B", q10: "C",
@@ -266,22 +274,41 @@ function checkAnswers() {
   let score = 0;
   for (let i = 1; i <= 15; i++) {
     const qName = "q" + i;
-    const selected = document.querySelector(`input[name="${qName}"]:checked`);
-    const div = document.getElementById(qName);
-    
-    div.classList.remove("correct-ans", "wrong-ans");
-    if (selected) {
-      if (selected.value === key[qName]) {
+    const qDiv = document.getElementById("q" + i);
+    const labels = qDiv.querySelectorAll("label");
+    const selectedInput = qDiv.querySelector(`input[name="${qName}"]:checked`);
+    const correctValue = key[qName];
+
+    // Reset style setiap kali tombol diklik
+    labels.forEach(label => {
+      label.classList.remove("correct-highlight", "wrong-highlight");
+    });
+
+    if (selectedInput) {
+      if (selectedInput.value === correctValue) {
         score++;
-        div.classList.add("correct-ans");
+        // Jika benar, beri warna hijau pada pilihan tersebut
+        selectedInput.parentElement.classList.add("correct-highlight");
       } else {
-        div.classList.add("wrong-ans");
+        // Jika salah, beri warna merah pada pilihan user
+        selectedInput.parentElement.classList.add("wrong-highlight");
+        // Dan beri warna hijau pada jawaban yang SEHARUSNYA benar
+        labels.forEach(label => {
+          if (label.querySelector('input').value === correctValue) {
+            label.classList.add("correct-highlight");
+          }
+        });
       }
     } else {
-      div.classList.add("wrong-ans");
+      // Jika tidak dijawab, tetap tunjukkan mana yang benar
+      labels.forEach(label => {
+        if (label.querySelector('input').value === correctValue) {
+          label.classList.add("correct-highlight");
+        }
+      });
     }
   }
-  document.getElementById("result").innerHTML = "Skor Akhir: " + score + " / 15";
+  document.getElementById("result").innerHTML = "Skor Anda: " + score + " / 15";
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 </script>
